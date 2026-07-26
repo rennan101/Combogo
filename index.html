@@ -16,6 +16,9 @@
 </head>
 <body>
 
+    <!-- 1. BARRA DE PROGRESSO DE ROLAGEM NO TOPO -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
     <!-- ELEMENTO DE BACKGROUND IMERSIVO -->
     <div class="ambient-bg"></div>
 
@@ -52,23 +55,39 @@
     </header>
 
     <main>
-        <!-- Seção 1: Hero Section -->
+        <!-- Seção 1: Hero Section (2 Colunas com Painel Clean de 1 Quote) -->
         <section id="hero">
             <div class="container">
-                <div class="hero-content">
-                    <span class="badge" data-i18n="hero_badge">Desde 2016 • +30 Bolsistas • Impacto Global • Lab UNICAP</span>
-                    <h1 data-i18n="hero_title">Transformando Ciência e Criatividade em Soluções Interativas Reais.</h1>
-                    <p data-i18n="hero_desc">Desenvolvimento de Jogos Digitais, Realidade Estendida (XR), Modelagem 3D e Aplicações Gamificadas para revolucionar o seu projeto.</p>
-                    <div class="hero-ctas">
-                        <a href="#orcamento" class="btn btn-primary" data-i18n="hero_btn_quote">Solicitar Orçamento</a>
-                        <a href="#portfolio" class="btn btn-secondary" data-i18n="hero_btn_portfolio">Conhecer Portfólio</a>
+                <div class="hero-grid">
+                    <!-- Coluna da Esquerda: Textos e Botões -->
+                    <div class="hero-content">
+                        <span class="badge" data-i18n="hero_badge">Desde 2016 • +30 Bolsistas • Impacto Global • Lab UNICAP</span>
+                        <h1 data-i18n="hero_title">Transformando Ciência e Criatividade em Soluções Interativas Reais.</h1>
+                        <p data-i18n="hero_desc">Desenvolvimento de Jogos Digitais, Realidade Estendida (XR), Modelagem 3D e Aplicações Gamificadas para revolucionar o seu projeto.</p>
+                        <div class="hero-ctas">
+                            <a href="#orcamento" class="btn btn-primary" data-i18n="hero_btn_quote">Solicitar Orçamento</a>
+                            <a href="#portfolio" class="btn btn-secondary" data-i18n="hero_btn_portfolio">Conhecer Portfólio</a>
+                        </div>
+                    </div>
+
+                    <!-- Coluna da Direita: Painel Minimalista com 1 Quote por vez -->
+                    <div class="hero-visual">
+                        <div class="clean-quote-card">
+                            <div class="quote-status">
+                                <span class="status-dot"></span>
+                                <span data-i18n="hero_panel_status">Disponível para Projetos</span>
+                            </div>
+                            <div class="quote-display-area">
+                                <p id="single-quote-text" class="quote-text">Fazemos seu projeto de jogo do zero</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção 2: Quem Somos & O Ecossistema -->
-        <section id="sobre">
+        <!-- Seção 2: Quem Somos & O Ecossistema (Com Scroll Reveal) -->
+        <section id="sobre" class="reveal">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
@@ -76,7 +95,7 @@
                         <p data-i18n="about_p1">Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.</p>
                         <p data-i18n="about_p2"><strong>Nossa Missão:</strong> Praticamos a indissociabilidade entre ensino, pesquisa e extensão. Conectamos o rigor científico acadêmico às demandas do mercado, entregando inovação aberta e soluções interativas de alta complexidade com viabilidade econômica.</p>
                     </div>
-                    <div class="terminal-box">
+                    <div class="terminal-box reveal reveal-delay-1">
                         <div class="terminal-header">
                             <div class="terminal-dot dot-red"></div>
                             <div class="terminal-dot dot-yellow"></div>
@@ -85,10 +104,10 @@
                         <div class="terminal-body">
                             <p class="comment" data-i18n="term_c1">// Nosso manifesto de laboratório prático e ágil</p>
                             <p><span class="command">$ combogo --culture</span></p>
-                            <p>&gt; Code &amp;</p>
-                            <p>&gt; Play &amp;</p>
-                            <p>&gt; Sleep &amp;</p>
-                            <p>&gt; Repeat:</p>
+                            <p>&gt; Research &amp;</p>
+                            <p>&gt; Prototype &amp;</p>
+                            <p>&gt; Validate &amp;</p>
+                            <p>&gt; Iterate:</p>
                             <p class="comment" data-i18n="term_c2">// Inovação, engenhosidade e transdisciplinaridade.</p>
                         </div>
                     </div>
@@ -96,35 +115,35 @@
             </div>
         </section>
 
-        <!-- Seção 3: Nossas Soluções & Especialidades -->
+        <!-- Seção 3: Nossas Soluções & Especialidades (Com Scroll Reveal em Cascata) -->
         <section id="solucoes">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <h2 data-i18n="sol_title">Especialidades &amp; Soluções</h2>
                     <p data-i18n="sol_sub">Oferecemos mão de obra qualificada para projetos interativos nas mais diversas áreas do conhecimento.</p>
                 </div>
                 <div class="solutions-grid">
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <div class="icon-wrapper">🎮</div>
                         <h3 data-i18n="sol_games_title">Jogos Digitais &amp; Jogos Sérios</h3>
                         <p data-i18n="sol_games_desc">Desenvolvimento 2D e 3D para entretenimento, educação, reabilitação médica, treinamento corporativo e conscientização social.</p>
                     </div>
-                    <div class="solution-card">
+                    <div class="solution-card reveal reveal-delay-1">
                         <div class="icon-wrapper">🥽</div>
                         <h3 data-i18n="sol_xr_title">Realidade Estendida (XR - VR/AR)</h3>
                         <p data-i18n="sol_xr_desc">Simulações imersivas em Realidade Virtual e Aumentada para terapias oncológicas, fóbicas, treinamentos de risco e experiências interativas.</p>
                     </div>
-                    <div class="solution-card">
+                    <div class="solution-card reveal reveal-delay-2">
                         <div class="icon-wrapper">📱</div>
                         <h3 data-i18n="sol_app_title">Aplicações Interativas &amp; Gamificação</h3>
                         <p data-i18n="sol_app_desc">Apps móveis de impacto social, plataformas gamificadas de engajamento, sistemas de denúncia e ferramentas socioeducativas.</p>
                     </div>
-                    <div class="solution-card">
+                    <div class="solution-card reveal reveal-delay-3">
                         <div class="icon-wrapper">📐</div>
                         <h3 data-i18n="sol_3d_title">Modelagem 3D &amp; Fotogrametria</h3>
                         <p data-i18n="sol_3d_desc">Criação de artefatos em 3D, Digitalização de objetos e órgãos em tamanho real, preservação de acervos culturais, e impressão 3D.</p>
                     </div>
-                    <div class="solution-card">
+                    <div class="solution-card reveal">
                         <div class="icon-wrapper">🎨</div>
                         <h3 data-i18n="sol_art_title">Arte 2D &amp; Concept Art</h3>
                         <p data-i18n="sol_art_desc">Ilustrações, design de personagens, cenários, animação 2D e assets visuais para jogos, livros de RPG e material didático.</p>
@@ -133,21 +152,21 @@
             </div>
         </section>
 
-        <!-- Seção Research & Inovação -->
+        <!-- Seção Research & Inovação (Com Scroll Reveal em Cascata) -->
         <section id="research">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <h2 data-i18n="res_title">Pesquisa &amp; Inovação</h2>
                     <p data-i18n="res_sub">A força científica que alimenta nossos desenvolvimentos, unindo a graduação, mestrado e doutorado em projetos de alto impacto.</p>
                 </div>
                 <div class="research-grid">
-                    <div class="research-card">
+                    <div class="research-card reveal">
                         <span class="research-tag" data-i18n="res_tag1">Iniciação Científica</span>
                         <div class="research-number">+30</div>
                         <h3 data-i18n="res_card1_title">Bolsistas PIBIC &amp; FACEPE</h3>
                         <p data-i18n="res_card1_desc">Alunos formados aplicando métodos científicos no desenvolvimento de software, gamificação e tecnologias assistivas com apoio de órgãos oficiais de fomento à pesquisa.</p>
                     </div>
-                    <div class="research-card">
+                    <div class="research-card reveal reveal-delay-1">
                         <span class="research-tag" data-i18n="res_tag2">Propriedade Intelectual</span>
                         <div class="research-number">03</div>
                         <h3 data-i18n="res_card2_title">Registros de Software &amp; Patentes</h3>
@@ -157,15 +176,15 @@
             </div>
         </section>
 
-        <!-- Seção 4: Portfólio de Impacto -->
+        <!-- Seção 4: Portfólio de Impacto (Cards animam automaticamente via JS) -->
         <section id="portfolio">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <h2 data-i18n="port_title">Portfólio de Impacto</h2>
                     <p data-i18n="port_sub">Conheça os cases que transformaram pesquisas científicas e ideias de parceiros em soluções premiadas, organizados por ano.</p>
                 </div>
                 
-                <div class="filter-container" id="portfolio-filters">
+                <div class="filter-container reveal reveal-delay-1" id="portfolio-filters">
                     <button class="filter-btn active" data-filter="Todos">Todos</button>
                 </div>
 
@@ -173,15 +192,15 @@
             </div>
         </section>
 
-        <!-- Seção 5: Para Quem Criamos -->
+        <!-- Seção 5: Para Quem Criamos (Com Scroll Reveal) -->
         <section id="parceiros">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <h2 data-i18n="part_title">Para Quem Criamos</h2>
                     <p data-i18n="part_sub">Atuamos como ponte entre o conhecimento acadêmico e as necessidades do setor público, privado e terceiro setor.</p>
                 </div>
                 <div class="partners-grid">
-                    <div class="partner-col">
+                    <div class="partner-col reveal">
                         <h3 data-i18n="part_ext_title">🌐 Clientes Externos</h3>
                         <ul class="partner-list">
                             <li data-i18n="part_ext_1"><strong>Prefeituras e Secretarias Governamentais:</strong> Prefeitura do Recife, Secretária Executiva de Políticas sobre Drogas, Secretaria de Turismo de Maringá-PR.</li>
@@ -190,7 +209,7 @@
                             <li data-i18n="part_ext_4"><strong>Instituições e Empresas Privadas:</strong> SEBRAE, Hospital de Câncer de Pernambuco.</li>
                         </ul>
                     </div>
-                    <div class="partner-col">
+                    <div class="partner-col reveal reveal-delay-1">
                         <h3 data-i18n="part_int_title">🏛️ Clientes Internos &amp; Acadêmicos</h3>
                         <ul class="partner-list">
                             <li data-i18n="part_int_1"><strong>Setores Estratégicos UNICAP:</strong> Assessoria de Comunicação (ASSECOM), Pró-Reitoria Administrativa (PRAD).</li>
@@ -203,52 +222,60 @@
             </div>
         </section>
 
-        <!-- Seção 6: Solicitação de Orçamento & Contato -->
+        <!-- Seção 6: Solicitação de Orçamento & Contato (Com Scroll Reveal) -->
         <section id="orcamento">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <h2 data-i18n="contact_title">Inicie Seu Projeto</h2>
                     <p data-i18n="contact_sub">Tire sua ideia do papel com a inovação acadêmica e qualidade profissional da Combogó.</p>
                 </div>
-                <div class="contact-wrapper">
-                    <form id="briefing-form" onsubmit="event.preventDefault(); alert(i18n[currentLang].alert_form_sent);">
+                <div class="contact-wrapper reveal reveal-delay-1">
+                    <!-- FORMULÁRIO CONFIGURADO PARA ENVIO VIA AJAX / FORMSUBMIT -->
+                    <form id="briefing-form">
+                        <input type="hidden" name="_subject" value="🚀 Novo Pedido de Orçamento - Site Combogó!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
                         <div class="form-group">
                             <label for="nome" data-i18n="form_name">Nome / Instituição *</label>
-                            <input type="text" id="nome" class="form-control" data-i18n-ph="form_name_ph" placeholder="Empresa, ONG, Setor Público, Acadêmico..." required>
+                            <input type="text" id="nome" name="Nome_ou_Instituicao" class="form-control" data-i18n-ph="form_name_ph" placeholder="Empresa, ONG, Setor Público, Acadêmico..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-i18n="form_email">E-mail *</label>
+                            <input type="email" id="email" name="Email_de_Contato" class="form-control" placeholder="seuemail@exemplo.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="contato" data-i18n="form_contact">E-mail e WhatsApp *</label>
-                            <input type="text" id="contato" class="form-control" placeholder="seuemail@exemplo.com | (00) 00000-0000" required>
+                            <label for="whatsapp" data-i18n="form_whatsapp">WhatsApp *</label>
+                            <input type="tel" id="whatsapp" name="WhatsApp" class="form-control" placeholder="(00) 00000-0000" required>
                         </div>
+                        
                         <div class="form-group">
                             <label data-i18n="form_type">Tipo de Solução Desejada *</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="solucao" value="Jogo Digital"> <span data-i18n="chk_game">Jogo Digital / Sério</span>
+                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="Jogo Digital"> <span data-i18n="chk_game">Jogo Digital / Sério</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="solucao" value="XR"> <span data-i18n="chk_xr">Realidade Estendida (VR/AR)</span>
+                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="XR"> <span data-i18n="chk_xr">Realidade Estendida (VR/AR)</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="solucao" value="App"> <span data-i18n="chk_app">App / Gamificação</span>
+                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="App"> <span data-i18n="chk_app">App / Gamificação</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="solucao" value="3D"> <span data-i18n="chk_3d">Modelagem 3D / Fotogrametria</span>
+                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="3D"> <span data-i18n="chk_3d">Modelagem 3D / Fotogrametria</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="solucao" value="2D"> <span data-i18n="chk_2d">Arte 2D &amp; Animação</span>
+                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="2D"> <span data-i18n="chk_2d">Arte 2D &amp; Animação</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="prazo" data-i18n="form_deadline">Prazo Estimado</label>
-                            <input type="text" id="prazo" class="form-control" data-i18n-ph="form_deadline_ph" placeholder="Ex: 3 meses, Para o 2º semestre...">
-                        </div>
+                        
                         <div class="form-group">
                             <label for="desc" data-i18n="form_desc">Descrição do Desafio ou Ideia *</label>
-                            <textarea id="desc" rows="4" class="form-control" data-i18n-ph="form_desc_ph" placeholder="Descreva brevemente o problema que deseja resolver ou a aplicação interativa que imaginou..." required></textarea>
+                            <textarea id="desc" name="Descricao_do_Desafio" rows="4" class="form-control" data-i18n-ph="form_desc_ph" placeholder="Descreva brevemente o problema que deseja resolver ou a aplicação interativa que imaginou..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Solicitar Orçamento</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Solicitar Proposta Comercial</button>
                     </form>
 
                     <div class="contact-info">
@@ -378,7 +405,11 @@
                         <textarea id="adm-desc" rows="3" class="form-control" required placeholder="Resumo do projeto e seus resultados..."></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="adm-submit-btn" data-i18n="adm_btn_submit">Adicionar Projeto ao Portfólio</button>
+                    <!-- BOTOES DE AÇÃO (SALVAR E VOLTAR À LISTA) -->
+                    <div style="display: flex; gap: 10px; margin-top: 16px;">
+                        <button type="button" class="btn btn-secondary" id="adm-cancel-btn" style="display: none; width: 45%;" onclick="returnToList()" data-i18n="adm_btn_back">🔙 Voltar à Lista</button>
+                        <button type="submit" class="btn btn-primary" style="flex-grow: 1;" id="adm-submit-btn" data-i18n="adm_btn_submit">Adicionar Projeto ao Portfólio</button>
+                    </div>
                 </form>
             </div>
 
@@ -424,344 +455,17 @@
         </div>
     </div>
 
+    <!-- LINK PARA O ARQUIVO DE TRADUÇÃO EXTERNO -->
+    <script src="translations.js"></script>
+
     <!-- JAVASCRIPT VANILLA -->
     <script>
         /**
          * ============================================================================
-         * 1. DICIONÁRIO DE TRADUÇÃO TRILÍNGUE (PT, EN, ES)
+         * 1. CONFIGURAÇÕES INICIAIS DE IDIOMA E INTERFACE
          * ============================================================================
          */
         let currentLang = 'pt';
-
-        const i18n = {
-            pt: {
-                logo_sub: "Agência de Soluções Interativas",
-                nav_about: "Sobre",
-                nav_solutions: "Soluções",
-                nav_research: "Pesquisa",
-                nav_portfolio: "Portfólio",
-                nav_partners: "Parceiros",
-                nav_budget: "Orçamento",
-                nav_adm: "⚙️ Painel ADM",
-                hero_badge: "Desde 2016 • +30 Bolsistas • Impacto Global • Lab UNICAP",
-                hero_title: "Transformando Ciência e Criatividade em Soluções Interativas Reais.",
-                hero_desc: "Desenvolvimento de Jogos Digitais, Realidade Estendida (XR), Modelagem 3D e Aplicações Gamificadas para revolucionar o seu projeto.",
-                hero_btn_quote: "Solicitar Orçamento",
-                hero_btn_portfolio: "Conhecer Portfólio",
-                about_title: "O Ecossistema Combogó",
-                about_p1: "Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.",
-                about_p2: "<strong>Nossa Missão:</strong> Praticamos a indissociabilidade entre ensino, pesquisa e extensão. Conectamos o rigor científico acadêmico às demandas do mercado, entregando inovação aberta e soluções interativas de alta complexidade com viabilidade econômica.",
-                term_c1: "// Nosso manifesto de laboratório prático e ágil",
-                term_c2: "// Inovação, engenhosidade e transdisciplinaridade.",
-                sol_title: "Especialidades & Soluções",
-                sol_sub: "Oferecemos cooperação técnica qualificada para projetos interativos nas mais diversas áreas do conhecimento.",
-                sol_games_title: "Jogos Digitais & Jogos Sérios",
-                sol_games_desc: "Desenvolvimento 2D e 3D para entretenimento, educação, reabilitação médica, treinamento corporativo e conscientização social.",
-                sol_xr_title: "Realidade Estendida (XR - VR/AR)",
-                sol_xr_desc: "Simulações imersivas em Realidade Virtual e Aumentada para terapias oncológicas, fóbicas, treinamentos de risco e experiências interativas.",
-                sol_app_title: "Aplicações Interativas & Gamificação",
-                sol_app_desc: "Apps móveis de impacto social, plataformas gamificadas de engajamento, sistemas de denúncia e ferramentas socioeducativas.",
-                sol_3d_title: "Modelagem 3D & Fotogrametria",
-                sol_3d_desc: "Criação de artefatos em 3D, Digitalização de objetos e órgãos em tamanho real, preservação de acervos culturais, e impressão 3D.",
-                sol_art_title: "Arte 2D & Concept Art",
-                sol_art_desc: "Ilustrações, design de personagens, cenários, animação 2D e assets visuais para jogos, livros de RPG e material didático.",
-                res_title: "Pesquisa & Inovação",
-                res_sub: "A força científica que alimenta nossos desenvolvimentos, unindo a graduação, mestrado e doutorado em projetos de alto impacto.",
-                res_tag1: "Iniciação Científica",
-                res_card1_title: "Bolsistas PIBIC & FACEPE",
-                res_card1_desc: "Alunos formados aplicando métodos científicos no desenvolvimento de software, gamificação e tecnologias assistivas com apoio de órgãos oficiais de fomento à pesquisa.",
-                res_tag2: "Propriedade Intelectual",
-                res_card2_title: "Registros de Software & Patentes",
-                res_card2_desc: "Desenvolvimentos autorais registrados no INPI em parceria com os cursos de Psicologia, Fisioterapia e com o Mestrado em Indústrias Criativas da UNICAP.",
-                port_title: "Portfólio de Impacto",
-                port_sub: "Conheça os cases que transformaram pesquisas científicas e ideias de parceiros em soluções premiadas, organizados por ano.",
-                part_title: "Para Quem Criamos",
-                part_sub: "Atuamos como ponte entre o conhecimento acadêmico e as necessidades do setor público, privado e terceiro setor.",
-                part_ext_title: "🌐 Clientes Externos",
-                part_ext_1: "<strong>Prefeituras e Secretarias Governamentais:</strong> Prefeitura do Recife, Secretária Executiva de Políticas sobre Drogas, Secretaria de Turismo de Maringá-PR.",
-                part_ext_2: "<strong>ONGs Sociais e de Direitos Humanos:</strong> Movimento Leões do Norte, Food For Thought.",
-                part_ext_3: "<strong>Startups e Inovação:</strong> Happen Escola de Habilidades, Viu Cine LTDA.",
-                part_ext_4: "<strong>Instituições e Empresas Privadas:</strong> SEBRAE, Hospital de Câncer de Pernambuco.",
-                part_int_title: "🏛️ Clientes Internos & Acadêmicos",
-                part_int_1: "<strong>Setores Estratégicos UNICAP:</strong> Assessoria de Comunicação (ASSECOM), Pró-Reitoria Administrativa (PRAD).",
-                part_int_2: "<strong>Pesquisa e Conservação:</strong> Museu de Arqueologia e Ciências Naturais (MUSARQ).",
-                part_int_3: "<strong>Cursos de Graduação:</strong> Parcerias ativas com docentes de Medicina, Fisioterapia, Psicologia, Arquitetura, Fotografia e Letras.",
-                part_int_4: "<strong>Pós-Graduação e Doutorado:</strong> Suporte em soluções tecnológicas para dissertações e pesquisas científicas de alto impacto.",
-                contact_title: "Inicie Seu Projeto",
-                contact_sub: "Tire sua ideia do papel com a inovação acadêmica e qualidade profissional da Combogó.",
-                form_name: "Nome / Instituição *",
-                form_name_ph: "Empresa, ONG, Setor Público, Acadêmico...",
-                form_contact: "E-mail e WhatsApp *",
-                form_type: "Tipo de Solução Desejada *",
-                chk_game: "Jogo Digital / Sério",
-                chk_xr: "Realidade Estendida (VR/AR)",
-                chk_app: "App / Gamificação",
-                chk_3d: "Modelagem 3D / Fotogrametria",
-                chk_2d: "Arte 2D & Animação",
-                form_deadline: "Prazo Estimado",
-                form_deadline_ph: "Ex: 3 meses, Para o 2º semestre...",
-                form_desc: "Descrição do Desafio ou Ideia *",
-                form_desc_ph: "Descreva brevemente o problema que deseja resolver ou a aplicação interativa que imaginou...",
-                form_submit: "Solicitar Proposta Comercial",
-                info_title: "Informações Diretas",
-                info_address_title: "📍 Endereço Físico",
-                info_address_val: "1º andar do Museu de Arqueologia e Ciências Naturais - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE",
-                info_email_title: "📧 E-mail da Coordenação",
-                info_hours_title: "⏱️ Atendimento",
-                info_hours_val: "Segunda a Sexta • 14:00 às 18:00",
-                footer_copy: "Copyright © 2026 Combogó - Agência de Soluções Interativas. Todos os direitos reservados.",
-                footer_org: "Universidade Católica de Pernambuco • Escola de Comunicação e Tecnologia",
-                footer_quote: "\"Inovação, Pesquisa e Extensão transformando a sociedade.\"",
-                adm_header: "⚙️ Painel ADM - Gestão de Portfólio",
-                adm_tab_new: "➕ Novo / Editar",
-                adm_tab_list: "📋 Gerenciar Projetos",
-                adm_tab_cat: "🏷️ Categorias",
-                adm_lbl_title: "Nome do Projeto *",
-                adm_lbl_client: "Cliente *",
-                adm_lbl_cat: "Categorias (Selecione uma ou mais) *",
-                adm_lbl_year: "Ano de Conclusão *",
-                adm_lbl_folder: "Pasta do Projeto (em assets/projects/) *",
-                adm_lbl_link: "Link do Projeto (Itch.io, GitHub, Notícia)",
-                adm_lbl_desc: "Descrição / Impacto Gerado *",
-                adm_btn_submit: "Adicionar Projeto ao Portfólio",
-                adm_btn_save: "💾 Salvar Alterações no Projeto",
-                adm_btn_json: "📥 Baixar projects.json atualizado",
-                adm_note: "<strong>Nota Técnica (Vercel / GitHub Free):</strong> Ao adicionar ou editar um projeto, ele é salvo no seu navegador (localStorage) e ordenado por ano. Para publicar as alterações definitivamente no servidor da Vercel, clique no botão \"Baixar projects.json\" e substitua o arquivo no seu repositório GitHub.",
-                adm_cat_create_title: "✨ Adicionar Nova Categoria",
-                adm_btn_create_cat: "Criar Categoria",
-                adm_cat_rename_title: "✏️ Renomear Categoria Existente",
-                adm_cat_old: "Selecione a Categoria para Renomear *",
-                adm_cat_rename: "Novo Nome da Categoria *",
-                adm_btn_rename: "Salvar Novo Nome da Categoria",
-                cat_all: "Todos",
-                folder_new_opt: "➕ Adicionar Nova Pasta...",
-                prompt_pass: "🔒 Digite a senha de acesso ao Painel de Administração:",
-                alert_pass_wrong: "❌ Senha incorreta! Acesso negado.",
-                alert_success: "✅ Projeto salvo com sucesso no portfólio!",
-                alert_cat_created: "✅ Nova categoria adicionada com sucesso!",
-                alert_cat_success: "✅ Categoria renomeada em todos os projetos compatíveis!",
-                alert_form_sent: "Solicitação enviada com sucesso! Entraremos em contato em breve.",
-                btn_view_project: "Ver Projeto / Case ↗"
-            },
-            en: {
-                logo_sub: "Interactive Solutions Agency",
-                nav_about: "About",
-                nav_solutions: "Solutions",
-                nav_research: "Research",
-                nav_portfolio: "Portfolio",
-                nav_partners: "Partners",
-                nav_budget: "Quote",
-                nav_adm: "⚙️ ADM Panel",
-                hero_badge: "Since 2016 • +30 Scholars • Global Impact • UNICAP Lab",
-                hero_title: "Transforming Science and Creativity into Real Interactive Solutions.",
-                hero_desc: "Development of Digital Games, Extended Reality (XR), 3D Modeling, and Gamified Applications to revolutionize your project.",
-                hero_btn_quote: "Request a Quote",
-                hero_btn_portfolio: "View Portfolio",
-                about_title: "The Combogó Ecosystem",
-                about_p1: "Founded in October 2016 within the Digital Games program at the Catholic University of Pernambuco (UNICAP), Combogó is a major extension project and innovation hub focused on solving society's real challenges.",
-                about_p2: "<strong>Our Mission:</strong> We practice the inseparability of teaching, research, and extension. We connect academic scientific rigor to market demands, delivering open innovation and complex interactive solutions with economic viability.",
-                term_c1: "// Our practical and agile laboratory manifesto",
-                term_c2: "// Innovation, ingenuity, and transdisciplinarity.",
-                sol_title: "Specialties & Solutions",
-                sol_sub: "We offer qualified technical cooperation for interactive projects in the most diverse areas of knowledge.",
-                sol_games_title: "Digital Games & Serious Games",
-                sol_games_desc: "2D and 3D development for entertainment, education, medical rehabilitation, corporate training, and social awareness.",
-                sol_xr_title: "Extended Reality (XR - VR/AR)",
-                sol_xr_desc: "Immersive simulations in Virtual and Augmented Reality for oncology therapies, phobias, risk training, and interactive experiences.",
-                sol_app_title: "Interactive Apps & Gamification",
-                sol_app_desc: "Social impact mobile apps, gamified engagement platforms, reporting systems, and socio-educational tools.",
-                sol_3d_title: "3D Modeling & Photogrammetry",
-                sol_3d_desc: "Creation of 3D assets, high-precision scanning of real-size objects and organs, cultural heritage preservation, and 3D printing.",
-                sol_art_title: "2D Art & Concept Art",
-                sol_art_desc: "Illustrations, character design, environments, 2D animation, and visual assets for games, RPG books, and educational material.",
-                res_title: "Research & Innovation",
-                res_sub: "The scientific force driving our developments, uniting undergraduate, master's, and PhD researchers in high-impact projects.",
-                res_tag1: "Scientific Research",
-                res_card1_title: "PIBIC & FACEPE Scholars",
-                res_card1_desc: "Trained students applying scientific methods to software development, gamification, and assistive technologies with official research funding.",
-                res_tag2: "Intellectual Property",
-                res_card2_title: "Software Registrations & Patents",
-                res_card2_desc: "Authoral developments registered at the National Institute of Industrial Property in partnership with Psychology, Physiotherapy, and Creative Industries programs.",
-                port_title: "Impact Portfolio",
-                port_sub: "Discover the cases that transformed scientific research and partner ideas into award-winning solutions, sorted by year.",
-                part_title: "Who We Create For",
-                part_sub: "We act as a bridge between academic knowledge and the needs of the public, private, and non-profit sectors.",
-                part_ext_title: "🌐 External Clients",
-                part_ext_1: "<strong>Government & Municipalities:</strong> City of Recife, Executive Secretariat for Drug Policies, Tourism Secretariat of Maringá-PR.",
-                part_ext_2: "<strong>NGOs & Human Rights:</strong> Leões do Norte Movement, Food For Thought.",
-                part_ext_3: "<strong>Startups & Innovation:</strong> Happen Skills School, Viu Cine LTD.",
-                part_ext_4: "<strong>Private Institutions & Companies:</strong> SEBRAE, Pernambuco Cancer Hospital.",
-                part_int_title: "🏛️ Internal & Academic Clients",
-                part_int_1: "<strong>Strategic UNICAP Sectors:</strong> Communication Office (ASSECOM), Administrative Vice-Rectorate (PRAD).",
-                part_int_2: "<strong>Research & Conservation:</strong> Museum of Archaeology and Natural Sciences (MUSARQ).",
-                part_int_3: "<strong>Undergraduate Programs:</strong> Active partnerships with professors from Medicine, Physiotherapy, Psychology, Architecture, Photography, and Literature.",
-                part_int_4: "<strong>Graduate & PhD Programs:</strong> Technological support for dissertations and high-impact scientific research.",
-                contact_title: "Start Your Project",
-                contact_sub: "Bring your idea to life with Combogó's academic innovation and professional quality.",
-                form_name: "Name / Institution *",
-                form_name_ph: "Company, NGO, Government Sector, Academic...",
-                form_contact: "Email and WhatsApp *",
-                form_type: "Desired Solution Type *",
-                chk_game: "Digital / Serious Game",
-                chk_xr: "Extended Reality (VR/AR)",
-                chk_app: "App / Gamification",
-                chk_3d: "3D Modeling / Photogrammetry",
-                chk_2d: "2D Art & Animation",
-                form_deadline: "Estimated Timeline",
-                form_deadline_ph: "Ex: 3 months, For Q2...",
-                form_desc: "Challenge or Idea Description *",
-                form_desc_ph: "Briefly describe the problem you want to solve or the interactive application you envisioned...",
-                form_submit: "Request Commercial Proposal",
-                info_title: "Direct Information",
-                info_address_title: "📍 Physical Address",
-                info_address_val: "1st floor of the Museum of Archaeology and Natural Sciences - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE - Brazil",
-                info_email_title: "📧 Coordination Email",
-                info_hours_title: "⏱️ Business Hours",
-                info_hours_val: "Monday to Friday • 2:00 PM to 6:00 PM (BRT)",
-                footer_copy: "Copyright © 2026 Combogó - Interactive Solutions Agency. All rights reserved.",
-                footer_org: "Catholic University of Pernambuco • School of Communication and Technology",
-                footer_quote: "\"Innovation, Research, and Extension transforming society.\"",
-                adm_header: "⚙️ ADM Panel - Portfolio Management",
-                adm_tab_new: "➕ Add / Edit",
-                adm_tab_list: "📋 Manage Projects",
-                adm_tab_cat: "🏷️ Categories",
-                adm_lbl_title: "Project Name *",
-                adm_lbl_client: "Client *",
-                adm_lbl_cat: "Categories (Select one or more) *",
-                adm_lbl_year: "Completion Year *",
-                adm_lbl_folder: "Project Folder (in assets/projects/) *",
-                adm_lbl_link: "Project Link (Itch.io, GitHub, News)",
-                adm_lbl_desc: "Description / Impact Generated *",
-                adm_btn_submit: "Add Project to Portfolio",
-                adm_btn_save: "💾 Save Project Changes",
-                adm_btn_json: "📥 Download updated projects.json",
-                adm_note: "<strong>Technical Note (Vercel / GitHub Free):</strong> When adding or editing a project, it is saved in your browser (localStorage) and sorted by year. To publish changes permanently to Vercel servers, click the \"Download projects.json\" button and replace the file in your GitHub repository.",
-                adm_cat_create_title: "✨ Add New Category",
-                adm_btn_create_cat: "Create Category",
-                adm_cat_rename_title: "✏️ Rename Existing Category",
-                adm_cat_old: "Select Category to Rename *",
-                adm_cat_rename: "New Category Name *",
-                adm_btn_rename: "Save New Category Name",
-                cat_all: "All",
-                folder_new_opt: "➕ Add New Folder...",
-                prompt_pass: "🔒 Enter the Administration Panel access password:",
-                alert_pass_wrong: "❌ Incorrect password! Access denied.",
-                alert_success: "✅ Project successfully saved to the portfolio!",
-                alert_cat_created: "✅ New category added successfully!",
-                alert_cat_success: "✅ Category renamed across all matching projects!",
-                alert_form_sent: "Request sent successfully! We will contact you soon.",
-                btn_view_project: "View Project / Case ↗"
-            },
-            es: {
-                logo_sub: "Agencia de Soluciones Interactivas",
-                nav_about: "Sobre Nosotros",
-                nav_solutions: "Soluciones",
-                nav_research: "Investigación",
-                nav_portfolio: "Portafolio",
-                nav_partners: "Socios",
-                nav_budget: "Presupuesto",
-                nav_adm: "⚙️ Panel ADM",
-                hero_badge: "Desde 2016 • +30 Becarios • Impacto Global • Lab UNICAP",
-                hero_title: "Transformando Ciencia y Creatividad en Soluciones Interactivas Reales.",
-                hero_desc: "Desarrollo de Videojuegos, Realidad Extendida (XR), Modelado 3D y Aplicaciones Gamificadas para revolucionar su proyecto.",
-                hero_btn_quote: "Solicitar Presupuesto",
-                hero_btn_portfolio: "Ver Portafolio",
-                about_title: "El Ecosistema Combogó",
-                about_p1: "Nacida en octubre de 2016 en la carrera de Juegos Digitales de la Universidad Católica de Pernambuco (UNICAP), Combogó es un gran proyecto de extensión y centro de innovación enfocado en resolver desafíos de la sociedad.",
-                about_p2: "<strong>Nuestra Misión:</strong> Practicamos la indisolubilidad entre enseñanza, investigación y extensión. Conectamos el rigor científico académico con las demandas del mercado, entregando innovación abierta y soluciones interactivas complejas con viabilidad económica.",
-                term_c1: "// Nuestro manifiesto de laboratorio práctico y ágil",
-                term_c2: "// Innovación, ingenio y transdisciplinariedad.",
-                sol_title: "Especialidades y Soluciones",
-                sol_sub: "Ofrecemos mano de obra calificada para proyectos interactivos en diversas áreas del conocimiento.",
-                sol_games_title: "Juegos Digitales y Juegos Serios",
-                sol_games_desc: "Desarrollo 2D y 3D para entretenimiento, educación, rehabilitación médica, capacitación corporativa y concientización social.",
-                sol_xr_title: "Realidad Extendida (XR - VR/AR)",
-                sol_xr_desc: "Simulaciones inmersivas en Realidad Virtual y Aumentada para terapias oncológicas, fobias, entrenamientos de riesgo y experiencias interativas.",
-                sol_app_title: "Aplicaciones Interactivas y Gamificación",
-                sol_app_desc: "Apps móviles de impacto social, plataformas gamificadas de participación, sistemas de denuncia y herramientas socioeducativas.",
-                sol_3d_title: "Modelado 3D y Fotogrametría",
-                sol_3d_desc: "Creación de artefactos en 3D, Digitalización de objetos y órganos a escala real, preservación de patrimonio cultural e impresión 3D.",
-                sol_art_title: "Arte 2D y Concept Art",
-                sol_art_desc: "Ilustraciones, diseño de personajes, escenarios, animación 2D y recursos visuales para videojuegos, libros de rol y material didáctico.",
-                res_title: "Investigación e Innovación",
-                res_sub: "La fuerza científica que impulsa nuestros desarrollos, uniendo grado, maestría y doctorado en proyectos de alto impacto.",
-                res_tag1: "Iniciación Científica",
-                res_card1_title: "Becarios PIBIC y FACEPE",
-                res_card1_desc: "Estudiantes capacitados aplicando métodos científicos en el desarrollo de software, gamification y technologies asistivas con apoyo de fondos oficiales de investigación.",
-                res_tag2: "Propiedad Intelectual",
-                res_card2_title: "Registros de Software y Patentes",
-                res_card2_desc: "Desarrollos de autor registrados en el INPI en asociación con las carreras de Psicologia, Fisioterapia y la Maestría en Industrias Creativas de UNICAP.",
-                port_title: "Portafolio de Impacto",
-                port_sub: "Conozca los casos que transformaron investigaciones científicas e ideas de socios en soluciones premiadas, ordenados por año.",
-                part_title: "Para Quién Creamos",
-                part_sub: "Actuamos como puente entre el conocimiento académico y las necesidades del sector público, privado y el tercer sector.",
-                part_ext_title: "🌐 Clientes Externos",
-                part_ext_1: "<strong>Alcaldías y Secretarías de Gobierno:</strong> Alcaldía de Recife, Secretaría Ejecutiva de Políticas sobre Drogas, Secretaría de Turismo de Maringá-PR.",
-                part_ext_2: "<strong>ONGs Sociales y de Derechos Humanos:</strong> Movimento Leões do Norte, Food For Thought.",
-                part_ext_3: "<strong>Startups e Innovación:</strong> Happen Escuela de Habilidades, Viu Cine LTDA.",
-                part_ext_4: "<strong>Instituciones y Empresas Privadas:</strong> SEBRAE, Hospital de Câncer de Pernambuco.",
-                part_int_title: "🏛️ Clientes Internos y Acadêmicos",
-                part_int_1: "<strong>Sectores Estratégicos UNICAP:</strong> Asesoría de Comunicación (ASSECOM), Vicerrectoría Administrativa (PRAD).",
-                part_int_2: "<strong>Investigación y Conservación:</strong> Museo de Arqueología y Ciencias Naturales (MUSARQ).",
-                part_int_3: "<strong>Carreras de Grado:</strong> Alianzas activas con docentes de Medicina, Fisioterapia, Psicologia, Arquitectura, Fotografia y Letras.",
-                part_int_4: "<strong>Posgrado y Doctorado:</strong> Soporte en soluciones tecnológicas para tesis e investigaciones científicas de alto impacto.",
-                contact_title: "Inicie Su Proyecto",
-                contact_sub: "Haga realidad su idea con la innovación académica y la calidad profesional de Combogó.",
-                form_name: "Nombre / Institución *",
-                form_name_ph: "Empresa, ONG, Sector Público, Académico...",
-                form_contact: "Correo electrónico y WhatsApp *",
-                form_type: "Tipo de Solución Deseada *",
-                chk_game: "Videojuego / Juego Serio",
-                chk_xr: "Realidad Extendida (VR/AR)",
-                chk_app: "App / Gamificación",
-                chk_3d: "Modelado 3D / Fotogrametría",
-                chk_2d: "Arte 2D y Animación",
-                form_deadline: "Plazo Estimado",
-                form_deadline_ph: "Ej: 3 meses, Para el 2º semestre...",
-                form_desc: "Descripción del Desafío o Idea *",
-                form_desc_ph: "Describa brevemente el problema que desea resolver o la aplicación interactiva que imaginó...",
-                form_submit: "Solicitar Propuesta Comercial",
-                info_title: "Información Directa",
-                info_address_title: "📍 Dirección Física",
-                info_address_val: "1º piso del Museo de Arqueologia e Ciencias Naturales - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE - Brasil",
-                info_email_title: "📧 Correo de la Coordinación",
-                info_hours_title: "⏱️ Horario de Atención",
-                info_hours_val: "Lunes a Viernes • 14:00 a 18:00 (BRT)",
-                footer_copy: "Copyright © 2026 Combogó - Agencia de Soluciones Interactivas. Todos los derechos reservados.",
-                footer_org: "Universidad Católica de Pernambuco • Escuela de Comunicación y Tecnología",
-                footer_quote: "\"Innovación, Investigación y Extensión transformando la sociedad.\"",
-                adm_header: "⚙️ Panel ADM - Gestión de Portafolio",
-                adm_tab_new: "➕ Agregar / Editar",
-                adm_tab_list: "📋 Gestionar Proyectos",
-                adm_tab_cat: "🏷️ Categorías",
-                adm_lbl_title: "Nombre del Proyecto *",
-                adm_lbl_client: "Cliente *",
-                adm_lbl_cat: "Categorías (Seleccione una o más) *",
-                adm_lbl_year: "Año de Finalización *",
-                adm_lbl_folder: "Carpeta del Proyecto (en assets/projects/) *",
-                adm_lbl_link: "Enlace del Proyecto (Itch.io, GitHub, Noticias)",
-                adm_lbl_desc: "Descripción / Impacto Generado *",
-                adm_btn_submit: "Agregar Proyecto al Portafolio",
-                adm_btn_save: "💾 Guardar Cambios en el Proyecto",
-                adm_btn_json: "📥 Descargar projects.json actualizado",
-                adm_note: "<strong>Nota Técnica (Vercel / GitHub Free):</strong> Al agregar o editar un proyecto, se guarda en su navegador (localStorage) y se ordena por año. Para publicar los cambios definitivamente en los servidores de Vercel, haga clic en \"Descargar projects.json\" y reemplace el archivo en su repositorio de GitHub.",
-                adm_cat_create_title: "✨ Agregar Nueva Categoría",
-                adm_btn_create_cat: "Crear Categoría",
-                adm_cat_rename_title: "✏️ Renombrar Categoría Existente",
-                adm_cat_old: "Seleccione Categoría para Renombrar *",
-                adm_cat_rename: "Nuevo Nombre de la Categoría *",
-                adm_btn_rename: "Guardar Nuevo Nombre de Categoría",
-                cat_all: "Todos",
-                folder_new_opt: "➕ Agregar Nueva Carpeta...",
-                prompt_pass: "🔒 Ingrese la contraseña de acceso al Panel de Administración:",
-                alert_pass_wrong: "❌ ¡Contraseña incorrecta! Acceso denegado.",
-                alert_success: "✅ ¡Proyecto guardado con éxito en el portafolio!",
-                alert_cat_created: "✅ ¡Nueva categoría agregada con éxito!",
-                alert_cat_success: "✅ ¡Categoría renombrada en todos los proyectos coincidentes!",
-                alert_form_sent: "¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.",
-                btn_view_project: "Ver Proyecto / Case ↗"
-            }
-        };
 
         function translatePage(lang) {
             currentLang = lang;
@@ -786,6 +490,7 @@
             updateDynamicCategories();
             updateDynamicFolders();
             updateAdmProjectList();
+            renderHeroQuote(); // Atualiza na hora o painel de 1 quote do Hero!
             const currentFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
             renderProjects(currentFilter);
         }
@@ -815,6 +520,38 @@
 
         /**
          * ============================================================================
+         * 1.1 MOTOR DO PAINEL DE QUOTES CLEAN (1 POR VEZ COM TRANSIÇÃO SUAVE)
+         * ============================================================================
+         */
+        let currentQuoteIndex = 0;
+        function renderHeroQuote() {
+            const quoteEl = document.getElementById('single-quote-text');
+            if (!quoteEl) return;
+            const quotes = i18n[currentLang].hero_quotes || [];
+            if (quotes.length === 0) return;
+            
+            // Efeito suave de saída (Fade out & Slide up)
+            quoteEl.style.opacity = "0";
+            quoteEl.style.transform = "translateY(-10px)";
+            
+            setTimeout(() => {
+                quoteEl.textContent = quotes[currentQuoteIndex];
+                // Efeito suave de entrada (Fade in & Reset transform)
+                quoteEl.style.opacity = "1";
+                quoteEl.style.transform = "translateY(0)";
+            }, 350);
+        }
+
+        setInterval(() => {
+            const quotes = i18n[currentLang].hero_quotes || [];
+            if (quotes.length > 0) {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                renderHeroQuote();
+            }
+        }, 3200);
+
+        /**
+         * ============================================================================
          * 2. DADOS INICIAIS DO PORTFÓLIO E GERENCIAMENTO DE ESTADO (MULTI-CATEGORIAS)
          * ============================================================================
          */
@@ -828,7 +565,7 @@
                 desc: "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
                 desc_en: "Use of Virtual Reality to humanize cancer treatment in hospital psychology and physiotherapy departments.",
                 desc_es: "Uso de Realidad Virtual para humanizar el tratamiento oncológico en las áreas de psicología y fisioterapia del hospital.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: ""
             },
             {
                 title: "O Resgate de Fárya",
@@ -839,7 +576,7 @@
                 desc: "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
                 desc_en: "2D Game winner in 4 categories at SBGames 2023 (Best Game, Art, Narrative, and Video) and Anima Verso award.",
                 desc_es: "Videojuego 2D ganador de 4 categorías en SBGames 2023 (Mejor Juego, Arte, Narrativa y Video) y premio Anima Verso.",
-                link: "https://combogounicap.itch.io/"
+                link: "https://oresgatedefarya.itch.io/o-resgate-de-farya"
             },
             {
                 title: "Campanha \"Teste Seu Olhar\"",
@@ -850,7 +587,7 @@
                 desc: "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
                 desc_en: "Virtual Reality experience to combat LGBTphobia, deployed in public spaces such as the Recife Metro.",
                 desc_es: "Experiencia de Realidad Virtual para combatir la LGBTfobia, implementada en espacios públicos como el Metro de Recife.",
-                link: "https://www.youtube.com/@combogounicap"
+                link: "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a"
             },
             {
                 title: "Aplicativo Rugido",
@@ -861,7 +598,7 @@
                 desc: "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
                 desc_en: "App for reporting and statistics on LGBTphobia, integrated into the Official Guide of the Public Defender's Office of PE.",
                 desc_es: "App para registro de denuncias y estadísticas de LGBTfobia, integrada en la Guía Oficial de la Defensoría Pública de PE.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf"
             },
             {
                 title: "Fotogrametria Anatômica 3D",
@@ -872,7 +609,7 @@
                 desc: "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
                 desc_en: "High-precision scanning and real-size 3D printing of a human heart, revolutionizing anatomy education.",
                 desc_es: "Digitalización de alta precisión e impresión 3D a escala real de un corazón humano, revolucionando la enseñanza de anatomía.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: ""
             },
             {
                 title: "Plataforma Quark",
@@ -883,7 +620,7 @@
                 desc: "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
                 desc_en: "Gamification research and QA for youth soft skills development app, recognized by MIT Tech Review LATAM.",
                 desc_es: "Investigación en gamificación y QA para app de desarrollo de soft skills en jóvenes, premiado por MIT Tech Review LATAM.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.plataformaquark.com/"
             },
             {
                 title: "Trilha das Memórias Maringá",
@@ -893,8 +630,8 @@
                 folder: "Trilha",
                 desc: "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
                 desc_en: "Gamified immersive tourism app featuring geolocation, QR Code scanning, and a reward system for tourists.",
-                desc_es: "App gamificada de turismo inmersivo con geolocalización, lectura de códigos QR y sistema de recompensas para turistas.",
-                link: "https://www.instagram.com/combogounicap/"
+                desc_es: "App gamificada de turismo inmersivo con geolocalización, lectura de códigos QR y sistema de recompensas para tourists.",
+                link: "https://www.instagram.com/trilhadasmemorias/"
             },
             {
                 title: "PsicoPing",
@@ -905,7 +642,7 @@
                 desc: "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
                 desc_en: "Transdisciplinary scientific game for cognitive stimulation and psychotherapeutic rehabilitation for ADHD patients.",
                 desc_es: "Videojuego científico transdisciplinario de estimulación cognitiva y rehabilitación psicoterapéutica para pacientes con TDAH.",
-                link: "https://www.youtube.com/@combogounicap"
+                link: "https://globoplay.globo.com/v/7497090/?s=0s"
             },
             {
                 title: "Aplicativo Previna (SEPOD)",
@@ -916,7 +653,7 @@
                 desc: "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
                 desc_en: "Mobile gamified platform for socio-educational support in public schools, encouraging reflections on drug prevention.",
                 desc_es: "Plataforma gamificada móvil de apoyo socioeducativo en escuelas públicas, incentivando reflexiones sobre prevención de drogas.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1"
             },
             {
                 title: "Projeto Flautista RV",
@@ -927,7 +664,7 @@
                 desc: "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
                 desc_en: "Interactive Virtual Reality reconstruction of the 2,000-year-old Brazilian hominid supported by PIBIC research.",
                 desc_es: "Reconstrucción interactiva en Realidad Virtual del homínido brasileño de 2 mil años con apoyo de investigación PIBIC.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: ""
             },
             {
                 title: "Animação Institucional #unicapsegura",
@@ -938,7 +675,7 @@
                 desc: "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
                 desc_en: "Informative 2D animation on safety, building regulations, and accident prevention across the university campus.",
                 desc_es: "Animación 2D informativa sobre seguridad, normas edilicias y prevención de accidentes en el campus universitario.",
-                link: "https://www.youtube.com/@combogounicap/"
+                link: "https://www.youtube.com/watch?v=USQH1NfQ6Jw"
             },
             {
                 title: "English Teen - Game of Cabo",
@@ -949,7 +686,7 @@
                 desc: "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
                 desc_en: "Gamified university extension application for practical English teaching in public schools on the coast.",
                 desc_es: "Aplicación gamificada de extensión universitaria para la enseñanza práctica de inglés en escuelas públicas costeras.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/"
             },
             {
                 title: "Game para o Católica In",
@@ -957,10 +694,10 @@
                 categories: ["Jogos Digitais"],
                 year: 2017,
                 folder: "CatolicaIn",
-                desc: "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
+                desc: "Jogo digital vocacional para o evento anual de orientation profissional voltado a estudantes do Ensino Médio.",
                 desc_en: "Vocational digital game for the university's annual career guidance event aimed at high school students.",
-                desc_es: "Videojuego vocacional para el evento anual de orientación profesional universitario dirigido a estudiantes de secundaria.",
-                link: "https://www.instagram.com/combogounicap/"
+                desc_es: "Videojuego vocacional para el evento anual de orientation profesional universitario dirigido a estudiantes de secundaria.",
+                link: "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/"
             },
             {
                 title: "Livro de RPG Digital",
@@ -971,7 +708,7 @@
                 desc: "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
                 desc_en: "Production of 32 original illustrations, character concept art, items, and environments for a digital RPG book.",
                 desc_es: "Producción de 32 ilustraciones originales, concept art de personajes, ítems y escenarios para libro digital de rol.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.instagram.com/p3boardgames/"
             },
             {
                 title: "Recife Invasion - Rua da Aurora",
@@ -982,7 +719,7 @@
                 desc: "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
                 desc_en: "Augmented Reality project and immersive game developed in 2 weeks for Technology Week and Red Bull event.",
                 desc_es: "Proyecto de Realidad Aumentada y juego inmersivo desarrollado en 2 semanas para la Semana de Tecnología y evento Red Bull.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1"
             },
             {
                 title: "Exposição Plural & Neon no Metaverso",
@@ -993,7 +730,7 @@
                 desc: "Construção de galeria interativa 3D no VRChat para exibição de 30 fotografias e narrativas contemporâneas no metaverso.",
                 desc_en: "Construction of an interactive 3D gallery in VRChat showcasing 30 photographs and contemporary narratives in the metaverse.",
                 desc_es: "Construcción de galería interactiva 3D en VRChat para exhibir 30 fotografías y narrativas contemporáneas en el metaverso.",
-                link: "https://combogounicap.itch.io/"
+                link: ""
             },
             {
                 title: "Biofeedback & VR Terapêutico",
@@ -1004,7 +741,7 @@
                 desc: "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
                 desc_en: "Advanced research in emotional regulation and biofeedback utilizing Oculus Rift headsets for immersive simulations.",
                 desc_es: "Investigación avanzada en regulación emocional y biofeedback utilizando visores Oculus Rift para simulaciones inmersivas.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full"
             },
             {
                 title: "Corre Ascensinho",
@@ -1015,7 +752,7 @@
                 desc: "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
                 desc_en: "Pixel art platform digital game promoting the university's identity and academic history in an entertaining way.",
                 desc_es: "Videojuego de plataformas en pixel art promoviendo la identidad e historia académica universitaria de forma divertida.",
-                link: "https://combogounicap.itch.io/"
+                link: ""
             },
             {
                 title: "Especial Interativo de Natal",
@@ -1026,7 +763,7 @@
                 desc: "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
                 desc_en: "Interactive application and gamified holiday card developed by the lab to engage the university community.",
                 desc_es: "Aplicación interactiva y tarjeta de fiestas gamificada desarrollada por el laboratorio para involucrar a la comunidad.",
-                link: "https://www.instagram.com/combogounicap/"
+                link: "https://www.youtube.com/watch?v=SgJgV_eys5U"
             }
         ];
 
@@ -1242,7 +979,9 @@
                         <h3 class="project-title">${p.title}</h3>
                         <div class="project-client">👥 ${p.client}</div>
                         <p class="project-desc">${displayDesc}</p>
-                        <a href="${p.link}" target="_blank" class="project-link">${t.btn_view_project}</a>
+                        ${(p.link && p.link.trim() !== "") 
+                            ? `<a href="${p.link}" target="_blank" class="project-link">${t.btn_view_project}</a>` 
+                            : `<span class="project-link" style="opacity: 0.35; cursor: not-allowed; pointer-events: none;" title="Link indisponível">${t.btn_view_project}</span>`}
                     </div>
                 `;
                 
@@ -1279,6 +1018,18 @@
 
         document.querySelectorAll('.adm-tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
+                if (btn.getAttribute('data-tab') !== 'tab-form') {
+                    // Limpa o modo de edição ao sair da aba
+                    admForm.reset();
+                    document.getElementById('adm-edit-id').value = "";
+                    const t = i18n[currentLang];
+                    document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
+                    const cancelBtn = document.getElementById('adm-cancel-btn');
+                    if (cancelBtn) cancelBtn.style.display = "none";
+                    admFolderNewInput.style.display = "none";
+                    admFolderNewInput.required = false;
+                }
+
                 document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
                 btn.classList.add('active');
@@ -1311,6 +1062,23 @@
                 admProjectsListUI.appendChild(item);
             });
         }
+
+        window.returnToList = function() {
+            admForm.reset();
+            document.getElementById('adm-edit-id').value = "";
+            const t = i18n[currentLang];
+            document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
+            const cancelBtn = document.getElementById('adm-cancel-btn');
+            if (cancelBtn) cancelBtn.style.display = "none";
+            admFolderNewInput.style.display = "none";
+            admFolderNewInput.required = false;
+
+            document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelector('[data-tab="tab-list"]').classList.add('active');
+            document.getElementById('tab-list').classList.add('active');
+            updateAdmProjectList();
+        };
 
         window.deleteProject = function(index) {
             const p = projects[index];
@@ -1359,6 +1127,8 @@
             }
 
             document.getElementById('adm-submit-btn').textContent = t.adm_btn_save;
+            const cancelBtn = document.getElementById('adm-cancel-btn');
+            if (cancelBtn) cancelBtn.style.display = "block";
         };
 
         footerAdmBtn.addEventListener('click', (e) => {
@@ -1379,6 +1149,8 @@
             admForm.reset();
             document.getElementById('adm-edit-id').value = "";
             document.getElementById('adm-submit-btn').textContent = i18n[currentLang].adm_btn_submit;
+            const cancelBtn = document.getElementById('adm-cancel-btn');
+            if (cancelBtn) cancelBtn.style.display = "none";
             admFolderNewInput.style.display = "none";
             admFolderNewInput.required = false;
         }
@@ -1429,7 +1201,7 @@
                 desc: descText,
                 desc_en: descText,
                 desc_es: descText,
-                link: document.getElementById('adm-link').value.trim() || "https://www.instagram.com/combogounicap/"
+                link: document.getElementById('adm-link').value.trim() || ""
             };
 
             if (editId !== "") {
@@ -1451,8 +1223,9 @@
             admForm.reset();
             document.getElementById('adm-edit-id').value = "";
             document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
+            const cancelBtn = document.getElementById('adm-cancel-btn');
+            if (cancelBtn) cancelBtn.style.display = "none";
             
-            // REDIRECIONAMENTO INTELIGENTE: Se você estava editando, ele te devolve para a lista para continuar trabalhando sem fechar o painel
             if (editId !== "") {
                 document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
@@ -1540,10 +1313,126 @@
             });
         });
 
+        /**
+         * ============================================================================
+         * 6. ENVIO DE E-MAIL EM SEGUNDO PLANO (AJAX / FORMSUBMIT)
+         * ============================================================================
+         */
+        const briefingForm = document.getElementById('briefing-form');
+        if (briefingForm) {
+            briefingForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o recarregamento padrão da página
+                
+                const submitBtn = briefingForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = "⏳ Enviando...";
+                submitBtn.disabled = true;
+
+                const formData = new FormData(briefingForm);
+
+                fetch("https://formsubmit.co/ajax/combogounicap@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(i18n[currentLang].alert_form_sent);
+                    briefingForm.reset(); // Limpa os campos após enviar com sucesso
+                })
+                .catch(error => {
+                    alert("❌ Ocorreu um erro ao enviar. Por favor, tente novamente ou envie um e-mail direto para combogo.unicap@unicap.br");
+                    console.error("Erro no envio:", error);
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             updateDynamicCategories();
             updateDynamicFolders();
+            renderHeroQuote(); // Garante o carregamento da frase clean logo na inicialização
             renderProjects("Todos");
+        });
+        /**
+         * ============================================================================
+         * 7. MOTOR DE SCROLL PRAZEROSO (HEADER DINÂMICO, REVEAL & PROGRESS BAR)
+         * ============================================================================
+         */
+        
+        // 1. Barra de Progresso de Rolagem e Header Dinâmico
+        const headerEl = document.querySelector('header');
+        const progressBar = document.getElementById('scroll-progress');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            // Efeito no Header
+            if (currentScroll > 50) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+
+            // Efeito na Barra de Progresso
+            if (progressBar) {
+                const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (currentScroll / totalHeight) * 100;
+                progressBar.style.width = scrollPercentage + '%';
+            }
+        }, { passive: true }); // passive: true melhora a performance de scroll do navegador!
+
+        // 2. Intersection Observer para Revelação em Cascata (Scroll Reveal)
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Para animar apenas na primeira vez que rolar para baixo, descomente a linha abaixo:
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        };
+
+        const revealOptions = {
+            root: null,
+            rootMargin: '0px 0px -80px 0px', // Aciona o efeito um pouco antes do elemento chegar no final da tela
+            threshold: 0.15
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+        function initScrollReveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        }
+
+        // 3. Atualização Inteligente no Portfólio Dinâmico
+        // Como o seu portfólio é gerado pelo JavaScript (localStorage), 
+        // precisamos aplicar o efeito de reveal nos cards dinamicamente!
+        const originalRenderProjects = renderProjects;
+        renderProjects = function(filter = "Todos") {
+            originalRenderProjects(filter); // Executa sua função original
+            
+            // Adiciona animação suave em cascata para os cards gerados
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, idx) => {
+                card.classList.add('reveal');
+                // Cria uma cascata visual de no máximo 4 níveis de atraso
+                const delayIndex = idx % 4;
+                if (delayIndex > 0) card.classList.add(`reveal-delay-${delayIndex}`);
+                revealObserver.observe(card);
+            });
+        };
+
+        // Inicializa o observador assim que o DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollReveal();
         });
     </script>
 </body>

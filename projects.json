@@ -13,7 +13,7 @@
         "desc": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
         "desc_en": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
         "desc_es": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": "https://medicinasa.com.br/hcp-oncoverso/"
     },
     {
         "title": "Recife Invasion - Rua da Aurora",
@@ -27,7 +27,7 @@
         "desc": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
         "desc_en": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
         "desc_es": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1"
     },
     {
         "title": "Plataforma Quark",
@@ -41,7 +41,7 @@
         "desc": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
         "desc_en": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
         "desc_es": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": "https://www.plataformaquark.com/"
     },
     {
         "title": "Fotogrametria Anatômica 3D",
@@ -55,18 +55,20 @@
         "desc": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
         "desc_en": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
         "desc_es": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": ""
     },
     {
         "title": "O Resgate de Fárya",
         "client": "Viu Cine (Funcultura)",
-        "category": "Jogos",
+        "categories": [
+            "Jogos"
+        ],
         "year": 2023,
         "folder": "Farya",
         "desc": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
-        "desc_en": "2D Game winner in 4 categories at SBGames 2023 (Best Game, Art, Narrative, and Video) and Anima Verso award.",
-        "desc_es": "Videojuego 2D ganador de 4 categorías en SBGames 2023 (Mejor Juego, Arte, Narrativa y Video) y premio Anima Verso.",
-        "link": "https://combogounicap.itch.io/"
+        "desc_en": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
+        "desc_es": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
+        "link": "https://oresgatedefarya.itch.io/o-resgate-de-farya"
     },
     {
         "title": "Exposição Plural & Neon no Metaverso",
@@ -91,7 +93,7 @@
         "desc": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
         "desc_en": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
         "desc_es": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": "https://www.instagram.com/trilhadasmemorias/"
     },
     {
         "title": "Projeto Flautista RV",
@@ -110,13 +112,15 @@
     {
         "title": "Livro de RPG Digital",
         "client": "P3Boardgames",
-        "category": "Jogos",
+        "categories": [
+            "Jogos"
+        ],
         "year": 2022,
         "folder": "Ilustracao_rpg",
         "desc": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
-        "desc_en": "Production of 32 original illustrations, character concept art, items, and environments for a digital RPG book.",
-        "desc_es": "Producción de 32 ilustraciones originales, concept art de personajes, ítems y escenarios para libro digital de rol.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
+        "desc_es": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
+        "link": "https://www.instagram.com/p3boardgames/"
     },
     {
         "title": "Aplicativo Rugido",
@@ -130,40 +134,46 @@
         "desc": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
         "desc_en": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
         "desc_es": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf"
     },
     {
         "title": "Animação Institucional #unicapsegura",
         "client": "PRAD / Departamento Predial UNICAP",
-        "category": "Inovação",
+        "categories": [
+            "Inovação"
+        ],
         "year": 2021,
         "folder": "Animacao_incendio",
         "desc": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
-        "desc_en": "Informative 2D animation on safety, building regulations, and accident prevention across the university campus.",
-        "desc_es": "Animación 2D informativa sobre seguridad, normas edilicias y prevención de accidentes en el campus universitario.",
-        "link": "https://www.youtube.com/@combogounicap"
+        "desc_en": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
+        "desc_es": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
+        "link": "https://www.youtube.com/watch?v=USQH1NfQ6Jw"
     },
     {
         "title": "Biofeedback & VR Terapêutico",
         "client": "Doutorado em Design UFPE",
-        "category": "XR",
+        "categories": [
+            "XR"
+        ],
         "year": 2021,
         "folder": "Vr_Treinamento",
         "desc": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
-        "desc_en": "Advanced research in emotional regulation and biofeedback utilizing Oculus Rift headsets for immersive simulations.",
-        "desc_es": "Investigación avanzada en regulación emocional y biofeedback utilizando visores Oculus Rift para simulaciones inmersivas.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
+        "desc_es": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
+        "link": "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full"
     },
     {
         "title": "Aplicativo Previna (SEPOD)",
         "client": "Secretaria Executiva de Políticas sobre Drogas",
-        "category": "Impacto Social",
+        "categories": [
+            "Impacto Social"
+        ],
         "year": 2020,
         "folder": "Sepod",
         "desc": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
-        "desc_en": "Mobile gamified platform for socio-educational support in public schools, encouraging reflections on drug prevention.",
-        "desc_es": "Plataforma gamificada móvil de apoyo socioeducativo en escuelas públicas, incentivando reflexiones sobre prevención de drogas.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
+        "desc_es": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
+        "link": "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1"
     },
     {
         "title": "Campanha \"Teste Seu Olhar\"",
@@ -177,61 +187,73 @@
         "desc": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
         "desc_en": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
         "desc_es": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
-        "link": "https://www.youtube.com/@combogounicap"
+        "link": "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a"
     },
     {
         "title": "PsicoPing",
         "client": "Curso de Psicologia UNICAP",
-        "category": "XR",
+        "categories": [
+            "Jogos",
+            "Saúde",
+            "Inovação"
+        ],
         "year": 2019,
         "folder": "Psicoping",
         "desc": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-        "desc_en": "Transdisciplinary scientific game for cognitive stimulation and psychotherapeutic rehabilitation for ADHD patients.",
-        "desc_es": "Videojuego científico transdisciplinario de estimulación cognitiva y rehabilitación psicoterapéutica para pacientes con TDAH.",
+        "desc_en": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
+        "desc_es": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
         "link": "https://www.youtube.com/@combogounicap"
     },
     {
         "title": "English Teen - Game of Cabo",
         "client": "IFPE Campus Cabo de Santo Agostinho",
-        "category": "Jogos",
+        "categories": [
+            "Jogos"
+        ],
         "year": 2018,
         "folder": "Game_cabo",
         "desc": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
-        "desc_en": "Gamified university extension application for practical English teaching in public schools on the coast.",
-        "desc_es": "Aplicación gamificada de extensión universitaria para la enseñanza práctica de inglés en escuelas públicas costeras.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
+        "desc_es": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
+        "link": "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/"
     },
     {
         "title": "Corre Ascensinho",
         "client": "UNICAP",
-        "category": "Jogos",
+        "categories": [
+            "Jogos"
+        ],
         "year": 2018,
         "folder": "Corre_ascensinho",
         "desc": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
-        "desc_en": "Pixel art platform digital game promoting the university's identity and academic history in an entertaining way.",
-        "desc_es": "Videojuego de plataformas en pixel art promoviendo la identidad e historia académica universitaria de forma divertida.",
-        "link": "https://combogounicap.itch.io/"
+        "desc_en": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
+        "desc_es": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
+        "link": ""
     },
     {
         "title": "Game para o Católica In",
         "client": "UNICAP",
-        "category": "Jogos",
+        "categories": [
+            "Jogos"
+        ],
         "year": 2017,
         "folder": "CatolicaIn",
         "desc": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
-        "desc_en": "Vocational digital game for the university's annual career guidance event aimed at high school students.",
-        "desc_es": "Videojuego vocacional para el evento anual de orientación profesional universitario dirigido a estudiantes de secundaria.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
+        "desc_es": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
+        "link": "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/"
     },
     {
         "title": "Especial Interativo de Natal",
         "client": "Ação de Extensão Combogó",
-        "category": "Impacto Social",
+        "categories": [
+            "Impacto Social"
+        ],
         "year": 2017,
         "folder": "Natal_2017",
         "desc": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
-        "desc_en": "Interactive application and gamified holiday card developed by the lab to engage the university community.",
-        "desc_es": "Aplicación interactiva y tarjeta de fiestas gamificada desarrollada por el laboratorio para involucrar a la comunidad.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "desc_en": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
+        "desc_es": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
+        "link": "https://www.youtube.com/watch?v=SgJgV_eys5U"
     }
 ]
