@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- 1. BARRA DE PROGRESSO DE ROLAGEM NO TOPO -->
+    <!-- BARRA DE PROGRESSO DE ROLAGEM NO TOPO -->
     <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-    <!-- ELEMENTO DE BACKGROUND IMERSIVO -->
+    <!-- ELEMENTO DE BACKGROUND IMERSIVO (COBOGÓ) -->
     <div class="ambient-bg"></div>
+
+    <!-- REDE NEURAL / SKILL TREE FLUTUANTE -->
+    <canvas id="neuro-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.7;"></canvas>
 
     <!-- Header / Navbar -->
     <header>
@@ -40,9 +42,10 @@
                 <a href="#research" data-i18n="nav_research">Pesquisa</a>
                 <a href="#portfolio" data-i18n="nav_portfolio">Portfólio</a>
                 <a href="#parceiros" data-i18n="nav_partners">Parceiros</a>
+                <a href="#equipe" data-i18n="nav_team">Equipe</a>
                 <a href="#orcamento" data-i18n="nav_budget">Orçamento</a>
                 
-                <!-- DROPDOWN DE IDIOMA (PT, EN, ES) -->
+                <!-- DROPDOWN DE IDIOMA -->
                 <div class="lang-dropdown" id="lang-dropdown-wrapper">
                     <button id="lang-toggle-btn" class="lang-btn" aria-label="Trocar Idioma">🌐 <span id="current-lang-label">PT</span> ▾</button>
                     <div class="lang-menu" id="lang-menu">
@@ -56,11 +59,10 @@
     </header>
 
     <main>
-        <!-- Seção 1: Hero Section (2 Colunas com Painel Clean de 1 Quote) -->
+        <!-- Seção 1: Hero Section -->
         <section id="hero">
             <div class="container">
                 <div class="hero-grid">
-                    <!-- Coluna da Esquerda: Textos e Botões -->
                     <div class="hero-content">
                         <span class="badge" data-i18n="hero_badge">Desde 2016 • +30 Bolsistas • Impacto Global • Lab UNICAP</span>
                         <h1 data-i18n="hero_title">Transformando Ciência e Criatividade em Soluções Interativas Reais.</h1>
@@ -71,7 +73,6 @@
                         </div>
                     </div>
 
-                    <!-- Coluna da Direita: Painel Minimalista com 1 Quote por vez -->
                     <div class="hero-visual">
                         <div class="clean-quote-card">
                             <div class="quote-status">
@@ -87,11 +88,11 @@
             </div>
         </section>
 
-        <!-- Seção 2: Quem Somos & O Ecossistema (Com Scroll Reveal) -->
-        <section id="sobre" class="reveal">
+        <!-- Seção 2: Quem Somos -->
+        <section id="sobre">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-text">
+                    <div class="about-text reveal">
                         <h2 data-i18n="about_title">O Ecossistema Combogó</h2>
                         <p data-i18n="about_p1">Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.</p>
                         <p data-i18n="about_p2"><strong>Nossa Missão:</strong> Praticamos a indissociabilidade entre ensino, pesquisa e extensão. Conectamos o rigor científico acadêmico às demandas do mercado, entregando inovação aberta e soluções interativas de alta complexidade com viabilidade econômica.</p>
@@ -116,7 +117,7 @@
             </div>
         </section>
 
-        <!-- Seção 3: Nossas Soluções & Especialidades (Com Scroll Reveal em Cascata) -->
+        <!-- Seção 3: Especialidades & Soluções (Com Ícones Vetoriais SVG) -->
         <section id="solucoes">
             <div class="container">
                 <div class="section-header reveal">
@@ -125,27 +126,51 @@
                 </div>
                 <div class="solutions-grid">
                     <div class="solution-card reveal">
-                        <div class="icon-wrapper">🎮</div>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="6" y1="11" x2="10" y2="11"></line><line x1="8" y1="9" x2="8" y2="13"></line><circle cx="15" cy="12" r="1"></circle><circle cx="18" cy="10" r="1"></circle><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>
+                            </svg>
+                        </div>
                         <h3 data-i18n="sol_games_title">Jogos Digitais &amp; Jogos Sérios</h3>
                         <p data-i18n="sol_games_desc">Desenvolvimento 2D e 3D para entretenimento, educação, reabilitação médica, treinamento corporativo e conscientização social.</p>
                     </div>
+
                     <div class="solution-card reveal reveal-delay-1">
-                        <div class="icon-wrapper">🥽</div>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 8h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-3l-2.5-3-2.5 3H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"></path><path d="M10 12h4"></path><circle cx="7" cy="12" r="1.5"></circle><circle cx="17" cy="12" r="1.5"></circle><path d="M12 5v3"></path>
+                            </svg>
+                        </div>
                         <h3 data-i18n="sol_xr_title">Realidade Estendida (XR - VR/AR)</h3>
                         <p data-i18n="sol_xr_desc">Simulações imersivas em Realidade Virtual e Aumentada para terapias oncológicas, fóbicas, treinamentos de risco e experiências interativas.</p>
                     </div>
+
                     <div class="solution-card reveal reveal-delay-2">
-                        <div class="icon-wrapper">📱</div>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><polygon points="12 6 13.5 9 17 9.5 14.5 12 15 15.5 12 14 9 15.5 9.5 12 7 9.5 10.5 9 12 6"></polygon>
+                            </svg>
+                        </div>
                         <h3 data-i18n="sol_app_title">Aplicações Interativas &amp; Gamificação</h3>
                         <p data-i18n="sol_app_desc">Apps móveis de impacto social, plataformas gamificadas de engajamento, sistemas de denúncia e ferramentas socioeducativas.</p>
                     </div>
+
                     <div class="solution-card reveal reveal-delay-3">
-                        <div class="icon-wrapper">📐</div>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="3" r="1"></circle><circle cx="20.73" cy="8" r="1"></circle><circle cx="3.27" cy="8" r="1"></circle>
+                            </svg>
+                        </div>
                         <h3 data-i18n="sol_3d_title">Modelagem 3D &amp; Fotogrametria</h3>
                         <p data-i18n="sol_3d_desc">Criação de artefatos em 3D, Digitalização de objetos e órgãos em tamanho real, preservação de acervos culturais, e impressão 3D.</p>
                     </div>
+
                     <div class="solution-card reveal">
-                        <div class="icon-wrapper">🎨</div>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path><path d="M15 5l3 3"></path>
+                            </svg>
+                        </div>
                         <h3 data-i18n="sol_art_title">Arte 2D &amp; Concept Art</h3>
                         <p data-i18n="sol_art_desc">Ilustrações, design de personagens, cenários, animação 2D e assets visuais para jogos, livros de RPG e material didático.</p>
                     </div>
@@ -153,7 +178,7 @@
             </div>
         </section>
 
-        <!-- Seção Research & Inovação (Com Scroll Reveal em Cascata) -->
+        <!-- Seção 4: Pesquisa & Inovação -->
         <section id="research">
             <div class="container">
                 <div class="section-header reveal">
@@ -177,7 +202,7 @@
             </div>
         </section>
 
-        <!-- Seção 4: Portfólio de Impacto (Cards animam automaticamente via JS) -->
+        <!-- Seção 5: Portfólio de Impacto -->
         <section id="portfolio">
             <div class="container">
                 <div class="section-header reveal">
@@ -193,7 +218,7 @@
             </div>
         </section>
 
-        <!-- Seção 5: Para Quem Criamos (Com Scroll Reveal) -->
+        <!-- Seção 6: Para Quem Criamos -->
         <section id="parceiros">
             <div class="container">
                 <div class="section-header reveal">
@@ -223,7 +248,18 @@
             </div>
         </section>
 
-        <!-- Seção 6: Solicitação de Orçamento & Contato (Com Scroll Reveal) -->
+        <!-- Seção 7: Nossa Equipe -->
+        <section id="equipe">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 data-i18n="team_title">Nossa Equipe</h2>
+                    <p data-i18n="team_sub">Conheça as mentes acadêmicas e criativas que conduzem as pesquisas e desenvolvimentos da agência.</p>
+                </div>
+                <div class="team-grid" id="team-grid"></div>
+            </div>
+        </section>
+
+        <!-- Seção 8: Orçamento & Contato -->
         <section id="orcamento">
             <div class="container">
                 <div class="section-header reveal">
@@ -231,7 +267,6 @@
                     <p data-i18n="contact_sub">Tire sua ideia do papel com a inovação acadêmica e qualidade profissional da Combogó.</p>
                 </div>
                 <div class="contact-wrapper reveal reveal-delay-1">
-                    <!-- FORMULÁRIO CONFIGURADO PARA ENVIO VIA AJAX / FORMSUBMIT -->
                     <form id="briefing-form">
                         <input type="hidden" name="_subject" value="🚀 Novo Pedido de Orçamento - Site Combogó!">
                         <input type="hidden" name="_captcha" value="false">
@@ -254,21 +289,11 @@
                         <div class="form-group">
                             <label data-i18n="form_type">Tipo de Solução Desejada *</label>
                             <div class="checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="Jogo Digital"> <span data-i18n="chk_game">Jogo Digital / Sério</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="XR"> <span data-i18n="chk_xr">Realidade Estendida (VR/AR)</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="App"> <span data-i18n="chk_app">App / Gamificação</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="3D"> <span data-i18n="chk_3d">Modelagem 3D / Fotogrametria</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="Solucoes_Desejadas[]" value="2D"> <span data-i18n="chk_2d">Arte 2D &amp; Animação</span>
-                                </label>
+                                <label class="checkbox-label"><input type="checkbox" name="Solucoes_Desejadas[]" value="Jogo Digital"> <span data-i18n="chk_game">Jogo Digital / Sério</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="Solucoes_Desejadas[]" value="XR"> <span data-i18n="chk_xr">Realidade Estendida (VR/AR)</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="Solucoes_Desejadas[]" value="App"> <span data-i18n="chk_app">App / Gamificação</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="Solucoes_Desejadas[]" value="3D"> <span data-i18n="chk_3d">Modelagem 3D / Fotogrametria</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="Solucoes_Desejadas[]" value="2D"> <span data-i18n="chk_2d">Arte 2D &amp; Animação</span></label>
                             </div>
                         </div>
                         
@@ -280,7 +305,7 @@
                     </form>
 
                     <div class="contact-info">
-                        <h3 data-i18n="info_title">Informações Diretas</h3>
+                        <h3 data-i18n="info_title">Informações</h3>
                         <div class="info-item">
                             <h4 data-i18n="info_address_title">📍 Endereço Físico</h4>
                             <p data-i18n="info_address_val">1º andar do Museu de Arqueologia e Ciências Naturais - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE</p>
@@ -296,6 +321,10 @@
                         </div>
 
                         <div class="social-links">
+                            <!-- WhatsApp Direto -->
+                            <a href="https://wa.me/5581997318982" target="_blank" class="social-btn" aria-label="WhatsApp" title="Falar no WhatsApp">
+                                <img src="assets/icons/whatsapp_icon.svg" alt="WhatsApp">
+                            </a>
                             <a href="https://www.instagram.com/combogounicap/" target="_blank" class="social-btn" aria-label="Instagram">
                                 <img src="assets/icons/instagram_icon.svg" alt="Instagram">
                             </a>
@@ -315,7 +344,7 @@
         </section>
     </main>
 
-    <!-- Seção 7: Rodapé -->
+    <!-- Rodapé -->
     <footer>
         <div class="container">
             <div class="footer-brands">
@@ -336,6 +365,7 @@
                 <a href="#research" data-i18n="nav_research">Pesquisa</a>
                 <a href="#portfolio" data-i18n="nav_portfolio">Portfólio</a>
                 <a href="#parceiros" data-i18n="nav_partners">Parceiros</a>
+                <a href="#equipe" data-i18n="nav_team">Equipe</a>
                 <a href="#orcamento" data-i18n="nav_budget">Orçamento</a>
                 <a href="#" id="footer-adm-btn" style="color: var(--secondary); font-weight: 600;" data-i18n="nav_adm">⚙️ Painel ADM</a>
             </div>
@@ -348,22 +378,22 @@
         </div>
     </footer>
 
-    <!-- Seção 4.1: Painel ADM Modal (Sem Fechar Automaticamente!) -->
+    <!-- Painel ADM Modal -->
     <div class="modal-overlay" id="adm-modal">
         <div class="modal-card">
             <div class="modal-header">
-                <h3 id="adm-modal-title" data-i18n="adm_header">⚙️ Painel ADM - Gestão de Portfólio</h3>
+                <h3 id="adm-modal-title" data-i18n="adm_header">⚙️ Painel ADM - Gestão</h3>
                 <button class="close-btn" id="close-adm-btn" aria-label="Fechar">&times;</button>
             </div>
             
-            <!-- NAVEGAÇÃO DE ABAS DO ADM -->
             <div class="adm-tabs">
                 <button type="button" class="adm-tab-btn active" data-tab="tab-form" id="tab-btn-form" data-i18n="adm_tab_new">➕ Novo / Editar</button>
                 <button type="button" class="adm-tab-btn" data-tab="tab-list" data-i18n="adm_tab_list">📋 Gerenciar Projetos</button>
                 <button type="button" class="adm-tab-btn" data-tab="tab-cat" data-i18n="adm_tab_cat">🏷️ Categorias</button>
+                <button type="button" class="adm-tab-btn" data-tab="tab-team" data-i18n="adm_tab_team">👥 Equipe</button>
             </div>
 
-            <!-- ABA 1: FORMULÁRIO DE CRIAR / EDITAR PROJETO -->
+            <!-- ABA 1: PROJETOS -->
             <div class="adm-tab-content active" id="tab-form">
                 <form id="adm-form">
                     <input type="hidden" id="adm-edit-id" value="">
@@ -377,13 +407,10 @@
                         <input type="text" id="adm-client" class="form-control" required placeholder="Ex: Hospital X, Prefeitura Y">
                     </div>
                     
-                    <!-- SELEÇÃO DE MÚLTIPLAS CATEGORIAS COM CHECKBOXES -->
                     <div class="form-group">
                         <label data-i18n="adm_lbl_cat">Categorias (Selecione uma ou mais) *</label>
-                        <div id="adm-cat-checkboxes" class="checkbox-group" style="max-height: 140px; overflow-y: auto; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px;">
-                            <!-- Preenchido via JS -->
-                        </div>
-                        <input type="text" id="adm-cat-new" class="form-control" placeholder="✨ Digite outras categorias separadas por vírgula (Ex: IA, Robótica)...">
+                        <div id="adm-cat-checkboxes" class="checkbox-group" style="max-height: 140px; overflow-y: auto; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px;"></div>
+                        <input type="text" id="adm-cat-new" class="form-control" placeholder="✨ Digite outras categorias separadas por vírgula...">
                     </div>
 
                     <div class="form-group">
@@ -392,13 +419,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="adm-folder" data-i18n="adm_lbl_folder">Pasta do Projeto (em assets/projects/) *</label>
+                        <label for="adm-folder" data-i18n="adm_lbl_folder">Pasta do Projeto *</label>
                         <select id="adm-folder" class="form-control" required></select>
                         <input type="text" id="adm-folder-new" class="form-control" style="display: none; margin-top: 10px; border-color: var(--primary);" placeholder="📁 Digite o nome da nova pasta...">
                     </div>
 
                     <div class="form-group">
-                        <label for="adm-link" data-i18n="adm_lbl_link">Link do Projeto (Itch.io, GitHub, Notícia)</label>
+                        <label for="adm-link" data-i18n="adm_lbl_link">Link do Projeto</label>
                         <input type="url" id="adm-link" class="form-control" placeholder="https://...">
                     </div>
                     <div class="form-group">
@@ -406,44 +433,77 @@
                         <textarea id="adm-desc" rows="3" class="form-control" required placeholder="Resumo do projeto e seus resultados..."></textarea>
                     </div>
                     
-                    <!-- BOTOES DE AÇÃO (SALVAR E VOLTAR À LISTA) -->
                     <div style="display: flex; gap: 10px; margin-top: 16px;">
-                        <button type="button" class="btn btn-secondary" id="adm-cancel-btn" style="display: none; width: 45%;" onclick="returnToList()" data-i18n="adm_btn_back">🔙 Voltar à Lista</button>
+                        <button type="button" class="btn btn-secondary" id="adm-cancel-btn" style="display: none; width: 45%;" onclick="returnToList()" data-i18n="adm_btn_back">🔙 Voltar</button>
                         <button type="submit" class="btn btn-primary" style="flex-grow: 1;" id="adm-submit-btn" data-i18n="adm_btn_submit">Adicionar Projeto ao Portfólio</button>
                     </div>
                 </form>
             </div>
 
-            <!-- ABA 2: LISTA DE PROJETOS PARA EXCLUIR OU EDITAR -->
+            <!-- ABA 2: LISTA PROJETOS -->
             <div class="adm-tab-content" id="tab-list">
-                <div class="adm-project-list" id="adm-projects-list-ui">
-                    <!-- Gerado dinamicamente via JavaScript -->
-                </div>
+                <div class="adm-project-list" id="adm-projects-list-ui"></div>
             </div>
 
-            <!-- ABA 3: GESTÃO COMPLETA DE CATEGORIAS -->
+            <!-- ABA 3: CATEGORIAS -->
             <div class="adm-tab-content" id="tab-cat">
                 <div style="margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
                     <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);" data-i18n="adm_cat_create_title">✨ Adicionar Nova Categoria</h4>
                     <form id="adm-create-cat-form" style="display: flex; gap: 10px; flex-wrap: wrap;">
                         <input type="text" id="adm-cat-create-input" class="form-control" required placeholder="Ex: IA & Robótica..." style="flex-grow: 1; min-width: 200px;">
-                        <button type="submit" class="btn btn-primary" style="padding: 10px 20px; white-space: nowrap;" data-i18n="adm_btn_create_cat">Criar Categoria</button>
+                        <button type="submit" class="btn btn-primary" style="padding: 10px 20px;" data-i18n="adm_btn_create_cat">Criar Categoria</button>
                     </form>
                 </div>
-
                 <div>
-                    <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);" data-i18n="adm_cat_rename_title">✏️ Renomear Categoria Existente</h4>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);" data-i18n="adm_cat_rename_title">✏️ Renomear Categoria</h4>
                     <form id="adm-rename-cat-form">
                         <div class="form-group">
-                            <label for="adm-cat-old" data-i18n="adm_cat_old">Selecione a Categoria para Renomear *</label>
+                            <label for="adm-cat-old" data-i18n="adm_cat_old">Selecione para Renomear *</label>
                             <select id="adm-cat-old" class="form-control" required></select>
                         </div>
                         <div class="form-group">
-                            <label for="adm-cat-rename" data-i18n="adm_cat_rename">Novo Nome da Categoria *</label>
+                            <label for="adm-cat-rename" data-i18n="adm_cat_rename">Novo Nome *</label>
                             <input type="text" id="adm-cat-rename" class="form-control" required placeholder="Ex: Inovação e XR...">
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="adm_btn_rename">Salvar Novo Nome da Categoria</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="adm_btn_rename">Salvar Novo Nome</button>
                     </form>
+                </div>
+            </div>
+
+            <!-- ABA 4: EQUIPE -->
+            <div class="adm-tab-content" id="tab-team">
+                <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);">✨ Adicionar / Editar Membro da Equipe</h4>
+                    <form id="adm-team-form">
+                        <input type="hidden" id="adm-team-edit-id" value="">
+                        <div class="form-group">
+                            <label>Nome Completo *</label>
+                            <input type="text" id="team-name" class="form-control" required placeholder="Ex: Rennan Raffaele">
+                        </div>
+                        <div class="form-group">
+                            <label>Cargo / Função *</label>
+                            <input type="text" id="team-role" class="form-control" required placeholder="Ex: Coordenador">
+                        </div>
+                        <div class="form-group">
+                            <label>Foto (assets/equipe/ ou URL externa) *</label>
+                            <input type="text" id="team-photo" class="form-control" required placeholder="assets/equipe/rennan.jpeg">
+                        </div>
+                        <div class="form-group">
+                            <label>Link do Perfil (LinkedIn, Lattes)</label>
+                            <input type="url" id="team-link" class="form-control" placeholder="https://...">
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 16px;">
+                            <button type="button" class="btn btn-secondary" id="team-cancel-btn" style="display: none; width: 40%;" onclick="resetTeamForm()">🔙 Cancelar</button>
+                            <button type="submit" class="btn btn-primary" style="flex-grow: 1;" id="team-submit-btn">Salvar Membro na Equipe</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);">📋 Membros Atuais da Equipe</h4>
+                    <div class="adm-project-list" id="adm-team-list-ui"></div>
+                </div>
+                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                    <button type="button" class="btn btn-secondary" id="download-team-json-btn" style="width: 100%;">📥 Baixar team.json atualizado</button>
                 </div>
             </div>
 
@@ -456,319 +516,111 @@
         </div>
     </div>
 
-    <!-- LINK PARA O ARQUIVO DE TRADUÇÃO EXTERNO -->
+    <!-- SCRIPTS COM PROTEÇÃO ANTI-FALHA (TRY/CATCH) -->
     <script src="translations.js"></script>
 
-    <!-- JAVASCRIPT VANILLA -->
     <script>
-        /**
-         * ============================================================================
-         * 1. CONFIGURAÇÕES INICIAIS DE IDIOMA E INTERFACE
-         * ============================================================================
-         */
         let currentLang = 'pt';
 
+        /* Leitura Segura de LocalStorage para evitar quebra em abas anônimas / Vercel Iframes */
+        function getSafeStorage(key, fallback) {
+            try {
+                const item = localStorage.getItem(key);
+                return item ? JSON.parse(item) : fallback;
+            } catch (e) {
+                console.warn("localStorage indisponível:", e);
+                return fallback;
+            }
+        }
+
+        function setSafeStorage(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+            } catch (e) {
+                console.warn("Erro ao salvar no localStorage:", e);
+            }
+        }
+
         function translatePage(lang) {
-            currentLang = lang;
-            const t = i18n[lang];
+            try {
+                currentLang = lang;
+                const t = i18n[lang];
 
-            document.getElementById('current-lang-label').textContent = lang.toUpperCase();
+                document.getElementById('current-lang-label').textContent = lang.toUpperCase();
+                document.querySelectorAll('.lang-menu a').forEach(a => a.classList.toggle('active', a.getAttribute('data-lang') === lang));
+                document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (t && t[key]) el.innerHTML = t[key]; });
+                document.querySelectorAll('[data-i18n-ph]').forEach(el => { const key = el.getAttribute('data-i18n-ph'); if (t && t[key]) el.setAttribute('placeholder', t[key]); });
 
-            document.querySelectorAll('.lang-menu a').forEach(a => {
-                a.classList.toggle('active', a.getAttribute('data-lang') === lang);
-            });
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key]) el.innerHTML = t[key];
-            });
-
-            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-                const key = el.getAttribute('data-i18n-ph');
-                if (t[key]) el.setAttribute('placeholder', t[key]);
-            });
-
-            updateDynamicCategories();
-            updateDynamicFolders();
-            updateAdmProjectList();
-            renderHeroQuote(); // Atualiza na hora o painel de 1 quote do Hero!
-            const currentFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
-            renderProjects(currentFilter);
+                updateDynamicCategories();
+                updateDynamicFolders();
+                updateAdmProjectList();
+                renderHeroQuote();
+                const currentFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
+                renderProjects(currentFilter);
+                renderTeam();
+            } catch (err) {
+                console.error("Erro em translatePage:", err);
+            }
         }
 
         const langToggleBtn = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
-
-        langToggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.lang-menu a').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const selectedLang = item.getAttribute('data-lang');
-                translatePage(selectedLang);
-                langMenu.classList.remove('active');
+        if (langToggleBtn && langMenu) {
+            langToggleBtn.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('active'); });
+            document.querySelectorAll('.lang-menu a').forEach(item => {
+                item.addEventListener('click', (e) => { e.preventDefault(); translatePage(item.getAttribute('data-lang')); langMenu.classList.remove('active'); });
             });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!document.getElementById('lang-dropdown-wrapper').contains(e.target)) {
-                langMenu.classList.remove('active');
-            }
-        });
-
-        /**
-         * ============================================================================
-         * 1.1 MOTOR DO PAINEL DE QUOTES CLEAN (1 POR VEZ COM TRANSIÇÃO SUAVE)
-         * ============================================================================
-         */
-        let currentQuoteIndex = 0;
-        function renderHeroQuote() {
-            const quoteEl = document.getElementById('single-quote-text');
-            if (!quoteEl) return;
-            const quotes = i18n[currentLang].hero_quotes || [];
-            if (quotes.length === 0) return;
-            
-            // Efeito suave de saída (Fade out & Slide up)
-            quoteEl.style.opacity = "0";
-            quoteEl.style.transform = "translateY(-10px)";
-            
-            setTimeout(() => {
-                quoteEl.textContent = quotes[currentQuoteIndex];
-                // Efeito suave de entrada (Fade in & Reset transform)
-                quoteEl.style.opacity = "1";
-                quoteEl.style.transform = "translateY(0)";
-            }, 350);
+            document.addEventListener('click', (e) => { if (!document.getElementById('lang-dropdown-wrapper').contains(e.target)) langMenu.classList.remove('active'); });
         }
 
+        /* Hero Quote */
+        let currentQuoteIndex = 0;
+        function renderHeroQuote() {
+            try {
+                const quoteEl = document.getElementById('single-quote-text');
+                if (!quoteEl) return;
+                const quotes = (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang].hero_quotes) ? i18n[currentLang].hero_quotes : ["Fazemos seu projeto de jogo do zero"];
+                if (quotes.length === 0) return;
+                quoteEl.style.opacity = "0";
+                quoteEl.style.transform = "translateY(-10px)";
+                setTimeout(() => {
+                    quoteEl.textContent = quotes[currentQuoteIndex];
+                    quoteEl.style.opacity = "1";
+                    quoteEl.style.transform = "translateY(0)";
+                }, 350);
+            } catch (e) { console.error(e); }
+        }
         setInterval(() => {
-            const quotes = i18n[currentLang].hero_quotes || [];
-            if (quotes.length > 0) {
-                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-                renderHeroQuote();
-            }
+            try {
+                const quotes = (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang].hero_quotes) ? i18n[currentLang].hero_quotes : [];
+                if (quotes.length > 0) { currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length; renderHeroQuote(); }
+            } catch (e) { console.error(e); }
         }, 3200);
 
-        /**
-         * ============================================================================
-         * 2. DADOS INICIAIS DO PORTFÓLIO E GERENCIAMENTO DE ESTADO (MULTI-CATEGORIAS)
-         * ============================================================================
-         */
+        /* Portfólio Inicial */
         const initialProjects = [
-            {
-                title: "Oncoverso",
-                client: "Hospital de Câncer de Pernambuco (HCP)",
-                categories: ["Saúde", "XR", "Inovação"],
-                year: 2026,
-                folder: "HCP",
-                desc: "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-                desc_en: "Use of Virtual Reality to humanize cancer treatment in hospital psychology and physiotherapy departments.",
-                desc_es: "Uso de Realidad Virtual para humanizar el tratamiento oncológico en las áreas de psicología y fisioterapia del hospital.",
-                link: ""
-            },
-            {
-                title: "O Resgate de Fárya",
-                client: "Viu Cine (Funcultura)",
-                categories: ["Jogos Digitais", "Arte 2D"],
-                year: 2023,
-                folder: "Farya",
-                desc: "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
-                desc_en: "2D Game winner in 4 categories at SBGames 2023 (Best Game, Art, Narrative, and Video) and Anima Verso award.",
-                desc_es: "Videojuego 2D ganador de 4 categorías en SBGames 2023 (Mejor Juego, Arte, Narrativa y Video) y premio Anima Verso.",
-                link: "https://oresgatedefarya.itch.io/o-resgate-de-farya"
-            },
-            {
-                title: "Campanha \"Teste Seu Olhar\"",
-                client: "Prefeitura do Recife (SDH)",
-                categories: ["Impacto Social", "XR"],
-                year: 2019,
-                folder: "Vr_Olhar",
-                desc: "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
-                desc_en: "Virtual Reality experience to combat LGBTphobia, deployed in public spaces such as the Recife Metro.",
-                desc_es: "Experiencia de Realidad Virtual para combatir la LGBTfobia, implementada en espacios públicos como el Metro de Recife.",
-                link: "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a"
-            },
-            {
-                title: "Aplicativo Rugido",
-                client: "Movimento Leões do Norte & Fundo Brasil",
-                categories: ["Impacto Social", "Apps & Gamificação"],
-                year: 2021,
-                folder: "Rugido",
-                desc: "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
-                desc_en: "App for reporting and statistics on LGBTphobia, integrated into the Official Guide of the Public Defender's Office of PE.",
-                desc_es: "App para registro de denuncias y estadísticas de LGBTfobia, integrada en la Guía Oficial de la Defensoría Pública de PE.",
-                link: "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf"
-            },
-            {
-                title: "Fotogrametria Anatômica 3D",
-                client: "Curso de Medicina UNICAP",
-                categories: ["Inovação", "Modelagem 3D", "Saúde"],
-                year: 2025,
-                folder: "Fotogrametria",
-                desc: "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
-                desc_en: "High-precision scanning and real-size 3D printing of a human heart, revolutionizing anatomy education.",
-                desc_es: "Digitalización de alta precisión e impresión 3D a escala real de un corazón humano, revolucionando la enseñanza de anatomía.",
-                link: ""
-            },
-            {
-                title: "Plataforma Quark",
-                client: "Startup Happen",
-                categories: ["Inovação", "Apps & Gamificação"],
-                year: 2024,
-                folder: "Quark",
-                desc: "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, aplicação foi premiada pelo MIT Tech Review LATAM e GovTech Summit.",
-                desc_en: "Research in gamification and QA for soft skills development app for young people, application was awarded by MIT Tech Review LATAM and GovTech Summit.",
-                desc_es: "Investigación en gamificación y QA para aplicación de desarrollo de soft skills para jóvenes, la aplicación fue premiada por MIT Tech Review LATAM y GovTech Summit.",
-                link: "https://www.plataformaquark.com/"
-            },
-            {
-                title: "Trilha das Memórias Maringá",
-                client: "SEBRAE & Sec. de Turismo de Maringá-PR",
-                categories: ["Jogos Digitais", "Inovação"],
-                year: 2022,
-                folder: "Trilha",
-                desc: "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
-                desc_en: "Gamified immersive tourism app featuring geolocation, QR Code scanning, and a reward system for tourists.",
-                desc_es: "App gamificada de turismo inmersivo con geolocalización, lectura de códigos QR y sistema de recompensas para tourists.",
-                link: "https://www.instagram.com/trilhadasmemorias/"
-            },
-            {
-                title: "PsicoPing",
-                client: "Curso de Psicologia UNICAP",
-                categories: ["Saúde", "Jogos Sérios", "XR"],
-                year: 2019,
-                folder: "Psicoping",
-                desc: "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-                desc_en: "Transdisciplinary scientific game for cognitive stimulation and psychotherapeutic rehabilitation for ADHD patients.",
-                desc_es: "Videojuego científico transdisciplinario de estimulación cognitiva y rehabilitación psicoterapéutica para pacientes con TDAH.",
-                link: "https://globoplay.globo.com/v/7497090/?s=0s"
-            },
-            {
-                title: "Aplicativo Previna (SEPOD)",
-                client: "Secretaria Executiva de Políticas sobre Drogas",
-                categories: ["Impacto Social", "Apps & Gamificação"],
-                year: 2020,
-                folder: "Sepod",
-                desc: "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
-                desc_en: "Mobile gamified platform for socio-educational support in public schools, encouraging reflections on drug prevention.",
-                desc_es: "Plataforma gamificada móvil de apoyo socioeducativo en escuelas públicas, incentivando reflexiones sobre prevención de drogas.",
-                link: "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1"
-            },
-            {
-                title: "Projeto Flautista RV",
-                client: "Museu de Arqueologia UNICAP (MUSARQ)",
-                categories: ["Saúde", "XR", "Inovação"],
-                year: 2022,
-                folder: "Flautista",
-                desc: "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
-                desc_en: "Interactive Virtual Reality reconstruction of the 2,000-year-old Brazilian hominid supported by PIBIC research.",
-                desc_es: "Reconstrucción interactiva en Realidad Virtual del homínido brasileño de 2 mil años con apoyo de investigación PIBIC.",
-                link: ""
-            },
-            {
-                title: "Animação Institucional #unicapsegura",
-                client: "PRAD / Departamento Predial UNICAP",
-                categories: ["Arte 2D", "Inovação"],
-                year: 2021,
-                folder: "Animacao_incendio",
-                desc: "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
-                desc_en: "Informative 2D animation on safety, building regulations, and accident prevention across the university campus.",
-                desc_es: "Animación 2D informativa sobre seguridad, normas edilicias y prevención de accidentes en el campus universitario.",
-                link: "https://www.youtube.com/watch?v=USQH1NfQ6Jw"
-            },
-            {
-                title: "English Teen - Game of Cabo",
-                client: "IFPE Campus Cabo de Santo Agostinho",
-                categories: ["Jogos Digitais", "Apps & Gamificação"],
-                year: 2018,
-                folder: "Game_cabo",
-                desc: "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
-                desc_en: "Gamified university extension application for practical English teaching in public schools on the coast.",
-                desc_es: "Aplicación gamificada de extensión universitaria para la enseñanza práctica de inglés en escuelas públicas costeras.",
-                link: "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/"
-            },
-            {
-                title: "Game para o Católica In",
-                client: "UNICAP",
-                categories: ["Jogos Digitais"],
-                year: 2017,
-                folder: "CatolicaIn",
-                desc: "Jogo digital vocacional para o evento anual de orientation profissional voltado a estudantes do Ensino Médio.",
-                desc_en: "Vocational digital game for the university's annual career guidance event aimed at high school students.",
-                desc_es: "Videojuego vocacional para el evento anual de orientation profesional universitario dirigido a estudiantes de secundaria.",
-                link: "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/"
-            },
-            {
-                title: "Livro de RPG Digital",
-                client: "P3Boardgames",
-                categories: ["Arte 2D", "Jogos Digitais"],
-                year: 2022,
-                folder: "Ilustracao_rpg",
-                desc: "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
-                desc_en: "Production of 32 original illustrations, character concept art, items, and environments for a digital RPG book.",
-                desc_es: "Producción de 32 ilustraciones originales, concept art de personajes, ítems y escenarios para libro digital de rol.",
-                link: "https://www.instagram.com/p3boardgames/"
-            },
-            {
-                title: "Recife Invasion - Rua da Aurora",
-                client: "Projeto Autoral Combogó",
-                categories: ["XR", "Jogos Digitais", "Inovação"],
-                year: 2026,
-                folder: "Recife Invasion",
-                desc: "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
-                desc_en: "Augmented Reality project and immersive game developed in 2 weeks for Technology Week and Red Bull event.",
-                desc_es: "Proyecto de Realidad Aumentada y juego inmersivo desarrollado en 2 semanas para la Semana de Tecnología y evento Red Bull.",
-                link: "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1"
-            },
-            {
-                title: "Exposição Plural & Neon no Metaverso",
-                client: "Cursos de Fotografia e Arquitetura UNICAP",
-                categories: ["Inovação", "XR", "Modelagem 3D"],
-                year: 2023,
-                folder: "Metaverse",
-                desc: "Construção de galeria interativa 3D no VRChat para exibição de 30 fotografias e narrativas contemporâneas no metaverso.",
-                desc_en: "Construction of an interactive 3D gallery in VRChat showcasing 30 photographs and contemporary narratives in the metaverse.",
-                desc_es: "Construcción de galería interactiva 3D en VRChat para exhibir 30 fotografías y narrativas contemporáneas en el metaverso.",
-                link: ""
-            },
-            {
-                title: "Biofeedback & VR Terapêutico",
-                client: "Doutorado em Design UFPE",
-                categories: ["Saúde", "XR", "Inovação"],
-                year: 2021,
-                folder: "Vr_Treinamento",
-                desc: "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
-                desc_en: "Advanced research in emotional regulation and biofeedback utilizing Oculus Rift headsets for immersive simulations.",
-                desc_es: "Investigación avanzada en regulación emocional y biofeedback utilizando visores Oculus Rift para simulaciones inmersivas.",
-                link: "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full"
-            },
-            {
-                title: "Corre Ascensinho",
-                client: "UNICAP",
-                categories: ["Jogos Digitais", "Arte 2D"],
-                year: 2018,
-                folder: "Corre_ascensinho",
-                desc: "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
-                desc_en: "Pixel art platform digital game promoting the university's identity and academic history in an entertaining way.",
-                desc_es: "Videojuego de plataformas en pixel art promoviendo la identidad e historia académica universitaria de forma divertida.",
-                link: ""
-            },
-            {
-                title: "Especial Interativo de Natal",
-                client: "Ação de Extensão Combogó",
-                categories: ["Impacto Social", "Apps & Gamificação"],
-                year: 2017,
-                folder: "Natal_2017",
-                desc: "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
-                desc_en: "Interactive application and gamified holiday card developed by the lab to engage the university community.",
-                desc_es: "Aplicación interactiva y tarjeta de fiestas gamificada desarrollada por el laboratorio para involucrar a la comunidad.",
-                link: "https://www.youtube.com/watch?v=SgJgV_eys5U"
-            }
+            { title: "Oncoverso", client: "Hospital de Câncer de Pernambuco (HCP)", categories: ["Saúde", "XR", "Inovação"], year: 2026, folder: "HCP", desc: "Desenvolvemos soluções em Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.", link: "" },
+            { title: "O Resgate de Fárya", client: "Viu Cine (Funcultura)", categories: ["Jogos Digitais", "Arte 2D"], year: 2023, folder: "Farya", desc: "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.", link: "https://oresgatedefarya.itch.io/o-resgate-de-farya" },
+            { title: "Campanha \"Teste Seu Olhar\"", client: "Prefeitura do Recife (SDH)", categories: ["Impacto Social", "XR"], year: 2019, folder: "Vr_Olhar", desc: "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.", link: "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a" },
+            { title: "Aplicativo Rugido", client: "Movimento Leões do Norte & Fundo Brasil", categories: ["Impacto Social", "Apps & Gamificação"], year: 2021, folder: "Rugido", desc: "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.", link: "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf" },
+            { title: "Fotogrametria Anatômica 3D", client: "Curso de Medicina UNICAP", categories: ["Inovação", "Modelagem 3D", "Saúde"], year: 2025, folder: "Fotogrametria", desc: "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.", link: "" },
+            { title: "Plataforma Quark", client: "Startup Happen", categories: ["Inovação", "Apps & Gamificação"], year: 2024, folder: "Quark", desc: "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, aplicação foi premiada pelo MIT Tech Review LATAM e GovTech Summit.", link: "https://www.plataformaquark.com/" },
+            { title: "Trilha das Memórias Maringá", client: "SEBRAE & Sec. de Turismo de Maringá-PR", categories: ["Jogos Digitais", "Inovação"], year: 2022, folder: "Trilha", desc: "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.", link: "https://www.instagram.com/trilhadasmemorias/" },
+            { title: "PsicoPing", client: "Curso de Psicologia UNICAP", categories: ["Saúde", "Jogos Sérios", "XR"], year: 2019, folder: "Psicoping", desc: "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.", link: "https://globoplay.globo.com/v/7497090/?s=0s" },
+            { title: "Aplicativo Previna (SEPOD)", client: "Secretaria Executiva de Políticas sobre Drogas", categories: ["Impacto Social", "Apps & Gamificação"], year: 2020, folder: "Sepod", desc: "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.", link: "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1" },
+            { title: "Projeto Flautista RV", client: "Museu de Arqueologia UNICAP (MUSARQ)", categories: ["Saúde", "XR", "Inovação"], year: 2022, folder: "Flautista", desc: "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.", link: "" },
+            { title: "Animação Institucional #unicapsegura", client: "PRAD / Departamento Predial UNICAP", categories: ["Arte 2D", "Inovação"], year: 2021, folder: "Animacao_incendio", desc: "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.", link: "https://www.youtube.com/watch?v=USQH1NfQ6Jw" },
+            { title: "English Teen - Game of Cabo", client: "IFPE Campus Cabo de Santo Agostinho", categories: ["Jogos Digitais", "Apps & Gamificação"], year: 2018, folder: "Game_cabo", desc: "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.", link: "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/" },
+            { title: "Game para o Católica In", client: "UNICAP", categories: ["Jogos Digitais"], year: 2017, folder: "CatolicaIn", desc: "Jogo digital vocacional para o evento anual de orientation profissional voltado a estudantes do Ensino Médio.", link: "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/" },
+            { title: "Livro de RPG Digital", client: "P3Boardgames", categories: ["Arte 2D", "Jogos Digitais"], year: 2022, folder: "Ilustracao_rpg", desc: "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.", link: "https://www.instagram.com/p3boardgames/" },
+            { title: "Recife Invasion - Rua da Aurora", client: "Projeto Autoral Combogó", categories: ["XR", "Jogos Digitais", "Inovação"], year: 2026, folder: "Recife Invasion", desc: "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.", link: "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1" },
+            { title: "Exposição Plural & Neon no Metaverso", client: "Cursos de Fotografia e Arquitetura UNICAP", categories: ["Inovação", "XR", "Modelagem 3D"], year: 2023, folder: "Metaverse", desc: "Construção de galeria interativa 3D no VRChat para exibição de 30 fotografias e narrativas contemporâneas no metaverso.", link: "" },
+            { title: "Biofeedback & VR Terapêutico", client: "Doutorado em Design UFPE", categories: ["Saúde", "XR", "Inovação"], year: 2021, folder: "Vr_Treinamento", desc: "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.", link: "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full" },
+            { title: "Corre Ascensinho", client: "UNICAP", categories: ["Jogos Digitais", "Arte 2D"], year: 2018, folder: "Corre_ascensinho", desc: "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.", link: "" },
+            { title: "Especial Interativo de Natal", client: "Ação de Extensão Combogó", categories: ["Impacto Social", "Apps & Gamificação"], year: 2017, folder: "Natal_2017", desc: "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.", link: "https://www.youtube.com/watch?v=SgJgV_eys5U" }
         ];
 
-        let projects = JSON.parse(localStorage.getItem('combogo_projects')) || initialProjects;
+        let projects = getSafeStorage('combogo_projects', initialProjects);
 
         function getProjectCats(p) {
             if (Array.isArray(p.categories)) return p.categories;
@@ -776,11 +628,6 @@
             return ["Inovação"];
         }
 
-        /**
-         * ============================================================================
-         * 3. RENDERIZAÇÃO E MOTOR INTELIGENTE DE DETECÇÃO AUTOMÁTICA DE IMAGENS
-         * ============================================================================
-         */
         async function checkImageExists(url) {
             return new Promise(resolve => {
                 const img = new Image();
@@ -794,65 +641,49 @@
             const exts = ['png', 'jpg', 'jpeg', 'webp', 'svg', 'gif', 'JPG', 'PNG'];
             for (let ext of exts) {
                 const url = `assets/projects/${encodeURI(folder)}/${index}.${ext}`;
-                if (await checkImageExists(url)) {
-                    return url;
-                }
+                if (await checkImageExists(url)) return url;
             }
             return null;
         }
 
         async function buildDynamicCarousel(card, folder, title) {
-            const track = card.querySelector('.carousel-track');
-            const dotsContainer = card.querySelector('.carousel-dots');
-            const prevBtn = card.querySelector('.carousel-btn.prev');
-            const nextBtn = card.querySelector('.carousel-btn.next');
-            
-            let validImages = [];
-            
-            for (let i = 1; i <= 15; i++) {
-                const validUrl = await probeImage(folder, i);
-                if (validUrl) {
-                    validImages.push(validUrl);
+            try {
+                const track = card.querySelector('.carousel-track');
+                const dotsContainer = card.querySelector('.carousel-dots');
+                const prevBtn = card.querySelector('.carousel-btn.prev');
+                const nextBtn = card.querySelector('.carousel-btn.next');
+                let validImages = [];
+                for (let i = 1; i <= 15; i++) {
+                    const validUrl = await probeImage(folder, i);
+                    if (validUrl) validImages.push(validUrl);
+                    else break;
+                }
+                track.innerHTML = "";
+                if (dotsContainer) dotsContainer.innerHTML = "";
+                if (validImages.length === 0) {
+                    track.innerHTML = `<div class="carousel-slide"><div class="img-error-box" style="display:flex;"><strong>⚠️ Imagem não encontrada</strong><span style="font-size:0.75rem; word-break:break-all;">Verifique a pasta:<br>assets/projects/${folder}/1.png</span></div></div>`;
+                    return;
+                }
+                validImages.forEach((url, idx) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    slide.innerHTML = `<img src="${url}" alt="${title}" class="carousel-img" loading="lazy">`;
+                    track.appendChild(slide);
+                    if (dotsContainer) {
+                        const dot = document.createElement('span');
+                        dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+                        dotsContainer.appendChild(dot);
+                    }
+                });
+                if (validImages.length > 1) {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                    setupCarousel(card, validImages.length);
                 } else {
-                    break;
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
                 }
-            }
-            
-            track.innerHTML = "";
-            if (dotsContainer) dotsContainer.innerHTML = "";
-            
-            if (validImages.length === 0) {
-                track.innerHTML = `
-                    <div class="carousel-slide">
-                        <div class="img-error-box" style="display:flex;">
-                            <strong>⚠️ Imagem não encontrada</strong>
-                            <span style="font-size:0.75rem; word-break:break-all;">Verifique a pasta:<br>assets/projects/${folder}/1.png (ou .jpg/.svg)</span>
-                        </div>
-                    </div>`;
-                return;
-            }
-            
-            validImages.forEach((url, idx) => {
-                const slide = document.createElement('div');
-                slide.className = 'carousel-slide';
-                slide.innerHTML = `<img src="${url}" alt="${title} - Foto ${idx + 1}" class="carousel-img" loading="lazy">`;
-                track.appendChild(slide);
-                
-                if (dotsContainer) {
-                    const dot = document.createElement('span');
-                    dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
-                    dotsContainer.appendChild(dot);
-                }
-            });
-            
-            if (validImages.length > 1) {
-                prevBtn.style.display = 'flex';
-                nextBtn.style.display = 'flex';
-                setupCarousel(card, validImages.length);
-            } else {
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-            }
+            } catch(e) { console.error("Erro ao montar carrossel:", e); }
         }
 
         const portfolioGrid = document.getElementById('portfolio-grid');
@@ -863,50 +694,47 @@
         const admCatCheckboxesContainer = document.getElementById('adm-cat-checkboxes');
 
         function getAllCategories() {
-            const customCategories = JSON.parse(localStorage.getItem('combogo_custom_categories')) || [];
+            const customCategories = getSafeStorage('combogo_custom_categories', []);
             const fromProjects = projects.flatMap(p => getProjectCats(p));
             return [...new Set([...fromProjects, ...customCategories])].filter(Boolean);
         }
 
         function updateDynamicCategories() {
-            const categories = ["Todos", ...getAllCategories()];
-            const currentActive = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
-            const t = i18n[currentLang];
-            
-            filterContainer.innerHTML = "";
-            categories.forEach(cat => {
-                const btn = document.createElement('button');
-                btn.className = `filter-btn ${cat === currentActive ? 'active' : ''}`;
-                btn.setAttribute('data-filter', cat);
-                btn.textContent = cat === "Todos" ? t.cat_all : cat;
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    renderProjects(cat);
+            try {
+                if (!filterContainer) return;
+                const categories = ["Todos", ...getAllCategories()];
+                const currentActive = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { cat_all: "Todos" };
+                filterContainer.innerHTML = "";
+                categories.forEach(cat => {
+                    const btn = document.createElement('button');
+                    btn.className = `filter-btn ${cat === currentActive ? 'active' : ''}`;
+                    btn.setAttribute('data-filter', cat);
+                    btn.textContent = cat === "Todos" ? t.cat_all : cat;
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        renderProjects(cat);
+                    });
+                    filterContainer.appendChild(btn);
                 });
-                filterContainer.appendChild(btn);
-            });
-
-            const categoriesWithoutAll = categories.filter(c => c !== "Todos");
-            
-            if (admCatCheckboxesContainer) {
-                admCatCheckboxesContainer.innerHTML = categoriesWithoutAll.map(c => `
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="proj_cats" value="${c}"> <span>${c}</span>
-                    </label>
-                `).join('');
-            }
-
-            if (admCatOldSelect) {
-                admCatOldSelect.innerHTML = categoriesWithoutAll.map(c => `<option value="${c}">${c}</option>`).join('');
-            }
+                const categoriesWithoutAll = categories.filter(c => c !== "Todos");
+                if (admCatCheckboxesContainer) {
+                    admCatCheckboxesContainer.innerHTML = categoriesWithoutAll.map(c => `<label class="checkbox-label"><input type="checkbox" name="proj_cats" value="${c}"> <span>${c}</span></label>`).join('');
+                }
+                if (admCatOldSelect) {
+                    admCatOldSelect.innerHTML = categoriesWithoutAll.map(c => `<option value="${c}">${c}</option>`).join('');
+                }
+            } catch(e) { console.error(e); }
         }
 
         function updateDynamicFolders() {
-            const folders = [...new Set(projects.map(p => p.folder || "Rugido"))];
-            const t = i18n[currentLang];
-            admFolderSelect.innerHTML = folders.map(f => `<option value="${f}">${f}</option>`).join('') + 
-                `<option value="NEW_FOLDER">${t.folder_new_opt}</option>`;
+            try {
+                if (!admFolderSelect) return;
+                const folders = [...new Set(projects.map(p => p.folder || "Rugido"))];
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { folder_new_opt: "✨ Criar Nova Pasta" };
+                admFolderSelect.innerHTML = folders.map(f => `<option value="${f}">${f}</option>`).join('') + `<option value="NEW_FOLDER">${t.folder_new_opt}</option>`;
+            } catch(e) { console.error(e); }
         }
 
         function setupCarousel(cardElement, totalSlides) {
@@ -916,98 +744,177 @@
             const dots = cardElement.querySelectorAll('.carousel-dot');
             const prevBtn = cardElement.querySelector('.carousel-btn.prev');
             const nextBtn = cardElement.querySelector('.carousel-btn.next');
-
             function updateSlide(newIndex) {
                 currentSlide = (newIndex + totalSlides) % totalSlides;
                 track.style.transform = `translateX(-${currentSlide * 100}%)`;
-                dots.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === currentSlide);
-                });
+                dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentSlide));
             }
-
-            prevBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                updateSlide(currentSlide - 1);
-            });
-            nextBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                updateSlide(currentSlide + 1);
-            });
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); updateSlide(currentSlide - 1); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); updateSlide(currentSlide + 1); });
         }
 
+        /* RENDERIZAÇÃO DE PROJETOS COM GARANTIA 100% DE VISIBILIDADE */
         function renderProjects(filter = "Todos") {
-            portfolioGrid.innerHTML = "";
-            const t = i18n[currentLang];
-            
-            const filteredProjects = (filter === "Todos" 
-                ? projects 
-                : projects.filter(p => getProjectCats(p).includes(filter)))
-                .sort((a, b) => b.year - a.year);
-
-            if (filteredProjects.length === 0) {
-                const emptyMsg = currentLang === 'pt' ? 'Nenhum projeto encontrado nesta categoria.' : (currentLang === 'es' ? 'No se encontraron proyectos en esta categoría.' : 'No projects found in this category.');
-                portfolioGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">${emptyMsg}</p>`;
-                return;
-            }
-
-            filteredProjects.forEach(p => {
-                const card = document.createElement('article');
-                card.className = 'project-card';
+            try {
+                if (!portfolioGrid) return;
+                portfolioGrid.innerHTML = "";
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { btn_view_project: "Ver Projeto" };
+                const filteredProjects = (filter === "Todos" ? projects : projects.filter(p => getProjectCats(p).includes(filter))).sort((a, b) => b.year - a.year);
                 
-                let displayDesc = p.desc;
-                if (currentLang === 'en' && p.desc_en) displayDesc = p.desc_en;
-                if (currentLang === 'es' && p.desc_es) displayDesc = p.desc_es;
+                if (filteredProjects.length === 0) {
+                    portfolioGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Nenhum projeto nesta categoria.</p>`;
+                    return;
+                }
 
-                const folder = p.folder || "Rugido";
-                const catsFormatted = getProjectCats(p).join(' • ');
-                
-                card.innerHTML = `
-                    <div class="project-carousel">
-                        <div class="carousel-track">
-                            <div class="carousel-slide" style="background:#101422; display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:0.8rem;">
-                                ⏳ Carregando mídias...
-                            </div>
+                filteredProjects.forEach(p => {
+                    const card = document.createElement('article');
+                    card.className = 'project-card';
+                    let displayDesc = p.desc;
+                    if (currentLang === 'en' && p.desc_en) displayDesc = p.desc_en;
+                    if (currentLang === 'es' && p.desc_es) displayDesc = p.desc_es;
+                    const folder = p.folder || "Rugido";
+                    const catsFormatted = getProjectCats(p).join(' • ');
+                    card.innerHTML = `
+                        <div class="project-carousel">
+                            <div class="carousel-track"><div class="carousel-slide" style="background:#101422; display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:0.8rem;">⏳ Carregando mídias...</div></div>
+                            <button class="carousel-btn prev" aria-label="Anterior" style="display:none;">‹</button>
+                            <button class="carousel-btn next" aria-label="Próximo" style="display:none;">›</button>
+                            <div class="carousel-dots"></div>
                         </div>
-                        <button class="carousel-btn prev" aria-label="Anterior" style="display:none;">‹</button>
-                        <button class="carousel-btn next" aria-label="Próximo" style="display:none;">›</button>
-                        <div class="carousel-dots"></div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-cat">${catsFormatted}</span>
-                            <span class="project-year">${p.year}</span>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-cat">${catsFormatted}</span><span class="project-year">${p.year}</span></div>
+                            <h3 class="project-title">${p.title}</h3>
+                            <div class="project-client">👥 ${p.client}</div>
+                            <p class="project-desc">${displayDesc}</p>
+                            ${(p.link && p.link.trim() !== "") ? `<a href="${p.link}" target="_blank" class="project-link">${t.btn_view_project} ↗</a>` : `<span class="project-link" style="opacity: 0.35; cursor: not-allowed; pointer-events: none;">${t.btn_view_project}</span>`}
                         </div>
-                        <h3 class="project-title">${p.title}</h3>
-                        <div class="project-client">👥 ${p.client}</div>
-                        <p class="project-desc">${displayDesc}</p>
-                        ${(p.link && p.link.trim() !== "") 
-                            ? `<a href="${p.link}" target="_blank" class="project-link">${t.btn_view_project}</a>` 
-                            : `<span class="project-link" style="opacity: 0.35; cursor: not-allowed; pointer-events: none;" title="Link indisponível">${t.btn_view_project}</span>`}
-                    </div>
-                `;
-                
-                portfolioGrid.appendChild(card);
-                buildDynamicCarousel(card, folder, p.title);
+                    `;
+                    portfolioGrid.appendChild(card);
+                    buildDynamicCarousel(card, folder, p.title);
+                });
+            } catch(e) { console.error("Erro ao renderizar projetos:", e); }
+        }
+
+        if (admFolderSelect) {
+            admFolderSelect.addEventListener('change', (e) => {
+                if (e.target.value === "NEW_FOLDER") {
+                    admFolderNewInput.style.display = "block";
+                    admFolderNewInput.required = true;
+                    admFolderNewInput.focus();
+                } else {
+                    admFolderNewInput.style.display = "none";
+                    admFolderNewInput.required = false;
+                    admFolderNewInput.value = "";
+                }
             });
         }
 
-        admFolderSelect.addEventListener('change', (e) => {
-            if (e.target.value === "NEW_FOLDER") {
-                admFolderNewInput.style.display = "block";
-                admFolderNewInput.required = true;
-                admFolderNewInput.focus();
-            } else {
-                admFolderNewInput.style.display = "none";
-                admFolderNewInput.required = false;
-                admFolderNewInput.value = "";
+        /* EQUIPE COMBOGÓ */
+        const initialTeam = [
+            { name: "Dr. Rennan Raffaele", role: "Coordenador", photo: "assets/equipe/rennan.jpeg", link: "https://www.linkedin.com/in/rennan-raffaele/" }
+        ];
+        let team = getSafeStorage('combogo_team', initialTeam);
+
+        function renderTeam() {
+            try {
+                const teamGrid = document.getElementById('team-grid');
+                if (!teamGrid) return;
+                teamGrid.innerHTML = "";
+                team.forEach((m, idx) => {
+                    const card = document.createElement('article');
+                    card.className = 'team-card reveal';
+                    if (idx > 0) card.classList.add(`reveal-delay-${idx % 4}`);
+                    const nameHtml = (m.link && m.link.trim() !== "") ? `<a href="${m.link}" target="_blank" class="team-name" title="Ver Perfil">${m.name} ↗</a>` : `<span class="team-name">${m.name}</span>`;
+                    card.innerHTML = `
+                        <div class="team-photo-wrapper"><img src="${m.photo}" alt="${m.name}" class="team-photo" onerror="this.src='https://via.placeholder.com/150?text=👤';"></div>
+                        ${nameHtml}
+                        <span class="team-role">${m.role}</span>
+                    `;
+                    teamGrid.appendChild(card);
+                });
+                if (typeof revealObserver !== 'undefined' && revealObserver) {
+                    document.querySelectorAll('#equipe .reveal').forEach(el => revealObserver.observe(el));
+                }
+            } catch(e) { console.error("Erro ao renderizar equipe:", e); }
+        }
+
+        function updateAdmTeamList() {
+            try {
+                const listUI = document.getElementById('adm-team-list-ui');
+                if (!listUI) return;
+                listUI.innerHTML = "";
+                team.forEach((m, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'adm-project-item';
+                    item.innerHTML = `
+                        <div class="adm-project-info"><strong>${m.name}</strong><span>💼 Cargo: ${m.role} | 📁 Foto: ${m.photo}</span></div>
+                        <div class="adm-project-actions"><button type="button" class="btn-edit" onclick="startEditTeam(${index})">✏️ Editar</button><button type="button" class="btn-danger" onclick="deleteTeam(${index})">🗑️ Excluir</button></div>
+                    `;
+                    listUI.appendChild(item);
+                });
+            } catch(e) { console.error(e); }
+        }
+
+        window.resetTeamForm = function() {
+            document.getElementById('adm-team-form').reset();
+            document.getElementById('adm-team-edit-id').value = "";
+            document.getElementById('team-submit-btn').textContent = "Salvar Membro na Equipe";
+            document.getElementById('team-cancel-btn').style.display = "none";
+        };
+
+        window.startEditTeam = function(index) {
+            const m = team[index];
+            document.getElementById('adm-team-edit-id').value = index;
+            document.getElementById('team-name').value = m.name;
+            document.getElementById('team-role').value = m.role;
+            document.getElementById('team-photo').value = m.photo;
+            document.getElementById('team-link').value = m.link || "";
+            document.getElementById('team-submit-btn').textContent = "💾 Atualizar Membro";
+            document.getElementById('team-cancel-btn').style.display = "block";
+            document.getElementById('team-name').focus();
+        };
+
+        window.deleteTeam = function(index) {
+            if (confirm(`⚠️ Excluir permanentemente "${team[index].name}" da equipe?`)) {
+                team.splice(index, 1);
+                setSafeStorage('combogo_team', team);
+                renderTeam();
+                updateAdmTeamList();
             }
+        };
+
+        const admTeamForm = document.getElementById('adm-team-form');
+        if (admTeamForm) {
+            admTeamForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const editId = document.getElementById('adm-team-edit-id').value;
+                const memberData = {
+                    name: document.getElementById('team-name').value.trim(),
+                    role: document.getElementById('team-role').value.trim(),
+                    photo: document.getElementById('team-photo').value.trim(),
+                    link: document.getElementById('team-link').value.trim() || ""
+                };
+                if (editId !== "") team[parseInt(editId)] = memberData;
+                else team.push(memberData);
+                setSafeStorage('combogo_team', team);
+                renderTeam();
+                updateAdmTeamList();
+                resetTeamForm();
+                alert("✅ Membro salvo com sucesso na equipe!");
+            });
+        }
+
+        document.getElementById('download-team-json-btn')?.addEventListener('click', () => {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(team, null, 4));
+            const anchor = document.createElement('a');
+            anchor.setAttribute("href", dataStr);
+            anchor.setAttribute("download", "team.json");
+            document.body.appendChild(anchor);
+            anchor.click();
+            anchor.remove();
         });
 
-        /**
-         * ============================================================================
-         * 4. GESTÃO DO PAINEL ADM (ABAS INTERATIVAS E CRUD COMPLETO)
-         * ============================================================================
-         */
+        /* PAINEL ADM */
         const admModal = document.getElementById('adm-modal');
         const footerAdmBtn = document.getElementById('footer-adm-btn');
         const closeAdmBtn = document.getElementById('close-adm-btn');
@@ -1020,60 +927,51 @@
         document.querySelectorAll('.adm-tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (btn.getAttribute('data-tab') !== 'tab-form') {
-                    // Limpa o modo de edição ao sair da aba
                     admForm.reset();
                     document.getElementById('adm-edit-id').value = "";
-                    const t = i18n[currentLang];
+                    const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_submit: "Adicionar Projeto ao Portfólio" };
                     document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
                     const cancelBtn = document.getElementById('adm-cancel-btn');
                     if (cancelBtn) cancelBtn.style.display = "none";
                     admFolderNewInput.style.display = "none";
                     admFolderNewInput.required = false;
                 }
-
                 document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
                 btn.classList.add('active');
                 document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
-                
-                if (btn.getAttribute('data-tab') === 'tab-list') {
-                    updateAdmProjectList();
-                }
+                if (btn.getAttribute('data-tab') === 'tab-list') updateAdmProjectList();
+                if (btn.getAttribute('data-tab') === 'tab-team') updateAdmTeamList();
             });
         });
 
         function updateAdmProjectList() {
-            admProjectsListUI.innerHTML = "";
-            const sorted = [...projects].sort((a, b) => b.year - a.year);
-
-            sorted.forEach(p => {
-                const originalIndex = projects.indexOf(p);
-                const item = document.createElement('div');
-                item.className = 'adm-project-item';
-                item.innerHTML = `
-                    <div class="adm-project-info">
-                        <strong>${p.title} (${p.year})</strong>
-                        <span>📁 Pasta: ${p.folder || 'N/A'} | 🏷️ Cat: ${getProjectCats(p).join(', ')}</span>
-                    </div>
-                    <div class="adm-project-actions">
-                        <button type="button" class="btn-edit" onclick="startEditProject(${originalIndex})">✏️ Editar</button>
-                        <button type="button" class="btn-danger" onclick="deleteProject(${originalIndex})">🗑️ Excluir</button>
-                    </div>
-                `;
-                admProjectsListUI.appendChild(item);
-            });
+            try {
+                if (!admProjectsListUI) return;
+                admProjectsListUI.innerHTML = "";
+                const sorted = [...projects].sort((a, b) => b.year - a.year);
+                sorted.forEach(p => {
+                    const originalIndex = projects.indexOf(p);
+                    const item = document.createElement('div');
+                    item.className = 'adm-project-item';
+                    item.innerHTML = `
+                        <div class="adm-project-info"><strong>${p.title} (${p.year})</strong><span>📁 Pasta: ${p.folder || 'N/A'} | 🏷️ Cat: ${getProjectCats(p).join(', ')}</span></div>
+                        <div class="adm-project-actions"><button type="button" class="btn-edit" onclick="startEditProject(${originalIndex})">✏️ Editar</button><button type="button" class="btn-danger" onclick="deleteProject(${originalIndex})">🗑️ Excluir</button></div>
+                    `;
+                    admProjectsListUI.appendChild(item);
+                });
+            } catch(e) { console.error(e); }
         }
 
         window.returnToList = function() {
             admForm.reset();
             document.getElementById('adm-edit-id').value = "";
-            const t = i18n[currentLang];
+            const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_submit: "Adicionar Projeto ao Portfólio" };
             document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
             const cancelBtn = document.getElementById('adm-cancel-btn');
             if (cancelBtn) cancelBtn.style.display = "none";
             admFolderNewInput.style.display = "none";
             admFolderNewInput.required = false;
-
             document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
             document.querySelector('[data-tab="tab-list"]').classList.add('active');
@@ -1083,13 +981,10 @@
 
         window.deleteProject = function(index) {
             const p = projects[index];
-            const confirmMsg = currentLang === 'pt' 
-                ? `⚠️ Tem certeza que deseja excluir permanentemente o projeto "${p.title}"?`
-                : `⚠️ Are you sure you want to permanently delete the project "${p.title}"?`;
-
+            const confirmMsg = currentLang === 'pt' ? `⚠️ Excluir permanentemente "${p.title}"?` : `⚠️ Permanently delete "${p.title}"?`;
             if (confirm(confirmMsg)) {
                 projects.splice(index, 1);
-                localStorage.setItem('combogo_projects', JSON.stringify(projects));
+                setSafeStorage('combogo_projects', projects);
                 updateDynamicCategories();
                 updateDynamicFolders();
                 updateAdmProjectList();
@@ -1099,342 +994,323 @@
 
         window.startEditProject = function(index) {
             const p = projects[index];
-            const t = i18n[currentLang];
-
+            const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_save: "💾 Salvar Alterações" };
             document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
             document.getElementById('tab-btn-form').classList.add('active');
             document.getElementById('tab-form').classList.add('active');
-
             document.getElementById('adm-edit-id').value = index;
             document.getElementById('adm-title').value = p.title;
             document.getElementById('adm-client').value = p.client;
             document.getElementById('adm-year').value = p.year;
             document.getElementById('adm-link').value = p.link || "";
             document.getElementById('adm-desc').value = p.desc || "";
-
             const projCats = getProjectCats(p);
-            document.querySelectorAll('#adm-cat-checkboxes input[type="checkbox"]').forEach(cb => {
-                cb.checked = projCats.includes(cb.value);
-            });
+            document.querySelectorAll('#adm-cat-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = projCats.includes(cb.value));
             document.getElementById('adm-cat-new').value = "";
-
-            if (Array.from(admFolderSelect.options).some(opt => opt.value === p.folder)) {
-                admFolderSelect.value = p.folder;
-            } else {
+            if (Array.from(admFolderSelect.options).some(opt => opt.value === p.folder)) admFolderSelect.value = p.folder;
+            else {
                 admFolderSelect.value = "NEW_FOLDER";
                 admFolderNewInput.style.display = "block";
                 admFolderNewInput.value = p.folder;
             }
-
             document.getElementById('adm-submit-btn').textContent = t.adm_btn_save;
             const cancelBtn = document.getElementById('adm-cancel-btn');
             if (cancelBtn) cancelBtn.style.display = "block";
         };
 
-        footerAdmBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const t = i18n[currentLang];
-            const senha = prompt(t.prompt_pass);
-            
-            if (senha === "ComboExtensão") {
-                admModal.classList.add('active');
-                updateAdmProjectList();
-            } else if (senha !== null) {
-                alert(t.alert_pass_wrong);
-            }
-        });
+        if (footerAdmBtn) {
+            footerAdmBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { prompt_pass: "Digite a senha ADM:", alert_pass_wrong: "❌ Senha incorreta!" };
+                const senha = prompt(t.prompt_pass);
+                if (senha === "ComboExtensão") {
+                    admModal.classList.add('active');
+                    updateAdmProjectList();
+                    updateAdmTeamList();
+                } else if (senha !== null) alert(t.alert_pass_wrong);
+            });
+        }
 
         function closeModal() {
+            if (!admModal) return;
             admModal.classList.remove('active');
             admForm.reset();
             document.getElementById('adm-edit-id').value = "";
-            document.getElementById('adm-submit-btn').textContent = i18n[currentLang].adm_btn_submit;
+            const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_submit: "Adicionar Projeto ao Portfólio" };
+            document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
             const cancelBtn = document.getElementById('adm-cancel-btn');
             if (cancelBtn) cancelBtn.style.display = "none";
             admFolderNewInput.style.display = "none";
             admFolderNewInput.required = false;
         }
 
-        closeAdmBtn.addEventListener('click', closeModal);
-        admModal.addEventListener('click', (e) => {
-            if (e.target === admModal) closeModal();
-        });
+        if (closeAdmBtn) closeAdmBtn.addEventListener('click', closeModal);
+        if (admModal) admModal.addEventListener('click', (e) => { if (e.target === admModal) closeModal(); });
 
-        admForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const t = i18n[currentLang];
-
-            let selectedCats = Array.from(document.querySelectorAll('#adm-cat-checkboxes input:checked')).map(cb => cb.value);
-            const extraCats = document.getElementById('adm-cat-new').value.trim();
-            
-            if (extraCats !== "") {
-                extraCats.split(',').forEach(c => {
-                    const clean = c.trim();
-                    if (clean && !selectedCats.includes(clean)) {
-                        selectedCats.push(clean);
-                        let custom = JSON.parse(localStorage.getItem('combogo_custom_categories')) || [];
-                        if (!custom.includes(clean)) {
-                            custom.push(clean);
-                            localStorage.setItem('combogo_custom_categories', JSON.stringify(custom));
+        if (admForm) {
+            admForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_submit: "Adicionar Projeto ao Portfólio", alert_success: "✅ Projeto salvo com sucesso!" };
+                let selectedCats = Array.from(document.querySelectorAll('#adm-cat-checkboxes input:checked')).map(cb => cb.value);
+                const extraCats = document.getElementById('adm-cat-new').value.trim();
+                if (extraCats !== "") {
+                    extraCats.split(',').forEach(c => {
+                        const clean = c.trim();
+                        if (clean && !selectedCats.includes(clean)) {
+                            selectedCats.push(clean);
+                            let custom = getSafeStorage('combogo_custom_categories', []);
+                            if (!custom.includes(clean)) { custom.push(clean); setSafeStorage('combogo_custom_categories', custom); }
                         }
-                    }
-                });
-            }
-
-            if (selectedCats.length === 0) selectedCats = ["Inovação"];
-
-            let selectedFolder = admFolderSelect.value;
-            if (selectedFolder === "NEW_FOLDER") {
-                selectedFolder = admFolderNewInput.value.trim();
-                if (selectedFolder === "") selectedFolder = "Rugido";
-            }
-
-            const descText = document.getElementById('adm-desc').value.trim();
-            const editId = document.getElementById('adm-edit-id').value;
-
-            const projectData = {
-                title: document.getElementById('adm-title').value.trim(),
-                client: document.getElementById('adm-client').value.trim(),
-                categories: selectedCats,
-                year: parseInt(document.getElementById('adm-year').value),
-                folder: selectedFolder,
-                desc: descText,
-                desc_en: descText,
-                desc_es: descText,
-                link: document.getElementById('adm-link').value.trim() || ""
-            };
-
-            if (editId !== "") {
-                projects[parseInt(editId)] = projectData;
-            } else {
-                projects.unshift(projectData);
-            }
-
-            localStorage.setItem('combogo_projects', JSON.stringify(projects));
-
-            updateDynamicCategories();
-            updateDynamicFolders();
-            updateAdmProjectList(); // <-- Lista atualizada na hora!
-            
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="Todos"]').classList.add('active');
-            renderProjects("Todos");
-
-            admForm.reset();
-            document.getElementById('adm-edit-id').value = "";
-            document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
-            const cancelBtn = document.getElementById('adm-cancel-btn');
-            if (cancelBtn) cancelBtn.style.display = "none";
-            
-            if (editId !== "") {
-                document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
-                document.querySelector('[data-tab="tab-list"]').classList.add('active');
-                document.getElementById('tab-list').classList.add('active');
-            }
-
-            alert(t.alert_success);
-        });
-
-        admCreateCatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const t = i18n[currentLang];
-            const newCat = document.getElementById('adm-cat-create-input').value.trim();
-
-            if (newCat !== "") {
-                let custom = JSON.parse(localStorage.getItem('combogo_custom_categories')) || [];
-                if (!custom.includes(newCat)) {
-                    custom.push(newCat);
-                    localStorage.setItem('combogo_custom_categories', JSON.stringify(custom));
-                    updateDynamicCategories();
-                    alert(t.alert_cat_created);
+                    });
                 }
-                admCreateCatForm.reset();
-            }
-        });
-
-        admRenameCatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const t = i18n[currentLang];
-            const oldCatName = document.getElementById('adm-cat-old').value;
-            const newCatName = document.getElementById('adm-cat-rename').value.trim();
-
-            if (newCatName !== "") {
-                projects.forEach(p => {
-                    let cats = getProjectCats(p);
-                    const index = cats.indexOf(oldCatName);
-                    if (index !== -1) {
-                        cats[index] = newCatName;
-                        p.categories = [...new Set(cats)];
-                    }
-                });
-
-                let custom = JSON.parse(localStorage.getItem('combogo_custom_categories')) || [];
-                const cIdx = custom.indexOf(oldCatName);
-                if (cIdx !== -1) custom[cIdx] = newCatName;
-                localStorage.setItem('combogo_custom_categories', JSON.stringify([...new Set(custom)]));
-
-                localStorage.setItem('combogo_projects', JSON.stringify(projects));
+                if (selectedCats.length === 0) selectedCats = ["Inovação"];
+                let selectedFolder = admFolderSelect.value;
+                if (selectedFolder === "NEW_FOLDER") {
+                    selectedFolder = admFolderNewInput.value.trim();
+                    if (selectedFolder === "") selectedFolder = "Rugido";
+                }
+                const descText = document.getElementById('adm-desc').value.trim();
+                const editId = document.getElementById('adm-edit-id').value;
+                const projectData = {
+                    title: document.getElementById('adm-title').value.trim(),
+                    client: document.getElementById('adm-client').value.trim(),
+                    categories: selectedCats,
+                    year: parseInt(document.getElementById('adm-year').value),
+                    folder: selectedFolder,
+                    desc: descText, desc_en: descText, desc_es: descText,
+                    link: document.getElementById('adm-link').value.trim() || ""
+                };
+                if (editId !== "") projects[parseInt(editId)] = projectData;
+                else projects.unshift(projectData);
+                setSafeStorage('combogo_projects', projects);
                 updateDynamicCategories();
+                updateDynamicFolders();
                 updateAdmProjectList();
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.filter-btn[data-filter="Todos"]').classList.add('active');
                 renderProjects("Todos");
-                admRenameCatForm.reset();
-                alert(t.alert_cat_success);
-            }
-        });
+                admForm.reset();
+                document.getElementById('adm-edit-id').value = "";
+                document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
+                const cancelBtn = document.getElementById('adm-cancel-btn');
+                if (cancelBtn) cancelBtn.style.display = "none";
+                if (editId !== "") {
+                    document.querySelectorAll('.adm-tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.remove('active'));
+                    document.querySelector('[data-tab="tab-list"]').classList.add('active');
+                    document.getElementById('tab-list').classList.add('active');
+                }
+                alert(t.alert_success);
+            });
+        }
 
-        downloadJsonBtn.addEventListener('click', () => {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projects, null, 4));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "projects.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        });
+        if (admCreateCatForm) {
+            admCreateCatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { alert_cat_created: "✨ Categoria criada com sucesso!" };
+                const newCat = document.getElementById('adm-cat-create-input').value.trim();
+                if (newCat !== "") {
+                    let custom = getSafeStorage('combogo_custom_categories', []);
+                    if (!custom.includes(newCat)) { custom.push(newCat); setSafeStorage('combogo_custom_categories', custom); updateDynamicCategories(); alert(t.alert_cat_created); }
+                    admCreateCatForm.reset();
+                }
+            });
+        }
 
-        /**
-         * ============================================================================
-         * 5. INTERATIVIDADE GERAL E MENU MOBILE
-         * ============================================================================
-         */
+        if (admRenameCatForm) {
+            admRenameCatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { alert_cat_success: "✏️ Categoria renomeada!" };
+                const oldCatName = document.getElementById('adm-cat-old').value;
+                const newCatName = document.getElementById('adm-cat-rename').value.trim();
+                if (newCatName !== "") {
+                    projects.forEach(p => {
+                        let cats = getProjectCats(p);
+                        const index = cats.indexOf(oldCatName);
+                        if (index !== -1) { cats[index] = newCatName; p.categories = [...new Set(cats)]; }
+                    });
+                    let custom = getSafeStorage('combogo_custom_categories', []);
+                    const cIdx = custom.indexOf(oldCatName);
+                    if (cIdx !== -1) custom[cIdx] = newCatName;
+                    setSafeStorage('combogo_custom_categories', [...new Set(custom)]);
+                    setSafeStorage('combogo_projects', projects);
+                    updateDynamicCategories();
+                    updateAdmProjectList();
+                    renderProjects("Todos");
+                    admRenameCatForm.reset();
+                    alert(t.alert_cat_success);
+                }
+            });
+        }
+
+        if (downloadJsonBtn) {
+            downloadJsonBtn.addEventListener('click', () => {
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projects, null, 4));
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.setAttribute("href", dataStr);
+                downloadAnchor.setAttribute("download", "projects.json");
+                document.body.appendChild(downloadAnchor);
+                downloadAnchor.click();
+                downloadAnchor.remove();
+            });
+        }
+
+        /* MENU MOBILE E FORMULÁRIO */
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? "✕" : "☰";
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.textContent = "☰";
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.textContent = navMenu.classList.contains('active') ? "✕" : "☰";
             });
-        });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => { navMenu.classList.remove('active'); mobileMenuBtn.textContent = "☰"; });
+            });
+        }
 
-        /**
-         * ============================================================================
-         * 6. ENVIO DE E-MAIL EM SEGUNDO PLANO (AJAX / FORMSUBMIT)
-         * ============================================================================
-         */
         const briefingForm = document.getElementById('briefing-form');
         if (briefingForm) {
             briefingForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Impede o recarregamento padrão da página
-                
+                e.preventDefault();
                 const submitBtn = briefingForm.querySelector('button[type="submit"]');
                 const originalBtnText = submitBtn.textContent;
                 submitBtn.textContent = "⏳ Enviando...";
                 submitBtn.disabled = true;
-
-                const formData = new FormData(briefingForm);
-
+                const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { alert_form_sent: "🚀 Solicitação enviada com sucesso!" };
                 fetch("https://formsubmit.co/ajax/combogo.unicap@unicap.br", {
                     method: "POST",
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    body: new FormData(briefingForm),
+                    headers: { 'Accept': 'application/json' }
                 })
                 .then(response => response.json())
-                .then(data => {
-                    alert(i18n[currentLang].alert_form_sent);
-                    briefingForm.reset(); // Limpa os campos após enviar com sucesso
-                })
-                .catch(error => {
-                    alert("❌ Ocorreu um erro ao enviar. Por favor, tente novamente ou envie um e-mail direto para combogo.unicap@unicap.br");
-                    console.error("Erro no envio:", error);
-                })
-                .finally(() => {
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                });
+                .then(() => { alert(t.alert_form_sent); briefingForm.reset(); })
+                .catch(error => { alert("❌ Ocorreu um erro ao enviar. Envie um e-mail direto para combogo.unicap@unicap.br"); console.error(error); })
+                .finally(() => { submitBtn.textContent = originalBtnText; submitBtn.disabled = false; });
             });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            updateDynamicCategories();
-            updateDynamicFolders();
-            renderHeroQuote(); // Garante o carregamento da frase clean logo na inicialização
-            renderProjects("Todos");
-        });
-        /**
-         * ============================================================================
-         * 7. MOTOR DE SCROLL PRAZEROSO (HEADER DINÂMICO, REVEAL & PROGRESS BAR)
-         * ============================================================================
-         */
-        
-        // 1. Barra de Progresso de Rolagem e Header Dinâmico
+        /* SCROLL E REVELAÇÃO BLINDADA */
         const headerEl = document.querySelector('header');
         const progressBar = document.getElementById('scroll-progress');
-
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
-            
-            // Efeito no Header
-            if (currentScroll > 50) {
-                headerEl.classList.add('scrolled');
-            } else {
-                headerEl.classList.remove('scrolled');
+            if (headerEl) {
+                if (currentScroll > 50) headerEl.classList.add('scrolled');
+                else headerEl.classList.remove('scrolled');
             }
-
-            // Efeito na Barra de Progresso
             if (progressBar) {
                 const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrollPercentage = (currentScroll / totalHeight) * 100;
-                progressBar.style.width = scrollPercentage + '%';
+                progressBar.style.width = ((currentScroll / totalHeight) * 100) + '%';
             }
-        }, { passive: true }); // passive: true melhora a performance de scroll do navegador!
+        }, { passive: true });
 
-        // 2. Intersection Observer para Revelação em Cascata (Scroll Reveal)
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    // Para animar apenas na primeira vez que rolar para baixo, descomente a linha abaixo:
-                    // observer.unobserve(entry.target); 
-                }
-            });
-        };
-
-        const revealOptions = {
-            root: null,
-            rootMargin: '0px 0px -80px 0px', // Aciona o efeito um pouco antes do elemento chegar no final da tela
-            threshold: 0.15
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-
+        let revealObserver = null;
         function initScrollReveal() {
-            document.querySelectorAll('.reveal').forEach(el => {
-                revealObserver.observe(el);
-            });
+            try {
+                revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { root: null, rootMargin: '50px 0px -20px 0px', threshold: 0.02 });
+
+                document.querySelectorAll('.reveal').forEach(el => {
+                    revealObserver.observe(el);
+                    // Blindagem: se o item já está na tela ao abrir a página, ativa imediatamente!
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight + 100) {
+                        el.classList.add('active');
+                    }
+                });
+
+                // Ativa o modo oculto apenas após comprovar que o observador está rodando
+                document.documentElement.classList.add('js-reveal-active');
+            } catch(e) { console.error("Erro ao iniciar revelação:", e); }
         }
 
-        // 3. Atualização Inteligente no Portfólio Dinâmico
-        // Como o seu portfólio é gerado pelo JavaScript (localStorage), 
-        // precisamos aplicar o efeito de reveal nos cards dinamicamente!
-        const originalRenderProjects = renderProjects;
-        renderProjects = function(filter = "Todos") {
-            originalRenderProjects(filter); // Executa sua função original
-            
-            // Adiciona animação suave em cascata para os cards gerados
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach((card, idx) => {
-                card.classList.add('reveal');
-                // Cria uma cascata visual de no máximo 4 níveis de atraso
-                const delayIndex = idx % 4;
-                if (delayIndex > 0) card.classList.add(`reveal-delay-${delayIndex}`);
-                revealObserver.observe(card);
-            });
-        };
-
-        // Inicializa o observador assim que o DOM estiver pronto
+        /* INICIALIZAÇÃO SEGURA DO SISTEMA */
         document.addEventListener('DOMContentLoaded', () => {
-            initScrollReveal();
+            try { updateDynamicCategories(); } catch(e) { console.error(e); }
+            try { updateDynamicFolders(); } catch(e) { console.error(e); }
+            try { renderHeroQuote(); } catch(e) { console.error(e); }
+            try { renderProjects("Todos"); } catch(e) { console.error(e); }
+            try { renderTeam(); } catch(e) { console.error(e); }
+            try { initScrollReveal(); } catch(e) { console.error(e); }
         });
+    </script>
+
+    <!-- REDE NEURAL INTERATIVA (CANVAS COM DISTÂNCIA 75 E CONEXÃO LARANJA) -->
+    <script>
+    (function() {
+        try {
+            const canvas = document.getElementById('neuro-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+            const mouse = { x: null, y: null, radius: 100 };
+            
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+
+            function init() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                const count = Math.min(Math.floor(width / 25), 50);
+                particles = Array.from({ length: count }, () => ({
+                    x: Math.random() * width, y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.6, vy: (Math.random() - 0.5) * 0.6,
+                    radius: Math.random() * 1.8 + 1.2, connected: false
+                }));
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                    p.connected = false;
+                });
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    if (mouse.x && mouse.y) {
+                        const distMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                        if (distMouse < mouse.radius) {
+                            p.connected = true;
+                            ctx.lineWidth = 1.2 - (distMouse / mouse.radius);
+                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.4)';
+                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                        }
+                    }
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 75) {
+                            p.connected = true; p2.connected = true;
+                            ctx.lineWidth = 1 - (dist / 75);
+                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.25)';
+                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.connected ? p.radius * 1.4 : p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.connected ? '#FF6B00' : '#00C9DB';
+                    if (p.connected) { ctx.shadowBlur = 12; ctx.shadowColor = '#FF6B00'; }
+                    else { ctx.shadowBlur = 4; ctx.shadowColor = '#00C9DB'; }
+                    ctx.fill(); ctx.shadowBlur = 0;
+                });
+                requestAnimationFrame(animate);
+            }
+            window.addEventListener('resize', init);
+            init(); animate();
+        } catch(e) { console.error("Erro no neuro-canvas:", e); }
+    })();
     </script>
 </body>
 </html>

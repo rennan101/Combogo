@@ -85,7 +85,7 @@ const i18n = {
         form_desc: "Descrição do Desafio ou Ideia *",
         form_desc_ph: "Descreva brevemente o problema que deseja resolver ou a aplicação interativa que imaginou...",
         form_submit: "Solicitar Proposta Comercial",
-        info_title: "Informações Diretas",
+        info_title: "Informações",
         info_address_title: "📍 Endereço Físico",
         info_address_val: "1º andar do Museu de Arqueologia e Ciências Naturais - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE",
         info_email_title: "📧 E-mail da Coordenação",
@@ -125,6 +125,10 @@ const i18n = {
         alert_cat_success: "✅ Categoria renomeada em todos os projetos compatíveis!",
         alert_form_sent: "Solicitação enviada com sucesso! Entraremos em contato em breve.",
         btn_view_project: "Ver Projeto / Case ↗"
+        nav_team: "Equipe",
+        team_title: "Nossa Equipe",
+        team_sub: "Conheça as mentes acadêmicas e criativas que conduzem as pesquisas e desenvolvimentos da agência.",
+        adm_tab_team: "👥 Equipe",
     },
     en: {
         logo_sub: "Interactive Solutions Agency",
@@ -207,7 +211,7 @@ const i18n = {
         form_desc: "Challenge or Idea Description *",
         form_desc_ph: "Briefly describe the problem you want to solve or the interactive application you envisioned...",
         form_submit: "Request a Proposal",
-        info_title: "Direct Information",
+        info_title: "Informations",
         info_address_title: "📍 Physical Address",
         info_address_val: "1st floor of the Museum of Archaeology and Natural Sciences - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE - Brazil",
         info_email_title: "📧 Coordination Email",
@@ -247,6 +251,10 @@ const i18n = {
         alert_cat_success: "✅ Category renamed across all matching projects!",
         alert_form_sent: "Request sent successfully! We will contact you soon.",
         btn_view_project: "View Project / Case ↗"
+        nav_team: "Team",
+        team_title: "Our Team",
+        team_sub: "Meet the academic and creative minds driving the agency's research and developments.",
+        adm_tab_team: "👥 Team",
     },
     es: {
         logo_sub: "Agencia de Soluciones Interactivas",
@@ -329,7 +337,7 @@ const i18n = {
         form_desc: "Descripción del Desafío o Idea *",
         form_desc_ph: "Describa brevemente el problema que desea resolver o la aplicación interactiva que imaginou...",
         form_submit: "Solicitar Propuesta",
-        info_title: "Información Directa",
+        info_title: "Informaciónes",
         info_address_title: "📍 Dirección Física",
         info_address_val: "1º piso del Museo de Arqueologia e Ciencias Naturales - UNICAP.<br>Av. Oliveira Lima, 824 - Boa Vista, Recife - PE - Brasil",
         info_email_title: "📧 Correo de la Coordinación",
@@ -369,5 +377,9 @@ const i18n = {
         alert_cat_success: "✅ ¡Categoría renombrada en todos los proyectos coincidentes!",
         alert_form_sent: "¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.",
         btn_view_project: "Ver Proyecto / Case ↗"
+        nav_team: "Equipo",
+        team_title: "Nuestro Equipo",
+        team_sub: "Conozca las mentes académicas y creativas que impulsan las investigaciones y desarrollos de la agencia.",
+        adm_tab_team: "👥 Equipo",
     }
 };

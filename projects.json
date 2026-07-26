@@ -153,7 +153,8 @@
         "title": "Biofeedback & VR Terapêutico",
         "client": "Doutorado em Design UFPE",
         "categories": [
-            "XR"
+            "XR",
+            "Saúde"
         ],
         "year": 2021,
         "folder": "Vr_Treinamento",
@@ -179,6 +180,7 @@
         "title": "Campanha \"Teste Seu Olhar\"",
         "client": "Prefeitura do Recife (SDH)",
         "categories": [
+            "XR",
             "Impacto Social",
             "Inovação"
         ],
