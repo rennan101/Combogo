@@ -352,8 +352,9 @@ header {
     background: none;
     border: none;
     color: #FFFFFF;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
+    z-index: 1001;
 }
 
 /* Hero Section */
@@ -1174,42 +1175,6 @@ footer {
     border-left: 3px solid var(--secondary);
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-    .about-grid, .partners-grid, .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .hero-content h1 { font-size: 2.8rem; }
-    .footer-brands { gap: 24px; }
-    .research-number { font-size: 3rem; }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--bg-alt);
-        flex-direction: column;
-        padding: 24px;
-        gap: 20px;
-        border-bottom: 1px solid var(--border-color);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: clip-path 0.4s ease;
-    }
-    .nav-links.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    .menu-toggle { display: block; }
-    .checkbox-group { grid-template-columns: 1fr; }
-    .contact-wrapper { padding: 24px; }
-    section { padding: 60px 0; }
-    .lang-menu { right: auto; left: 50%; transform: translateX(-50%); }
-    .adm-project-item { flex-direction: column; align-items: flex-start; }
-    .adm-project-actions { width: 100%; justify-content: flex-end; margin-top: 8px; }
-}
 /* ==========================================================================
    HERO GRID & PAINEL DE QUOTES CLEAN (RIGHT PANEL)
    ========================================================================== */
@@ -1283,6 +1248,7 @@ footer {
     margin: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 /* ==========================================================================
    EFEITOS DE SCROLL PREMIUM & UI/UX DESIGN
    ========================================================================== */
@@ -1292,7 +1258,7 @@ html {
     scroll-padding-top: 90px;
 }
 
-/* 2. Cabeçalho Dinâmico ao rolar a página (mais compacto e com sombra profunda) */
+/* 2. Cabeçalho Dinâmico ao rolar a página */
 header {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1304,10 +1270,10 @@ header.scrolled {
 }
 
 header.scrolled .nav-container {
-    height: 64px; /* Compacta de 80px para 64px suavemente */
+    height: 64px;
 }
 
-/* 3. Barra de Progresso de Leitura (Scroll Progress) */
+/* 3. Barra de Progresso de Leitura */
 .scroll-progress-bar {
     position: fixed;
     top: 0;
@@ -1320,7 +1286,7 @@ header.scrolled .nav-container {
     pointer-events: none;
 }
 
-/* 4. Motor de Revelação Suave ao Rolar (Scroll Reveal via GPU) */
+/* 4. Motor de Revelação Suave ao Rolar */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -1334,7 +1300,99 @@ header.scrolled .nav-container {
     transform: translateY(0);
 }
 
-/* Atrasos em cascata para grids (Stagger Effect) */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ==========================================================================
+   RESPONSIVIDADE GERAL E CORREÇÃO DO MENU DE IDIOMAS MOBILE
+   ========================================================================== */
+@media (max-width: 992px) {
+    .about-grid, .partners-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-content h1 { font-size: 2.8rem; }
+    .footer-brands { gap: 24px; }
+    .research-number { font-size: 3rem; }
+    .research-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        position: static; /* Garante que o menu suspenso use o cabeçalho como referência inteira */
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Fixa exatamente no limite inferior do cabeçalho sem deixar lacunas */
+        left: 0;
+        width: 100%;
+        background: rgba(10, 15, 29, 0.98); /* Fundo com a mesma opacidade do header */
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease;
+        z-index: 1050;
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+    }
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    }
+    .menu-toggle { 
+        display: block; 
+    }
+    
+    /* CORREÇÃO DO MENU DE IDIOMAS MOBILE */
+    .lang-dropdown {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .lang-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+    .lang-menu {
+        right: 0;
+        left: 0;
+        width: 100%;
+        position: relative;
+        box-shadow: none;
+        margin-top: 8px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1600;
+    }
+    .lang-menu a {
+        justify-content: center;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .checkbox-group { grid-template-columns: 1fr; }
+    .contact-wrapper { padding: 24px; }
+    section { padding: 60px 0; }
+    
+    .solutions-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .adm-project-item { flex-direction: column; align-items: flex-start; }
+    .adm-project-actions { width: 100%; justify-content: flex-end; margin-top: 8px; }
+    .modal-card { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.05rem; }
+    .section-header h2 { font-size: 2rem; }
+    .hero-ctas { flex-direction: column; width: 100%; }
+    .hero-ctas .btn { width: 100%; }
+    .research-card { padding: 24px; }
+}
