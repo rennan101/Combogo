@@ -3,123 +3,113 @@
         "title": "Oncoverso",
         "client": "Hospital de Câncer de Pernambuco (HCP)",
         "categories": [
+            "Saúde",
             "XR",
-            "Jogos",
-            "Impacto Social",
-            "Saúde"
+            "Inovação"
         ],
         "year": 2026,
         "folder": "HCP",
-        "desc": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-        "desc_en": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-        "desc_es": "Uso de Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-        "link": "https://medicinasa.com.br/hcp-oncoverso/"
+        "desc": "Desenvolvemos soluções em Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
+        "link": ""
     },
     {
         "title": "Recife Invasion - Rua da Aurora",
         "client": "Projeto Autoral Combogó",
         "categories": [
             "XR",
-            "Jogos"
+            "Jogos Digitais",
+            "Inovação"
         ],
         "year": 2026,
         "folder": "Recife Invasion",
         "desc": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
-        "desc_en": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
-        "desc_es": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
         "link": "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1"
-    },
-    {
-        "title": "Plataforma Quark",
-        "client": "Startup Happen",
-        "categories": [
-            "Impacto Social",
-            "Inovação"
-        ],
-        "year": 2024,
-        "folder": "Quark",
-        "desc": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
-        "desc_en": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
-        "desc_es": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, premiado pelo MIT Tech Review LATAM.",
-        "link": "https://www.plataformaquark.com/"
     },
     {
         "title": "Fotogrametria Anatômica 3D",
         "client": "Curso de Medicina UNICAP",
         "categories": [
-            "Saúde",
-            "Inovação"
+            "Inovação",
+            "Modelagem 3D",
+            "Saúde"
         ],
-        "year": 2023,
+        "year": 2025,
         "folder": "Fotogrametria",
         "desc": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
-        "desc_en": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
-        "desc_es": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
         "link": ""
+    },
+    {
+        "title": "Plataforma Quark",
+        "client": "Startup Happen",
+        "categories": [
+            "Inovação",
+            "Apps & Gamificação"
+        ],
+        "year": 2024,
+        "folder": "Quark",
+        "desc": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, aplicação foi premiada pelo MIT Tech Review LATAM e GovTech Summit.",
+        "link": "https://www.plataformaquark.com/"
     },
     {
         "title": "O Resgate de Fárya",
         "client": "Viu Cine (Funcultura)",
         "categories": [
-            "Jogos"
+            "Jogos Digitais",
+            "Arte 2D"
         ],
         "year": 2023,
         "folder": "Farya",
         "desc": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
-        "desc_en": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
-        "desc_es": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
         "link": "https://oresgatedefarya.itch.io/o-resgate-de-farya"
     },
     {
         "title": "Exposição Plural & Neon no Metaverso",
         "client": "Cursos de Fotografia e Arquitetura UNICAP",
-        "category": "Inovação",
+        "categories": [
+            "Inovação",
+            "XR",
+            "Modelagem 3D"
+        ],
         "year": 2023,
         "folder": "Metaverse",
         "desc": "Construção de galeria interativa 3D no VRChat para exibição de 30 fotografias e narrativas contemporâneas no metaverso.",
-        "desc_en": "Construction of an interactive 3D gallery in VRChat showcasing 30 photographs and contemporary narratives in the metaverse.",
-        "desc_es": "Construcción de galería interactiva 3D en VRChat para exhibir 30 fotografías y narrativas contemporáneas en el metaverso.",
-        "link": "https://combogounicap.itch.io/"
+        "link": ""
     },
     {
         "title": "Trilha das Memórias Maringá",
         "client": "SEBRAE & Sec. de Turismo de Maringá-PR",
         "categories": [
-            "Impacto Social",
+            "Jogos Digitais",
             "Inovação"
         ],
         "year": 2022,
         "folder": "Trilha",
         "desc": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
-        "desc_en": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
-        "desc_es": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
         "link": "https://www.instagram.com/trilhadasmemorias/"
     },
     {
         "title": "Projeto Flautista RV",
         "client": "Museu de Arqueologia UNICAP (MUSARQ)",
         "categories": [
+            "Saúde",
             "XR",
             "Inovação"
         ],
         "year": 2022,
         "folder": "Flautista",
         "desc": "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
-        "desc_en": "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
-        "desc_es": "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
-        "link": "https://www.instagram.com/combogounicap/"
+        "link": ""
     },
     {
         "title": "Livro de RPG Digital",
         "client": "P3Boardgames",
         "categories": [
-            "Jogos"
+            "Arte 2D",
+            "Jogos Digitais"
         ],
         "year": 2022,
         "folder": "Ilustracao_rpg",
         "desc": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
-        "desc_en": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
-        "desc_es": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
         "link": "https://www.instagram.com/p3boardgames/"
     },
     {
@@ -127,135 +117,120 @@
         "client": "Movimento Leões do Norte & Fundo Brasil",
         "categories": [
             "Impacto Social",
-            "Inovação"
+            "Apps & Gamificação"
         ],
         "year": 2021,
         "folder": "Rugido",
         "desc": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
-        "desc_en": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
-        "desc_es": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
         "link": "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf"
     },
     {
         "title": "Animação Institucional #unicapsegura",
         "client": "PRAD / Departamento Predial UNICAP",
         "categories": [
-            "Animação 2D"
+            "Arte 2D",
+            "Inovação"
         ],
         "year": 2021,
         "folder": "Animacao_incendio",
         "desc": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
-        "desc_en": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
-        "desc_es": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
         "link": "https://www.youtube.com/watch?v=USQH1NfQ6Jw"
     },
     {
         "title": "Biofeedback & VR Terapêutico",
         "client": "Doutorado em Design UFPE",
         "categories": [
+            "Saúde",
             "XR",
-            "Saúde"
+            "Inovação"
         ],
         "year": 2021,
         "folder": "Vr_Treinamento",
         "desc": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
-        "desc_en": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
-        "desc_es": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
         "link": "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full"
     },
     {
         "title": "Aplicativo Previna (SEPOD)",
         "client": "Secretaria Executiva de Políticas sobre Drogas",
         "categories": [
-            "Impacto Social"
+            "Impacto Social",
+            "Apps & Gamificação"
         ],
         "year": 2020,
         "folder": "Sepod",
         "desc": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
-        "desc_en": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
-        "desc_es": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
         "link": "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1"
     },
     {
         "title": "Campanha \"Teste Seu Olhar\"",
         "client": "Prefeitura do Recife (SDH)",
         "categories": [
-            "XR",
             "Impacto Social",
-            "Inovação"
+            "XR"
         ],
         "year": 2019,
         "folder": "Vr_Olhar",
         "desc": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
-        "desc_en": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
-        "desc_es": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
         "link": "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a"
     },
     {
         "title": "PsicoPing",
         "client": "Curso de Psicologia UNICAP",
         "categories": [
-            "Jogos",
             "Saúde",
-            "Inovação"
+            "Jogos Sérios",
+            "XR"
         ],
         "year": 2019,
         "folder": "Psicoping",
         "desc": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-        "desc_en": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-        "desc_es": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-        "link": "https://www.youtube.com/@combogounicap"
+        "link": "https://globoplay.globo.com/v/7497090/?s=0s"
     },
     {
         "title": "English Teen - Game of Cabo",
         "client": "IFPE Campus Cabo de Santo Agostinho",
         "categories": [
-            "Inovação"
+            "Jogos Digitais",
+            "Apps & Gamificação"
         ],
         "year": 2018,
         "folder": "Game_cabo",
         "desc": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
-        "desc_en": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
-        "desc_es": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
         "link": "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/"
     },
     {
         "title": "Corre Ascensinho",
         "client": "UNICAP",
         "categories": [
-            "Jogos"
+            "Jogos Digitais",
+            "Arte 2D"
         ],
         "year": 2018,
         "folder": "Corre_ascensinho",
         "desc": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
-        "desc_en": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
-        "desc_es": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
         "link": ""
     },
     {
         "title": "Game para o Católica In",
         "client": "UNICAP",
         "categories": [
-            "Jogos"
+            "Jogos Digitais"
         ],
         "year": 2017,
         "folder": "CatolicaIn",
-        "desc": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
-        "desc_en": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
-        "desc_es": "Jogo digital vocacional para o evento anual de orientação profissional voltado a estudantes do Ensino Médio.",
+        "desc": "Jogo digital vocacional para o evento anual de orientation profissional voltado a estudantes do Ensino Médio.",
         "link": "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/"
     },
     {
         "title": "Especial Interativo de Natal",
         "client": "Ação de Extensão Combogó",
         "categories": [
-            "Jogos"
+            "Impacto Social",
+            "Apps & Gamificação"
         ],
         "year": 2017,
         "folder": "Natal_2017",
         "desc": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
-        "desc_en": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
-        "desc_es": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
         "link": "https://www.youtube.com/watch?v=SgJgV_eys5U"
     }
 ]
