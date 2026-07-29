@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Dr. Rennan Raffaele",
+        "role": "Coordenador",
+        "photo": "assets/equipe/rennan.jpeg",
+        "link": "https://www.linkedin.com/in/rennan-raffaele/"
+    },
+    {
+        "name": "Luana Felipe Meneghini",
+        "role": "Game Designer / QA",
+        "photo": "assets/equipe/luana.jpeg",
+        "link": "https://www.linkedin.com/in/luana-meneghini-650830269/"
+    },
+    {
+        "name": "Gustavo Feliciano",
+        "role": "Desenvolvedor Unreal / Modelador 3D / Game Designer / Level Designer",
+        "photo": "assets/equipe/gustavo.jpeg",
+        "link": "https://www.linkedin.com/in/gustavofsbritto/"
+    }
+]
