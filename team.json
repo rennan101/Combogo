@@ -2,25 +2,41 @@
     {
         "name": "Dr. Rennan Raffaele",
         "role": "Coordenador",
+        "role_en": "Coordinator",
+        "role_es": "Coordinador",
         "photo": "assets/equipe/rennan.jpeg",
         "link": "https://www.linkedin.com/in/rennan-raffaele/"
     },
     {
         "name": "Luana Felipe Meneghini",
-        "role": "Game Designer / QA",
+        "role": "Game Designer / QA",
+        "role_en": "Game Designer / QA",
+        "role_es": "Game Designer / QA",
         "photo": "assets/equipe/luana.jpeg",
         "link": "https://www.linkedin.com/in/luana-meneghini-650830269/"
     },
     {
         "name": "Gustavo Feliciano",
         "role": "Desenvolvedor Unreal / Modelador 3D / Game Designer / Level Designer",
+        "role_en": "Unreal Developer / 3D Modeler / Game Designer / Level Designer",
+        "role_es": "Desarrollador Unreal / Modelador 3D / Game Designer / Level Designer",
         "photo": "assets/equipe/gustavo.jpeg",
         "link": "https://www.linkedin.com/in/gustavofsbritto/"
     },
     {
         "name": "Hugo Beltrão de Carvalho",
         "role": "Modelador 3D",
+        "role_en": "3D Modeler",
+        "role_es": "Modelador 3D",
         "photo": "assets/equipe/hugo.jpeg",
         "link": "https://www.linkedin.com/in/hugo-beltrão-b98a65425?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+    },
+    {
+        "name": "Yve Camille",
+        "role": "Artista 2D",
+        "role_en": "2D Artist",
+        "role_es": "Artista 2D",
+        "photo": "assets/equipe/yve.jpeg",
+        "link": "http://www.linkedin.com/in/yve-camille-093458237"
     }
 ]
