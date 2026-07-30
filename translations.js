@@ -32,7 +32,7 @@ const i18n = {
             "Seu projeto foi aprovado em um edital? Podemos ajudar a desenvolvê-lo!"
         ],
         about_title: "O Ecossistema Combogó",
-        about_p1: "Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.",
+       about_p1: "Criada em outubro de 2016 no curso de <a href='https://jogosdigitaisunicap.vercel.app/' target='_blank' style='color: var(--secondary); font-weight: bold; text-decoration: none;'>Jogos Digitais</a> da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.",
         about_p2: "<strong>Nossa Missão:</strong> Praticamos a indissociabilidade entre ensino, pesquisa e extensão. Conectamos o rigor científico acadêmico às demandas do mercado, entregando inovação aberta e soluções interativas de alta complexidade com viabilidade econômica.",
         term_c1: "// Nosso manifesto de laboratório prático e ágil",
         term_c2: "// Inovação, engenhosidade e transdisciplinaridade.",
@@ -158,7 +158,7 @@ const i18n = {
             "Has your project been approved through a public funding call? We can help bring it to life!"
         ],
         about_title: "The Combogó Ecosystem",
-        about_p1: "Founded in October 2016 within the Digital Games program at the Catholic University of Pernambuco (UNICAP), Combogó is a major extension project and innovation hub focused on solving society's real challenges.",
+   about_p1: "Founded in October 2016 within the <a href='https://jogosdigitaisunicap.vercel.app/' target='_blank' style='color: var(--secondary); font-weight: bold; text-decoration: none;'>Digital Games</a> program at the Catholic University of Pernambuco (UNICAP), Combogó is a major extension project and innovation hub focused on solving society's real challenges.",
         about_p2: "<strong>Our Mission:</strong> We practice the inseparability of teaching, research, and extension. We connect academic scientific rigor to market demands, delivering open innovation and complex interactive solutions with economic viability.",
         term_c1: "// Our practical and agile laboratory manifesto",
         term_c2: "// Innovation, ingenuity, and transdisciplinarity.",
@@ -284,7 +284,7 @@ const i18n = {
             "¿Tu proyecto ha sido aprobado en una convocatoria? ¡Podemos ayudarte a desarrollarlo!"
         ],
         about_title: "El Ecosistema Combogó",
-        about_p1: "Nacida en octubre de 2016 en la carrera de Juegos Digitales de la Universidad Católica de Pernambuco (UNICAP), Combogó es un gran proyecto de extensión y centro de innovación enfocado en resolver desafíos de la sociedad.",
+      about_p1: "Creado en octubre de 2016 en la carrera de <a href='https://jogosdigitaisunicap.vercel.app/' target='_blank' style='color: var(--secondary); font-weight: bold; text-decoration: none;'>Juegos Digitales</a> de la Universidad Católica de Pernambuco (UNICAP), Combogó es un gran proyecto de extensión y centro de innovación enfocado en resolver desafíos de la sociedad.",
         about_p2: "<strong>Nuestra Misión:</strong> Practicamos la indisolubilidad entre enseñanza, investigación y extensión. Conectamos el rigor científico académico con las demandas del mercado, entregando innovación abierta y soluciones interactivas complejas con viabilidad económica.",
         term_c1: "// Nuestro manifiesto de laboratorio práctico y ágil",
         term_c2: "// Innovación, ingenio y transdisciplinariedad.",

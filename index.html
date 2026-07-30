@@ -104,7 +104,7 @@
                 <div class="about-grid">
                     <div class="about-text reveal">
                         <h2 data-i18n="about_title">O Ecossistema Combogó</h2>
-                        <p data-i18n="about_p1">Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.</p>
+                        <p data-i18n="about_p1">Nascida em outubro de 2016 no curso de <a href='https://jogosdigitaisunicap.vercel.app/' target='_blank' style='color: var(--secondary); font-weight: bold; text-decoration: none;'>Jogos Digitais</a> da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.</p>
                         <p data-i18n="about_p2"><strong>Nossa Missão:</strong> Praticamos a indissociabilidade entre ensino, pesquisa e extensão. Conectamos o rigor científico acadêmico às demandas do mercado, entregando inovação aberta e soluções interativas de alta complexidade com viabilidade econômica.</p>
                     </div>
                     <div class="terminal-box reveal reveal-delay-1">
@@ -361,7 +361,7 @@
                 <a href="#hero" aria-label="Logo Combogó">
                     <img src="assets/logo/Combogo_logo.png" alt="Logo Combogó" class="footer-brand-img">
                 </a>
-                <a href="https://portal.unicap.br/w/jogos-digitais#presencial" target="_blank" rel="noopener noreferrer" aria-label="Curso de Jogos Digitais UNICAP">
+                <a href="https://jogosdigitaisunicap.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Curso de Jogos Digitais UNICAP">
                     <img src="assets/logo/Jogos_logo.png" alt="Logo Jogos Digitais" class="footer-brand-img">
                 </a>
                 <a href="https://portal.unicap.br/" target="_blank" rel="noopener noreferrer" aria-label="Universidade Católica de Pernambuco">
@@ -369,7 +369,7 @@
                 </a>
             </div>
 
-            <div class="footer-links">
+     <div class="footer-links">
                 <a href="#sobre" data-i18n="nav_about">Sobre</a>
                 <a href="#solucoes" data-i18n="nav_solutions">Soluções</a>
                 <a href="#research" data-i18n="nav_research">Pesquisa</a>
@@ -377,15 +377,19 @@
                 <a href="#parceiros" data-i18n="nav_partners">Parceiros</a>
                 <a href="#equipe" data-i18n="nav_team">Equipe</a>
                 <a href="#orcamento" data-i18n="nav_budget">Orçamento</a>
-                <a href="#" id="footer-adm-btn" style="color: var(--secondary); font-weight: 600;" data-i18n="nav_adm">⚙️ Painel ADM</a>
+                <!-- O botão texto do ADM foi removido daqui -->
             </div>
             
             <div class="footer-bottom">
                 <p data-i18n="footer_copy">Copyright © 2026 Combogó - Agência de Soluções Interativas. Todos os direitos reservados.</p>
-                <p data-i18n="footer_org">Universidade Católica de Pernambuco • Escola de Comunicação e Tecnologia</p>
+                <p>
+                    <span data-i18n="footer_org">Universidade Católica de Pernambuco • Escola de Comunicação e Tecnologia</span>
+                    <!-- Botão ADM Discreto (Cadeado) -->
+                    <a href="#" id="footer-adm-btn" style="color: inherit; text-decoration: none; opacity: 0.3; margin-left: 6px; font-size: 0.85rem; transition: opacity 0.3s;" title="Acesso Restrito" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.3'">🔒</a>
+                </p>
                 <p class="footer-quote" data-i18n="footer_quote">"Inovação, Pesquisa e Extensão transformando a sociedade."</p>
-            </div>
-        </div>
+            </div>      
+             </div>
     </footer>
 
     <!-- Painel ADM Modal -->
@@ -1104,21 +1108,67 @@
             });
         }
 
+/* ============================================================================
+           SISTEMA DE SEGURANÇA E FECHAMENTO DO PAINEL ADM
+           ============================================================================ */
+        let admIsDirty = false; // Rastreador de alterações não salvas
+        
+        // 1. Monitora qualquer digitação para marcar como "sujo" (com alterações)
+        document.querySelectorAll('#adm-modal input, #adm-modal textarea, #adm-modal select').forEach(el => {
+            el.addEventListener('input', () => { admIsDirty = true; });
+            el.addEventListener('change', () => { admIsDirty = true; });
+        });
+
+        // 2. Reseta o rastreador ao salvar os dados (submeter qualquer formulário)
+        document.querySelectorAll('#adm-modal form').forEach(form => {
+            form.addEventListener('submit', () => { setTimeout(() => { admIsDirty = false; }, 100); });
+        });
+
+        // 3. Nova função de fechamento blindada
         function closeModal() {
             if (!admModal) return;
+
+            // SISTEMA DE PREVENÇÃO DE PERDA DE DADOS
+            if (admIsDirty) {
+                const confirmMsg = currentLang === 'pt' ? '⚠️ Você tem alterações não salvas. Deseja mesmo fechar e perder os dados?' : 
+                                  (currentLang === 'es' ? '⚠️ Tienes cambios no guardados. ¿De verdad quieres cerrar?' : 
+                                  '⚠️ You have unsaved changes. Do you really want to close?');
+                
+                if (!confirm(confirmMsg)) {
+                    return; // Interrompe o fechamento se o usuário cancelar
+                }
+            }
+
             admModal.classList.remove('active');
-            admForm.reset();
-            document.getElementById('adm-edit-id').value = "";
+            
+            // Reseta os formulários principais
+            if(admForm) admForm.reset();
+            const teamForm = document.getElementById('adm-team-form');
+            if(teamForm) teamForm.reset();
+
+            const editId = document.getElementById('adm-edit-id');
+            if(editId) editId.value = "";
+            
             const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { adm_btn_submit: "Adicionar Projeto ao Portfólio" };
-            document.getElementById('adm-submit-btn').textContent = t.adm_btn_submit;
+            const submitBtn = document.getElementById('adm-submit-btn');
+            if(submitBtn) submitBtn.textContent = t.adm_btn_submit;
+            
             const cancelBtn = document.getElementById('adm-cancel-btn');
             if (cancelBtn) cancelBtn.style.display = "none";
-            admFolderNewInput.style.display = "none";
-            admFolderNewInput.required = false;
+            
+            const folderNewInput = document.getElementById('adm-folder-new');
+            if (folderNewInput) {
+                folderNewInput.style.display = "none";
+                folderNewInput.required = false;
+            }
+
+            admIsDirty = false; // Reseta o estado limpo após fechar com sucesso
         }
 
+        // 4. FECHAMENTO APENAS NO BOTÃO 'X'
         if (closeAdmBtn) closeAdmBtn.addEventListener('click', closeModal);
-        if (admModal) admModal.addEventListener('click', (e) => { if (e.target === admModal) closeModal(); });
+        
+        
 
         if (admForm) {
             admForm.addEventListener('submit', (e) => {
