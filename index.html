@@ -484,15 +484,26 @@
             <div class="adm-tab-content" id="tab-team">
                 <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
                     <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--secondary);">✨ Adicionar / Editar Membro da Equipe</h4>
-                    <form id="adm-team-form">
+     <form id="adm-team-form">
                         <input type="hidden" id="adm-team-edit-id" value="">
                         <div class="form-group">
                             <label>Nome Completo *</label>
                             <input type="text" id="team-name" class="form-control" required placeholder="Ex: Rennan Raffaele">
                         </div>
                         <div class="form-group">
-                            <label>Cargo / Função *</label>
+                            <label>Cargo / Função (PT) *</label>
                             <input type="text" id="team-role" class="form-control" required placeholder="Ex: Coordenador">
+                        </div>
+                        <!-- NOVOS CAMPOS DE TRADUÇÃO -->
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <label>Cargo (Inglês)</label>
+                                <input type="text" id="team-role-en" class="form-control" placeholder="Ex: Coordinator">
+                            </div>
+                            <div>
+                                <label>Cargo (Espanhol)</label>
+                                <input type="text" id="team-role-es" class="form-control" placeholder="Ex: Coordinador">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Foto (assets/equipe/ ou URL externa) *</label>
@@ -819,11 +830,50 @@
             });
         }
 
-        /* EQUIPE COMBOGÓ */
+/* EQUIPE COMBOGÓ */
+     /* EQUIPE COMBOGÓ */
         const initialTeam = [
-            { name: "Dr. Rennan Raffaele", role: "Coordenador", photo: "assets/equipe/rennan.jpeg", link: "https://www.linkedin.com/in/rennan-raffaele/" }
+            { 
+                name: "Dr. Rennan Raffaele", 
+                role: "Coordenador", 
+                role_en: "Coordinator",
+                role_es: "Coordinador",
+                photo: "assets/equipe/rennan.jpeg", 
+                link: "https://www.linkedin.com/in/rennan-raffaele/" 
+            },
+            { 
+                name: "Luana Felipe Meneghini", 
+                role: "Game Designer / QA", 
+                role_en: "Game Designer / QA",
+                role_es: "Game Designer / QA",
+                photo: "assets/equipe/luana.jpeg", 
+                link: "https://www.linkedin.com/in/luana-meneghini-650830269/" 
+            },
+            { 
+                name: "Gustavo Feliciano", 
+                role: "Desenvolvedor Unreal / Modelador 3D / Game Designer / Level Designer", 
+                role_en: "Unreal Developer / 3D Modeler / Game Designer / Level Designer",
+                role_es: "Desarrollador Unreal / Modelador 3D / Game Designer / Level Designer",
+                photo: "assets/equipe/gustavo.jpeg", 
+                link: "https://www.linkedin.com/in/gustavofsbritto/" 
+            },
+            { 
+                name: "Hugo Beltrão de Carvalho", 
+                role: "Modelador 3D", 
+                role_en: "3D Modeler",
+                role_es: "Modelador 3D",
+                photo: "assets/equipe/hugo.jpeg", 
+                link: "https://www.linkedin.com/in/hugo-beltrão-b98a65425?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+            }
         ];
-        let team = getSafeStorage('combogo_team', initialTeam);
+
+        // Lógica inteligente: Se o navegador salvou a equipe sem traduções no passado, ele sobrescreve para consertar
+        let savedTeam = getSafeStorage('combogo_team', initialTeam);
+        if (savedTeam.length > 0 && !savedTeam[0].role_en) {
+            savedTeam = initialTeam;
+            setSafeStorage('combogo_team', savedTeam);
+        }
+        let team = savedTeam;
 
         function renderTeam() {
             try {
@@ -835,10 +885,16 @@
                     card.className = 'team-card reveal';
                     if (idx > 0) card.classList.add(`reveal-delay-${idx % 4}`);
                     const nameHtml = (m.link && m.link.trim() !== "") ? `<a href="${m.link}" target="_blank" class="team-name" title="Ver Perfil">${m.name} ↗</a>` : `<span class="team-name">${m.name}</span>`;
+                    
+                    // LÓGICA DE TRADUÇÃO: Puxa o cargo certo conforme o idioma
+                    let displayRole = m.role;
+                    if (currentLang === 'en' && m.role_en) displayRole = m.role_en;
+                    if (currentLang === 'es' && m.role_es) displayRole = m.role_es;
+
                     card.innerHTML = `
                         <div class="team-photo-wrapper"><img src="${m.photo}" alt="${m.name}" class="team-photo" onerror="this.src='https://via.placeholder.com/150?text=👤';"></div>
                         ${nameHtml}
-                        <span class="team-role">${m.role}</span>
+                        <span class="team-role">${displayRole}</span>
                     `;
                     teamGrid.appendChild(card);
                 });
@@ -847,7 +903,7 @@
                 }
             } catch(e) { console.error("Erro ao renderizar equipe:", e); }
         }
-
+        
         function updateAdmTeamList() {
             try {
                 const listUI = document.getElementById('adm-team-list-ui');
@@ -872,11 +928,13 @@
             document.getElementById('team-cancel-btn').style.display = "none";
         };
 
-        window.startEditTeam = function(index) {
+       window.startEditTeam = function(index) {
             const m = team[index];
             document.getElementById('adm-team-edit-id').value = index;
             document.getElementById('team-name').value = m.name;
             document.getElementById('team-role').value = m.role;
+            document.getElementById('team-role-en').value = m.role_en || ""; // Puxa Inglês
+            document.getElementById('team-role-es').value = m.role_es || ""; // Puxa Espanhol
             document.getElementById('team-photo').value = m.photo;
             document.getElementById('team-link').value = m.link || "";
             document.getElementById('team-submit-btn').textContent = "💾 Atualizar Membro";
@@ -898,9 +956,13 @@
             admTeamForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const editId = document.getElementById('adm-team-edit-id').value;
+                const rolePT = document.getElementById('team-role').value.trim();
                 const memberData = {
                     name: document.getElementById('team-name').value.trim(),
-                    role: document.getElementById('team-role').value.trim(),
+                    role: rolePT,
+                    // Se o usuário não digitar EN/ES, copia o de Português para evitar erros
+                    role_en: document.getElementById('team-role-en').value.trim() || rolePT,
+                    role_es: document.getElementById('team-role-es').value.trim() || rolePT,
                     photo: document.getElementById('team-photo').value.trim(),
                     link: document.getElementById('team-link').value.trim() || ""
                 };
@@ -913,7 +975,7 @@
                 alert("✅ Membro salvo com sucesso na equipe!");
             });
         }
-
+        
         document.getElementById('download-team-json-btn')?.addEventListener('click', () => {
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(team, null, 4));
             const anchor = document.createElement('a');

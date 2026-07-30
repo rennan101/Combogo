@@ -21,15 +21,15 @@ const i18n = {
         hero_panel_status: "Disponível para Projetos",
         hero_panel_title: "⚡ O Que Desenvolvemos",
         hero_quotes: [
-        "Desenvolvemos seu jogo do zero!",
-        "Criamos assets para seu jogo 2D ou 3D!",
-        "Fazemos o co-desenvolvimento do seu jogo!",
-        "Desenvolvemos o Game Design do seu jogo!",
-        "Realizamos o QA e os testes do seu jogo!",
-        "Desenvolvemos seu projeto de VR/XR!",
-        "Desenvolvemos seu aplicativo mobile!",
-        "Desenvolvemos seu site ou plataforma web!",
-        "Seu projeto foi aprovado em um edital? Podemos ajudar a desenvolvê-lo!"
+            "Desenvolvemos seu jogo do zero!",
+            "Criamos assets para seu jogo 2D ou 3D!",
+            "Fazemos o co-desenvolvimento do seu jogo!",
+            "Desenvolvemos o Game Design do seu jogo!",
+            "Realizamos o QA e os testes do seu jogo!",
+            "Desenvolvemos seu projeto de VR/XR!",
+            "Desenvolvemos seu aplicativo mobile!",
+            "Desenvolvemos seu site ou plataforma web!",
+            "Seu projeto foi aprovado em um edital? Podemos ajudar a desenvolvê-lo!"
         ],
         about_title: "O Ecossistema Combogó",
         about_p1: "Nascida em outubro de 2016 no curso de Jogos Digitais da Universidade Católica de Pernambuco (UNICAP), a Combogó é um grande projeto de extensão e hub de inovação focado em resolver desafios da sociedade.",
@@ -124,11 +124,11 @@ const i18n = {
         alert_cat_created: "✅ Nova categoria adicionada com sucesso!",
         alert_cat_success: "✅ Categoria renomeada em todos os projetos compatíveis!",
         alert_form_sent: "Solicitação enviada com sucesso! Entraremos em contato em breve.",
-        btn_view_project: "Ver Projeto / Case ↗"
+        btn_view_project: "Ver Projeto / Case ↗",
         nav_team: "Equipe",
         team_title: "Nossa Equipe",
         team_sub: "Conheça as mentes acadêmicas e criativas que conduzem as pesquisas e desenvolvimentos da agência.",
-        adm_tab_team: "👥 Equipe",
+        adm_tab_team: "👥 Equipe"
     },
     en: {
         logo_sub: "Interactive Solutions Agency",
@@ -147,15 +147,15 @@ const i18n = {
         hero_panel_status: "Available for Projects",
         hero_panel_title: "⚡ What We Develop",
         hero_quotes: [
-        "We develop your game from scratch!",
-        "We create assets for your 2D or 3D game!",
-        "We co-develop your game!",
-        "We design your game's Game Design!",
-        "We provide QA and testing for your game!",
-        "We develop your VR/XR project!",
-        "We develop your mobile app!",
-        "We develop your website or web platform!",
-        "Has your project been approved through a public funding call? We can help bring it to life!"
+            "We develop your game from scratch!",
+            "We create assets for your 2D or 3D game!",
+            "We co-develop your game!",
+            "We design your game's Game Design!",
+            "We provide QA and testing for your game!",
+            "We develop your VR/XR project!",
+            "We develop your mobile app!",
+            "We develop your website or web platform!",
+            "Has your project been approved through a public funding call? We can help bring it to life!"
         ],
         about_title: "The Combogó Ecosystem",
         about_p1: "Founded in October 2016 within the Digital Games program at the Catholic University of Pernambuco (UNICAP), Combogó is a major extension project and innovation hub focused on solving society's real challenges.",
@@ -250,11 +250,11 @@ const i18n = {
         alert_cat_created: "✅ New category added successfully!",
         alert_cat_success: "✅ Category renamed across all matching projects!",
         alert_form_sent: "Request sent successfully! We will contact you soon.",
-        btn_view_project: "View Project / Case ↗"
+        btn_view_project: "View Project / Case ↗",
         nav_team: "Team",
         team_title: "Our Team",
         team_sub: "Meet the academic and creative minds driving the agency's research and developments.",
-        adm_tab_team: "👥 Team",
+        adm_tab_team: "👥 Team"
     },
     es: {
         logo_sub: "Agencia de Soluciones Interactivas",
@@ -273,15 +273,15 @@ const i18n = {
         hero_panel_status: "Disponible para Proyectos",
         hero_panel_title: "⚡ Lo Que Desarrollamos",
         hero_quotes: [
-        "¡Desarrollamos tu videojuego desde cero!",
-        "¡Creamos recursos (assets) para tu juego 2D o 3D!",
-        "¡Desarrollamos tu videojuego en modalidad de co-desarrollo (co-dev)!",
-        "¡Diseñamos el Game Design de tu videojuego!",
-        "¡Realizamos el QA y las pruebas de tu videojuego!",
-        "¡Desarrollamos tu proyecto de VR/XR!",
-        "¡Desarrollamos tu aplicación móvil!",
-        "¡Desarrollamos tu sitio web o plataforma web!",
-        "¿Tu proyecto ha sido aprobado en una convocatoria? ¡Podemos ayudarte a desarrollarlo!"
+            "¡Desarrollamos tu videojuego desde cero!",
+            "¡Creamos recursos (assets) para tu juego 2D o 3D!",
+            "¡Desarrollamos tu videojuego en modalidad de co-desarrollo (co-dev)!",
+            "¡Diseñamos el Game Design de tu videojuego!",
+            "¡Realizamos el QA y las pruebas de tu videojuego!",
+            "¡Desarrollamos tu proyecto de VR/XR!",
+            "¡Desarrollamos tu aplicación móvil!",
+            "¡Desarrollamos tu sitio web o plataforma web!",
+            "¿Tu proyecto ha sido aprobado en una convocatoria? ¡Podemos ayudarte a desarrollarlo!"
         ],
         about_title: "El Ecosistema Combogó",
         about_p1: "Nacida en octubre de 2016 en la carrera de Juegos Digitales de la Universidad Católica de Pernambuco (UNICAP), Combogó es un gran proyecto de extensión y centro de innovación enfocado en resolver desafíos de la sociedad.",
@@ -376,10 +376,10 @@ const i18n = {
         alert_cat_created: "✅ ¡Nueva categoría agregada con éxito!",
         alert_cat_success: "✅ ¡Categoría renombrada en todos los proyectos coincidentes!",
         alert_form_sent: "¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.",
-        btn_view_project: "Ver Proyecto / Case ↗"
+        btn_view_project: "Ver Proyecto / Case ↗",
         nav_team: "Equipo",
         team_title: "Nuestro Equipo",
         team_sub: "Conozca las mentes académicas y creativas que impulsan las investigaciones y desarrollos de la agencia.",
-        adm_tab_team: "👥 Equipo",
+        adm_tab_team: "👥 Equipo"
     }
 };
