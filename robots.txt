@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://combogounicap.vercel.app/sitemap.xml
