@@ -350,43 +350,47 @@ header.scrolled .nav-container {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
 }
 
 .logo-icon {
-    height: 38px;
-    width: auto;
+    height: 44px;
+    width: 44px;
     object-fit: contain;
     display: block;
+    flex-shrink: 0;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.05;
 }
 
-.logo-text span {
+.logo-title, .logo-text span:first-child {
     color: #FFFFFF;
-    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
     font-weight: 800;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    text-transform: uppercase;
+    display: block;
 }
 
 .logo-sub {
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     color: #FFFFFF !important;
     font-weight: 600;
     display: block;
-    margin-top: 1px;
-    letter-spacing: -0.1px;
+    margin-top: 4px;
+    letter-spacing: 0.1px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .nav-links {

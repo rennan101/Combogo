@@ -562,8 +562,24 @@
     box-shadow: none;
 }
 
+/* Spinner Profissional de Carregamento */
+.btn-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+    animation: btnSpin 0.75s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes btnSpin {
+    to { transform: rotate(360deg); }
+}
+
 /* ==========================================================================
-   TELA DE SUCESSO DE CANDIDATURA
+   TELA DE SUCESSO DE CANDIDATURA & ANIMAÇÃO DE CONFETES
    ========================================================================== */
 
 .success-card {
@@ -571,10 +587,46 @@
     text-align: center;
     padding: 60px 40px;
     animation: fadeInStep 0.5s ease forwards;
+    position: relative;
+    overflow: hidden;
 }
 
 .success-card.active {
     display: block;
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 14px;
+    opacity: 0.95;
+    border-radius: 3px;
+    animation: dropConfetti 3.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes dropConfetti {
+    0% {
+        transform: translateY(-20px) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(650px) rotate(720deg) scale(0.5);
+        opacity: 0;
+    }
 }
 
 .success-icon-wrapper {

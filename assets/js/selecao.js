@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     async function submitForm() {
         btnNext.disabled = true;
-        btnNext.innerHTML = `Enviando... ⏳`;
+        btnNext.innerHTML = `<span class="btn-spinner"></span> Enviando...`;
 
         const fullData = state.getFormData();
 
@@ -535,7 +535,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 stepsListContainer.parentElement.style.display = "none";
                 successCard.classList.add("active");
 
-                window.scrollTo({ top: successCard.offsetTop - 80, behavior: "smooth" });
+                // Rolagem suave direta até o card de sucesso
+                setTimeout(() => {
+                    successCard.scrollIntoView({ behavior: "smooth", block: "center" });
+                    triggerConfettiAnimation(successCard);
+                }, 100);
             } else {
                 alert("Ocorreu um erro ao enviar sua candidatura. Por favor, tente novamente.");
                 btnNext.disabled = false;
@@ -547,6 +551,30 @@ document.addEventListener("DOMContentLoaded", () => {
             btnNext.disabled = false;
             btnNext.innerHTML = `Enviar candidatura`;
         }
+    }
+
+    /**
+     * Animação de Confetes Festivos na Tela de Sucesso
+     */
+    function triggerConfettiAnimation(container) {
+        const confettiBox = document.createElement("div");
+        confettiBox.className = "confetti-container";
+
+        const colors = ["#FF6B00", "#00C9DB", "#FFD166", "#06D6A0", "#EF476F", "#FFFFFF"];
+
+        for (let i = 0; i < 70; i++) {
+            const piece = document.createElement("div");
+            piece.className = "confetti-piece";
+            piece.style.left = `${Math.random() * 100}%`;
+            piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            piece.style.width = `${Math.random() * 8 + 6}px`;
+            piece.style.height = `${Math.random() * 10 + 8}px`;
+            piece.style.animationDelay = `${Math.random() * 1.5}s`;
+            piece.style.animationDuration = `${Math.random() * 2 + 2.5}s`;
+            confettiBox.appendChild(piece);
+        }
+
+        container.appendChild(confettiBox);
     }
 
     function showStepErrors(errors) {

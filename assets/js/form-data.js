@@ -289,6 +289,15 @@ window.CombogoFormSteps = [
         subtitle: "Queremos conhecer seu jeito de trabalhar.",
         fields: [
             {
+                id: "coeficiente_rendimento",
+                label: "Coeficiente de Rendimento (CR)",
+                type: "text",
+                required: true,
+                placeholder: "Ex: 8.5",
+                inputmode: "decimal",
+                hint: "Informação obtida no portal do aluno, geralmente na parte do histórico de notas das disciplinas."
+            },
+            {
                 id: "participou_extracurricular",
                 label: "Você já participou de algum projeto acadêmico, extensão, iniciação científica, empresa júnior, Game Jam ou projeto extracurricular?",
                 type: "checkbox-group",
