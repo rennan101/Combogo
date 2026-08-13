@@ -27,25 +27,25 @@ window.CombogoFormService = (function () {
             source: "combogo_web_portal"
         };
 
-        // Se houver um endpoint configurado, faz o POST via fetch
+        // Google Apps Script NÃO suporta preflight CORS com Content-Type: application/json.
+        // A solução correta é enviar como text/plain com mode: "no-cors".
+        // O Apps Script recebe e processa normalmente via e.postData.contents.
         if (API_ENDPOINT) {
             try {
-                const response = await fetch(API_ENDPOINT, {
+                await fetch(API_ENDPOINT, {
                     method: "POST",
+                    mode: "no-cors",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "text/plain;charset=utf-8"
                     },
                     body: JSON.stringify(fullPayload)
                 });
-
-                if (!response.ok) {
-                    throw new Error(`Erro na API (${response.status})`);
-                }
-
+                // Com no-cors, a resposta é opaca (não podemos ler o status),
+                // mas se não gerou exceção, o envio foi feito com sucesso.
                 return { success: true };
             } catch (error) {
-                console.error("Falha ao comunicar com API externa:", error);
-                // Fallback para persistência local se houver falha de rede
+                console.error("Falha ao comunicar com Google Apps Script:", error);
+                // Fallback para localStorage se houver falha de rede
             }
         }
 
