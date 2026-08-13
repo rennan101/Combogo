@@ -7,7 +7,7 @@
 window.CombogoFormService = (function () {
     // Configuração futura do endpoint de API
     // Exemplo: "https://api.combogounicap.com.br/selecao" ou Webhook do Google Apps Script / Supabase
-    const API_ENDPOINT = null; 
+    const API_ENDPOINT = "https://script.google.com/macros/s/AKfycbwvJFkF-0QJPf_SeI0DQoxLXIw-i-Ddh1SIc2cypTKNXnsgVcXbxEIghmr6Ek9o1pJK/exec"; 
 
     /**
      * Envia os dados da candidatura
