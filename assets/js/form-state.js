@@ -96,6 +96,13 @@ window.CombogoFormState = (function () {
 
     function isFieldVisible(field) {
         if (!field.condition) return true;
+
+        if (field.condition.notIncludes) {
+            const val = formData[field.condition.field];
+            const arr = Array.isArray(val) ? val : (val ? [val] : []);
+            return arr.length > 0 && !arr.includes(field.condition.notIncludes);
+        }
+
         const { field: depField, value: expectedVal } = field.condition;
         return formData[depField] === expectedVal;
     }

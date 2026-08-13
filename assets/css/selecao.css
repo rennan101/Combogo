@@ -377,11 +377,13 @@
 }
 
 .custom-option-card input[type="radio"],
-.custom-option-card input[type="checkbox"] {
+.custom-option-card input[type="checkbox"],
+.auth-checkbox-card input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
+    pointer-events: none;
 }
 
 /* Custom Checkbox Indicator */
@@ -462,6 +464,20 @@
     border-color: var(--primary);
     background: rgba(255, 107, 0, 0.12);
     box-shadow: 0 0 20px rgba(255, 107, 0, 0.15);
+}
+
+.auth-checkbox-card input[type="checkbox"]:checked + .option-indicator {
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+.auth-checkbox-card input[type="checkbox"]:checked + .option-indicator::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 2px;
 }
 
 /* Mensagens de Erro de Campo */
@@ -570,10 +586,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
     box-shadow: 0 0 30px rgba(0, 201, 219, 0.3);
     animation: pulseRocket 2s infinite ease-in-out;
+}
+
+.success-icon-wrapper svg {
+    width: 46px;
+    height: 46px;
+    color: var(--secondary);
 }
 
 @keyframes pulseRocket {

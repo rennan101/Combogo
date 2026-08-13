@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBack.style.visibility = currentIndex === 0 ? "hidden" : "visible";
 
         if (currentStep.isFinalStep) {
-            btnNext.innerHTML = `Enviar candidatura 🚀`;
+            btnNext.innerHTML = `Enviar candidatura`;
             const authValue = state.getFieldValue("autorizacao_dados");
             btnNext.disabled = !authValue;
         } else {
@@ -539,13 +539,13 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 alert("Ocorreu um erro ao enviar sua candidatura. Por favor, tente novamente.");
                 btnNext.disabled = false;
-                btnNext.innerHTML = `Enviar candidatura 🚀`;
+                btnNext.innerHTML = `Enviar candidatura`;
             }
         } catch (err) {
             console.error("Erro ao enviar:", err);
             alert("Falha de conexão ao enviar formulário. Tente novamente.");
             btnNext.disabled = false;
-            btnNext.innerHTML = `Enviar candidatura 🚀`;
+            btnNext.innerHTML = `Enviar candidatura`;
         }
     }
 

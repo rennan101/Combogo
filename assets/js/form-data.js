@@ -68,9 +68,7 @@ window.CombogoFormSteps = [
                     "5º período",
                     "6º período",
                     "7º período",
-                    "8º período",
-                    "9º período",
-                    "10º período ou superior"
+                    "8º período ou superior"
                 ]
             }
         ]
@@ -170,12 +168,22 @@ window.CombogoFormSteps = [
                     "Git / GitHub",
                     "Unity",
                     "Unreal Engine",
+                    "Godot",
                     "Blender",
                     "Figma",
                     "APIs / Web Services",
                     "IA generativa",
                     "Machine Learning",
                     "Docker",
+                    "Antigravity IDE",
+                    "Claude Code",
+                    "Codex",
+                    "Google Stitch",
+                    "Lovable",
+                    "Render",
+                    "Vercel",
+                    "Firebase",
+                    "Supabase",
                     "Outra",
                     "Ainda não tenho experiência com essas tecnologias"
                 ],
@@ -215,9 +223,8 @@ window.CombogoFormSteps = [
         id: "etapa-04",
         stepNumber: "04",
         shortTitle: "Estrutura",
-        title: "ETAPA 04 — Seu setup",
-        subtitle: "Tecnologia também precisa de um lugar para acontecer.",
-        infoBox: "Não ter computador pessoal não significa necessariamente que você não possa participar da Combogó. Essas informações serão utilizadas apenas para entendermos quais atividades e projetos podem ser mais adequados ao seu perfil.",
+        title: "ETAPA 04 — Seu setup & Disponibilidade",
+        subtitle: "Tecnologia também precisa de um lugar e tempo para acontecer.",
         fields: [
             {
                 id: "tem_computador",
@@ -264,87 +271,45 @@ window.CombogoFormSteps = [
                     "Outro",
                     "Não possuo computador"
                 ]
+            },
+            {
+                id: "disponibilidade_14_18",
+                label: "Você teria disponibilidade para atuar na Combogó das 14hrs até as 18hrs?",
+                type: "radio",
+                required: true,
+                options: ["Sim", "Não"]
             }
         ]
     },
     {
         id: "etapa-05",
         stepNumber: "05",
-        shortTitle: "Disponibilidade",
-        title: "ETAPA 05 — Disponibilidade",
-        subtitle: "Quanto espaço a Combogó pode ocupar na sua rotina?",
-        fields: [
-            {
-                id: "horas_semanais",
-                label: "Quantas horas por semana você teria disponibilidade para atuar na Combogó?",
-                type: "radio",
-                required: true,
-                options: [
-                    "Até 5 horas",
-                    "5–10 horas",
-                    "10–15 horas",
-                    "15–20 horas",
-                    "Mais de 20 horas"
-                ]
-            },
-            {
-                id: "periodos_disponiveis",
-                label: "Em quais períodos você possui disponibilidade?",
-                type: "checkbox-group",
-                required: true,
-                options: [
-                    "Manhã",
-                    "Tarde",
-                    "Noite"
-                ]
-            },
-            {
-                id: "disponibilidade_presencial",
-                label: "Você possui disponibilidade para comparecer presencialmente à Combogó?",
-                type: "radio",
-                required: true,
-                options: [
-                    "Sim, regularmente",
-                    "Sim, alguns dias da semana",
-                    "Eventualmente",
-                    "Não"
-                ]
-            },
-            {
-                id: "quando_pode_comecar",
-                label: "Caso selecionado, quando você poderia começar?",
-                type: "radio",
-                required: false,
-                options: [
-                    "Imediatamente",
-                    "Em até 15 dias",
-                    "Em até 30 dias",
-                    "Outro"
-                ]
-            }
-        ]
-    },
-    {
-        id: "etapa-06",
-        stepNumber: "06",
         shortTitle: "Perfil",
-        title: "ETAPA 06 — Perfil",
+        title: "ETAPA 05 — Perfil",
         subtitle: "Queremos conhecer seu jeito de trabalhar.",
         fields: [
             {
                 id: "participou_extracurricular",
                 label: "Você já participou de algum projeto acadêmico, extensão, iniciação científica, empresa júnior, Game Jam ou projeto extracurricular?",
-                type: "radio",
+                type: "checkbox-group",
                 required: false,
-                options: ["Sim", "Não"],
-                defaultValue: "Não"
+                options: [
+                    "Projeto acadêmico",
+                    "Projeto de extensão",
+                    "Iniciação científica",
+                    "Empresa júnior",
+                    "Game Jam",
+                    "Outro projeto extracurricular",
+                    "Nenhum"
+                ],
+                exclusiveOption: "Nenhum"
             },
             {
                 id: "descricao_extracurricular",
                 label: "Conte brevemente sobre essa experiência.",
                 type: "textarea",
                 required: false,
-                condition: { field: "participou_extracurricular", value: "Sim" },
+                condition: { field: "participou_extracurricular", notIncludes: "Nenhum" },
                 placeholder: "Descreva qual foi o projeto, evento ou iniciativa...",
                 rows: 3
             },
@@ -371,10 +336,10 @@ window.CombogoFormSteps = [
         ]
     },
     {
-        id: "etapa-07",
-        stepNumber: "07",
+        id: "etapa-06",
+        stepNumber: "06",
         shortTitle: "Finalização",
-        title: "ETAPA 07 — A pergunta final",
+        title: "ETAPA 06 — A pergunta final",
         subtitle: "Agora é com você.",
         isFinalStep: true,
         fields: [

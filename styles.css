@@ -166,19 +166,19 @@ ul {
 
 .nav-selection-highlight {
     color: var(--primary) !important;
-    font-weight: 700 !important;
-    background: rgba(255, 107, 0, 0.12);
-    border: 1px solid rgba(255, 107, 0, 0.35);
-    padding: 6px 14px !important;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    font-weight: 600 !important;
+    background: rgba(255, 107, 0, 0.08);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    padding: 5px 12px !important;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
 }
 
 .nav-selection-highlight:hover {
-    background: var(--primary);
-    color: #FFFFFF !important;
-    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
-    transform: translateY(-1px);
+    background: rgba(255, 107, 0, 0.18);
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.25);
 }
 
 .btn-danger {
@@ -350,16 +350,17 @@ header.scrolled .nav-container {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #FFFFFF;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo-icon {
-    height: 42px;
+    height: 38px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -369,19 +370,23 @@ header.scrolled .nav-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.1;
+    line-height: 1.05;
 }
 
 .logo-text span {
     color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
 }
 
 .logo-sub {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #FFFFFF !important;
     font-weight: 600;
     display: block;
-    margin-top: 3px;
+    margin-top: 1px;
+    letter-spacing: -0.1px;
 }
 
 .nav-links {
