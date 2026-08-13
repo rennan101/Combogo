@@ -678,9 +678,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function scrollToFormTop() {
-        const header = document.querySelector(".selection-hero");
-        if (header) {
-            window.scrollTo({ top: formCard.offsetTop - 120, behavior: "smooth" });
+        // Tenta rolar até o stepper (fica acima do card) ou até o card
+        const target = document.querySelector(".stepper-header") || formCard;
+        if (target) {
+            const rect = target.getBoundingClientRect();
+            const absoluteTop = rect.top + window.scrollY;
+            // Desconta a altura do header fixo (~80px) + margem de conforto visual
+            window.scrollTo({ top: absoluteTop - 90, behavior: "smooth" });
         }
     }
 });
