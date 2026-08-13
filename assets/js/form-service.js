@@ -17,6 +17,16 @@ window.CombogoFormService = (function () {
     async function submitApplication(payload) {
         console.log("🚀 Enviando candidatura para a Combogó UNICAP...", payload);
 
+        // Obtém o nome da edição da seleção configurada no ADM
+        const selectionConfig = window.CombogoSelectionConfig ? window.CombogoSelectionConfig.getConfig() : { name: "Seleção 2026.2" };
+
+        const fullPayload = {
+            ...payload,
+            edicao_selecao: selectionConfig.name,
+            submittedAt: new Date().toISOString(),
+            source: "combogo_web_portal"
+        };
+
         // Se houver um endpoint configurado, faz o POST via fetch
         if (API_ENDPOINT) {
             try {
@@ -25,11 +35,7 @@ window.CombogoFormService = (function () {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({
-                        ...payload,
-                        submittedAt: new Date().toISOString(),
-                        source: "selecao_2026_web"
-                    })
+                    body: JSON.stringify(fullPayload)
                 });
 
                 if (!response.ok) {

@@ -467,6 +467,7 @@
                 <button type="button" class="adm-tab-btn" data-tab="tab-list" data-i18n="adm_tab_list">📋 Gerenciar Projetos</button>
                 <button type="button" class="adm-tab-btn" data-tab="tab-cat" data-i18n="adm_tab_cat">🏷️ Categorias</button>
                 <button type="button" class="adm-tab-btn" data-tab="tab-team" data-i18n="adm_tab_team">👥 Equipe</button>
+                <button type="button" class="adm-tab-btn" data-tab="tab-selection">🚀 Seleção</button>
             </div>
 
             <!-- ABA 1: PROJETOS -->
@@ -592,6 +593,32 @@
                 <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-color);">
                     <button type="button" class="btn btn-secondary" id="download-team-json-btn" style="width: 100%;">📥 Baixar team.json atualizado</button>
                 </div>
+            </div>
+
+            <!-- ABA 5: SELEÇÃO DE ALUNOS -->
+            <div class="adm-tab-content" id="tab-selection">
+                <form id="adm-selection-config-form">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--secondary);">🚀 Gestão do Processo Seletivo</h4>
+                    
+                    <div class="form-group" style="background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.25); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; color: #FFFFFF; font-weight: 600; font-size: 0.95rem;">
+                            <input type="checkbox" id="adm-selection-active" style="width: 20px; height: 20px; accent-color: var(--primary);">
+                            <span>Ativar Processo Seletivo no Site (Exibir botões e formulário)</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adm-selection-name">Nome do Botão / Edição da Seleção *</label>
+                        <input type="text" id="adm-selection-name" class="form-control" required placeholder="Ex: Seleção 2026.2 ou Seleção 2027.1">
+                        <small style="color: var(--text-muted); display: block; margin-top: 6px; line-height: 1.4;">
+                            💡 Ao alterar o nome (ex: para "Seleção 2027.1"), o Google Sheets criará automaticamente uma nova aba separada para a nova edição!
+                        </small>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Salvar Configurações da Seleção</button>
+                    </div>
+                </form>
             </div>
 
             <div class="modal-footer">
@@ -1088,8 +1115,32 @@
                 document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
                 if (btn.getAttribute('data-tab') === 'tab-list') updateAdmProjectList();
                 if (btn.getAttribute('data-tab') === 'tab-team') updateAdmTeamList();
+                if (btn.getAttribute('data-tab') === 'tab-selection') loadAdmSelectionConfig();
             });
         });
+
+        function loadAdmSelectionConfig() {
+            if (window.CombogoSelectionConfig) {
+                const config = window.CombogoSelectionConfig.getConfig();
+                const activeCb = document.getElementById('adm-selection-active');
+                const nameInput = document.getElementById('adm-selection-name');
+                if (activeCb) activeCb.checked = config.active;
+                if (nameInput) nameInput.value = config.name;
+            }
+        }
+
+        const admSelectionForm = document.getElementById('adm-selection-config-form');
+        if (admSelectionForm) {
+            admSelectionForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const active = document.getElementById('adm-selection-active').checked;
+                const name = document.getElementById('adm-selection-name').value;
+                if (window.CombogoSelectionConfig) {
+                    window.CombogoSelectionConfig.saveConfig(active, name);
+                    alert("✅ Configurações do processo seletivo salvas com sucesso!");
+                }
+            });
+        }
 
         function updateAdmProjectList() {
             try {

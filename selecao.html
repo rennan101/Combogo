@@ -88,6 +88,20 @@
             </div>
         </section>
 
+        <!-- Aviso de Processo Seletivo Encerrado (Exibido se o ADM desativar a seleção) -->
+        <div class="container" id="selection-closed-notice" style="display:none; text-align:center; padding: 60px 20px 100px;">
+            <div style="background: rgba(255, 107, 0, 0.08); border: 1px solid rgba(255, 107, 0, 0.3); border-radius: 20px; padding: 40px 30px; max-width: 640px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
+                <h3 style="color: #FFFFFF; font-size: 1.6rem; margin-bottom: 14px;">Processo Seletivo Encerrado</h3>
+                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px;">
+                    As inscrições para esta edição da seleção no momento não estão abertas. Acompanhe nossas redes sociais e o site da Combogó UNICAP para ficar sabendo em primeira mão quando a próxima seleção for iniciada!
+                </p>
+                <div>
+                    <a href="index.html" class="btn btn-primary" style="padding: 12px 32px; text-decoration: none;">Voltar para a Combogó</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Seção do Formulário -->
         <section class="form-section" id="form-section">
             <div class="container form-wrapper">
@@ -150,6 +164,7 @@
     </footer>
 
     <!-- JS MODULAR DA SELEÇÃO -->
+    <script src="assets/js/selection-config.js"></script>
     <script src="assets/js/form-data.js"></script>
     <script src="assets/js/form-state.js"></script>
     <script src="assets/js/form-service.js"></script>
