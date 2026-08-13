@@ -296,14 +296,69 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     const el = document.getElementById(field.id);
                     if (el) {
-                        el.addEventListener("input", (e) => {
-                            state.setFieldValue(field.id, e.target.value);
-                            clearFieldError(field.id);
-                        });
-                        el.addEventListener("change", (e) => {
-                            state.setFieldValue(field.id, e.target.value);
-                            updateUI();
-                        });
+
+                        // === MÁSCARA AO VIVO PARA TELEFONE (DDD + número brasileiro) ===
+                        if (field.validate === "phone" || field.type === "tel") {
+                            el.addEventListener("input", (e) => {
+                                let raw = e.target.value.replace(/\D/g, ""); // só dígitos
+
+                                // Limita a 11 dígitos (DDD + número com 9)
+                                if (raw.length > 11) raw = raw.slice(0, 11);
+
+                                // Aplica máscara progressiva
+                                let masked = raw;
+                                if (raw.length <= 2) {
+                                    masked = raw.length ? `(${raw}` : "";
+                                } else if (raw.length <= 7) {
+                                    masked = `(${raw.slice(0,2)}) ${raw.slice(2)}`;
+                                } else if (raw.length <= 10) {
+                                    // Fixo sem o 9: (81) 9999-9999
+                                    masked = `(${raw.slice(0,2)}) ${raw.slice(2,6)}-${raw.slice(6)}`;
+                                } else {
+                                    // Celular com 9: (81) 99999-9999
+                                    masked = `(${raw.slice(0,2)}) ${raw.slice(2,7)}-${raw.slice(7)}`;
+                                }
+
+                                e.target.value = masked;
+                                state.setFieldValue(field.id, masked);
+                                clearFieldError(field.id);
+                            });
+
+                            // Bloqueia colar texto além do limite
+                            el.addEventListener("keydown", (e) => {
+                                const digits = el.value.replace(/\D/g, "");
+                                const allowed = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "Home", "End"];
+                                if (digits.length >= 11 && !allowed.includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                                    e.preventDefault();
+                                }
+                            });
+
+                        // === VALIDAÇÃO INLINE AO VIVO PARA E-MAIL ===
+                        } else if (field.validate === "email" || field.type === "email") {
+                            el.addEventListener("input", (e) => {
+                                state.setFieldValue(field.id, e.target.value);
+                                clearFieldError(field.id);
+                            });
+
+                            el.addEventListener("blur", (e) => {
+                                const val = e.target.value.trim();
+                                if (val && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
+                                    showFieldError(field.id, "Informe um e-mail válido (ex: seu.nome@unicap.br).");
+                                } else {
+                                    clearFieldError(field.id);
+                                }
+                            });
+
+                        } else {
+                            el.addEventListener("input", (e) => {
+                                state.setFieldValue(field.id, e.target.value);
+                                clearFieldError(field.id);
+                            });
+                            el.addEventListener("change", (e) => {
+                                state.setFieldValue(field.id, e.target.value);
+                                updateUI();
+                            });
+                        }
                     }
                 }
             });
@@ -603,6 +658,16 @@ document.addEventListener("DOMContentLoaded", () => {
             group.classList.remove("has-error");
             errEl.textContent = "";
             errEl.style.display = "none";
+        }
+    }
+
+    function showFieldError(fieldId, message) {
+        const group = document.getElementById(`field-group-${fieldId}`);
+        const errEl = document.getElementById(`error-${fieldId}`);
+        if (group && errEl) {
+            group.classList.add("has-error");
+            errEl.textContent = message;
+            errEl.style.display = "block";
         }
     }
 

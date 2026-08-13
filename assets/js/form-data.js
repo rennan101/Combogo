@@ -34,6 +34,7 @@ window.CombogoFormSteps = [
                 required: true,
                 placeholder: "seu.nome@unicap.br",
                 autocomplete: "email",
+                validate: "email",
                 hint: "Utilize preferencialmente seu e-mail da UNICAP"
             },
             {
@@ -43,7 +44,9 @@ window.CombogoFormSteps = [
                 required: true,
                 placeholder: "(81) 99999-9999",
                 autocomplete: "tel",
-                inputmode: "tel"
+                inputmode: "numeric",
+                validate: "phone",
+                maxlength: 15
             },
             {
                 id: "curso",

@@ -149,16 +149,23 @@ window.CombogoFormState = (function () {
 
             // Validações específicas de formato (se houver valor)
             if (value && String(value).trim() !== "") {
-                if (field.type === "email") {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (field.validate === "email" || field.type === "email") {
+                    // Aceita qualquer e-mail válido no formato padrão
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
                     if (!emailRegex.test(String(value).trim())) {
                         valid = false;
-                        errors[field.id] = "Informe um e-mail válido.";
+                        errors[field.id] = "Informe um e-mail válido (ex: seu.nome@unicap.br).";
+                    }
+                } else if (field.validate === "phone" || field.type === "tel") {
+                    // Remove tudo que não for dígito para contar
+                    const digits = String(value).replace(/\D/g, "");
+                    if (digits.length < 10 || digits.length > 11) {
+                        valid = false;
+                        errors[field.id] = "Informe um número válido com DDD (ex: (81) 99999-9999).";
                     }
                 } else if (field.type === "url") {
                     try {
                         const urlStr = String(value).trim();
-                        // Aceita URLs sem protocolo adicionando https:// se necessário para teste
                         const formattedUrl = urlStr.startsWith("http://") || urlStr.startsWith("https://") ? urlStr : `https://${urlStr}`;
                         new URL(formattedUrl);
                     } catch (_) {
