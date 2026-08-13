@@ -678,13 +678,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function scrollToFormTop() {
-        // Tenta rolar até o stepper (fica acima do card) ou até o card
-        const target = document.querySelector(".stepper-header") || formCard;
+        // Usa a âncora estática acima do stepper (não é sticky, então offsetTop é confiável)
+        const anchor = document.getElementById("form-scroll-anchor");
+        const target = anchor || document.querySelector(".stepper-header") || formCard;
+
         if (target) {
-            const rect = target.getBoundingClientRect();
-            const absoluteTop = rect.top + window.scrollY;
-            // Desconta a altura do header fixo (~80px) + margem de conforto visual
-            window.scrollTo({ top: absoluteTop - 90, behavior: "smooth" });
+            // Sobe pelo DOM acumulando offsetTop para obter posição absoluta real na página
+            let absoluteTop = 0;
+            let el = target;
+            while (el) {
+                absoluteTop += el.offsetTop || 0;
+                el = el.offsetParent;
+            }
+            // Desconta o header fixo do site (~80px) + 10px de margem
+            window.scrollTo({ top: Math.max(0, absoluteTop - 90), behavior: "smooth" });
         }
     }
 });
