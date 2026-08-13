@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Alunos 2026.2 | Combogó UNICAP</title>
+
+    <!-- SEO E META TAGS -->
+    <meta name="description" content="Faça parte da Combogó UNICAP. Seleção de novos alunos de Ciência da Computação e Sistemas para Internet para integrar nossa equipe de tecnologia, inovação e jogos.">
+    <meta name="keywords" content="Seleção Combogó, UNICAP, Ciência da Computação, Sistemas para Internet, jogos digitais, bolsa, projetos reais, Recife">
+    <meta name="author" content="Combogó UNICAP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://combogounicap.vercel.app/selecao.html">
+
+    <!-- OPEN GRAPH (COMPARTILHAMENTO) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Seleção de Alunos 2026.2 | Combogó UNICAP">
+    <meta property="og:description" content="Faça parte da Agência de Soluções Interativas da UNICAP. Inscreva-se para trabalhar com Games, IA, Web e XR.">
+    <meta property="og:url" content="https://combogounicap.vercel.app/selecao.html">
+    <meta property="og:image" content="https://combogounicap.vercel.app/assets/logo/Combogo_logo_social.jpg">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS DO SITE E DA SELEÇÃO -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/selecao.css">
+</head>
+<body>
+    <!-- BARRA DE PROGRESSO DE ROLAGEM GLOBAL -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <!-- BACKGROUND IMERSIVO (PONTOS E NÉVOA CYBER) -->
+    <div class="ambient-bg"></div>
+
+    <!-- REDE NEURAL FLUTUANTE -->
+    <canvas id="neuro-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.75;"></canvas>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/icons/combogo_icon.svg" alt="Ícone Combogó" class="logo-icon">
+                <div class="logo-text">
+                    <span>COMBOGÓ UNICAP</span>
+                    <span class="logo-sub">Agência de Soluções Interativas</span>
+                </div>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir Menu" id="mobile-menu-btn">☰</button>
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#solucoes">Soluções</a>
+                <a href="index.html#portfolio">Portfólio</a>
+                <a href="index.html#equipe">Equipe</a>
+                <a href="selecao.html" class="active" style="color: var(--primary); font-weight: 700;">🚀 Seleção 2026.2</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section da Seleção -->
+        <section class="selection-hero">
+            <div class="container">
+                <div class="selection-badge">
+                    <span>COMBOGÓ UNICAP</span>
+                    <span>•</span>
+                    <span>Seleção de Alunos 2026</span>
+                </div>
+
+                <h1 class="selection-title">Faça parte da Agência de Soluções Interativas da UNICAP.</h1>
+                
+                <p class="selection-desc">
+                    A Combogó está selecionando novos alunos de <strong>Ciência da Computação</strong> e <strong>Sistemas para Internet</strong> para integrar nossa equipe e participar de projetos reais envolvendo tecnologia, inovação e soluções interativas.
+                </p>
+
+                <!-- Chamada Visual (Pills) -->
+                <div class="selection-pills">
+                    <span class="pill-item">Programação</span>
+                    <span class="pill-item">Games</span>
+                    <span class="pill-item">IA</span>
+                    <span class="pill-item">Web</span>
+                    <span class="pill-item">XR</span>
+                    <span class="pill-item">Tecnologia</span>
+                    <span class="pill-item">Inovação</span>
+                </div>
+
+                <div class="hero-ctas" style="justify-content: center;">
+                    <a href="#form-section" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 32px;">Quero fazer parte da Combogó</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do Formulário -->
+        <section class="form-section" id="form-section">
+            <div class="container form-wrapper">
+                
+                <!-- Stepper de Progresso (Fixo no topo durante a rolagem) -->
+                <div class="stepper-header">
+                    <div class="stepper-progress-track">
+                        <div class="stepper-progress-fill" id="stepper-progress-fill"></div>
+                    </div>
+                    <div class="stepper-steps-list" id="stepper-steps-list">
+                        <!-- Gerado dinamicamente via selecao.js -->
+                    </div>
+                </div>
+
+                <!-- Card Principal do Formulário -->
+                <div class="form-card" id="form-card">
+                    <form id="combogo-selection-form" onsubmit="return false;" novalidate>
+                        
+                        <!-- Conteúdo dos Passos (Etapas 01 a 07 geradas dinamicamente) -->
+                        <div id="form-fields-container"></div>
+
+                        <!-- Rodapé de Navegação do Formulário -->
+                        <div class="form-footer-nav">
+                            <button type="button" class="btn-form-back" id="btn-form-back">← Voltar</button>
+                            <button type="button" class="btn-form-next" id="btn-form-next">Continuar →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tela Especial de Sucesso / Conclusão -->
+                <div class="form-card success-card" id="success-card">
+                    <div class="success-icon-wrapper">🚀</div>
+                    <h2 class="success-title">Candidatura enviada!</h2>
+                    <p class="success-desc">
+                        Obrigado pelo seu interesse em fazer parte da Combogó UNICAP. Suas informações foram recebidas. A equipe analisará os perfis e entrará em contato caso seu perfil avance para as próximas etapas da seleção.
+                    </p>
+                    <div class="success-highlight-box">
+                        ✨ Agora é só aguardar. Quem sabe o próximo projeto da Combogó começa com você?
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="index.html" class="btn btn-primary" style="padding: 14px 36px; text-decoration: none;">Voltar para a Combogó</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Padrão Combogó -->
+    <footer style="background: var(--bg-alt); padding: 50px 0; margin-top: 60px; border-top: 1px solid var(--border-color);">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-main); font-weight: 600; margin-bottom: 8px;">Universidade Católica de Pernambuco • Escola de Comunicação e Tecnologia</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Copyright © 2026 Combogó - Agência de Soluções Interativas. Todos os direitos reservados.</p>
+            <p style="color: var(--secondary); font-style: italic; font-size: 0.9rem;">"Inovação, Pesquisa e Extensão transformando a sociedade."</p>
+        </div>
+    </footer>
+
+    <!-- JS MODULAR DA SELEÇÃO -->
+    <script src="assets/js/form-data.js"></script>
+    <script src="assets/js/form-state.js"></script>
+    <script src="assets/js/form-service.js"></script>
+    <script src="assets/js/selecao.js"></script>
+
+    <!-- CANVAS INTERATIVO DE REDE NEURAL DA COMBOGÓ -->
+    <script>
+    (function() {
+        try {
+            const canvas = document.getElementById('neuro-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+            const mouse = { x: null, y: null, radius: 100 };
+            
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+
+            function init() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                const count = Math.min(Math.floor(width / 25), 50);
+                particles = Array.from({ length: count }, () => ({
+                    x: Math.random() * width, y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.6, vy: (Math.random() - 0.5) * 0.6,
+                    radius: Math.random() * 1.8 + 1.2, connected: false
+                }));
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                    p.connected = false;
+                });
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    if (mouse.x && mouse.y) {
+                        const distMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                        if (distMouse < mouse.radius) {
+                            p.connected = true;
+                            ctx.lineWidth = 1.2 - (distMouse / mouse.radius);
+                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.4)';
+                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                        }
+                    }
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 75) {
+                            p.connected = true; p2.connected = true;
+                            ctx.lineWidth = 1 - (dist / 75);
+                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.25)';
+                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.connected ? p.radius * 1.4 : p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.connected ? '#FF6B00' : '#00C9DB';
+                    if (p.connected) { ctx.shadowBlur = 12; ctx.shadowColor = '#FF6B00'; }
+                    else { ctx.shadowBlur = 4; ctx.shadowColor = '#00C9DB'; }
+                    ctx.fill(); ctx.shadowBlur = 0;
+                });
+                requestAnimationFrame(animate);
+            }
+            window.addEventListener('resize', init);
+            init(); animate();
+        } catch(e) { console.error("Erro no neuro-canvas:", e); }
+    })();
+    </script>
+</body>
+</html>

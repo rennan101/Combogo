@@ -149,6 +149,38 @@ ul {
     box-shadow: 0 0 15px rgba(0, 201, 219, 0.3);
 }
 
+.btn-selection {
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.2) 0%, rgba(0, 201, 219, 0.2) 100%);
+    color: #FFFFFF;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+    font-weight: 700;
+}
+
+.btn-selection:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, #FF8533 100%);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.6);
+}
+
+.nav-selection-highlight {
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    background: rgba(255, 107, 0, 0.12);
+    border: 1px solid rgba(255, 107, 0, 0.35);
+    padding: 6px 14px !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-selection-highlight:hover {
+    background: var(--primary);
+    color: #FFFFFF !important;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+    transform: translateY(-1px);
+}
+
 .btn-danger {
     background: rgba(255, 95, 86, 0.15);
     color: #FF5F56;
