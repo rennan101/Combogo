@@ -38,5 +38,13 @@
         "role_es": "Artista 2D",
         "photo": "assets/equipe/yve.jpeg",
         "link": "http://www.linkedin.com/in/yve-camille-093458237"
+    },
+    {
+        "name": "Giovana Verissimo",
+        "role": "Modeladora 3D / Animação 3D",
+        "role_en": "3D Modeling / 3D Animation",
+        "role_es": "Modeladora 3D / Animación 3D",
+        "photo": "assets/equipe/giovana.jpeg",
+        "link": "https://www.linkedin.com/in/verissimo-feitosa-65099a331/"
     }
 ]
