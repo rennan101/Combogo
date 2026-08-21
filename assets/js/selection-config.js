@@ -7,7 +7,7 @@ window.CombogoSelectionConfig = (function () {
     const CONFIG_KEY = "combogo_selection_config";
 
     const DEFAULT_CONFIG = {
-        active: false,
+        active: true,
         name: "Seleção 2026.2"
     };
 
