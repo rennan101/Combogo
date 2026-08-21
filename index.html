@@ -631,6 +631,7 @@
     </div>
 
     <!-- SCRIPTS COM PROTEÇÃO ANTI-FALHA (TRY/CATCH) -->
+    <script src="assets/js/selection-config.js"></script>
     <script src="translations.js"></script>
 
     <script>
@@ -672,6 +673,9 @@
                 const currentFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || "Todos";
                 renderProjects(currentFilter);
                 renderTeam();
+                if (window.CombogoSelectionConfig) {
+                    window.CombogoSelectionConfig.applyConfigToDOM();
+                }
             } catch (err) {
                 console.error("Erro em translatePage:", err);
             }
