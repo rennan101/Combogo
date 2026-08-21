@@ -1221,15 +1221,46 @@
         };
 
         if (footerAdmBtn) {
-            footerAdmBtn.addEventListener('click', (e) => {
+            footerAdmBtn.addEventListener('click', async (e) => {
                 e.preventDefault();
                 const t = (typeof i18n !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : { prompt_pass: "Digite a senha ADM:", alert_pass_wrong: "❌ Senha incorreta!" };
                 const senha = prompt(t.prompt_pass);
-                if (senha === "ComboExtensão") {
-                    admModal.classList.add('active');
-                    updateAdmProjectList();
-                    updateAdmTeamList();
-                } else if (senha !== null) alert(t.alert_pass_wrong);
+                if (senha === null || senha.trim() === "") return;
+
+                try {
+                    // 1. Tenta autenticar de forma segura pelo endpoint da Vercel
+                    const res = await fetch("/api/admin-auth", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ password: senha })
+                    });
+
+                    if (res.ok) {
+                        admModal.classList.add('active');
+                        updateAdmProjectList();
+                        updateAdmTeamList();
+                    } else if (res.status === 401) {
+                        alert(t.alert_pass_wrong);
+                    } else {
+                        // Se o endpoint retornar erro ou não estiver na Vercel (ex: teste local via file://)
+                        if (senha === "ComboExtensão") {
+                            admModal.classList.add('active');
+                            updateAdmProjectList();
+                            updateAdmTeamList();
+                        } else {
+                            alert(t.alert_pass_wrong);
+                        }
+                    }
+                } catch (err) {
+                    // Fallback para testes locais / offline caso /api/admin-auth não esteja rodando localmente
+                    if (senha === "ComboExtensão") {
+                        admModal.classList.add('active');
+                        updateAdmProjectList();
+                        updateAdmTeamList();
+                    } else {
+                        alert(t.alert_pass_wrong);
+                    }
+                }
             });
         }
 
