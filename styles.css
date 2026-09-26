@@ -401,7 +401,10 @@ section {
 /* Hero Section */
 #hero {
     position: relative;
-    padding: 120px 0 100px 0;
+    min-height: 85vh;
+    padding: 240px 0 96px 0;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
     background: transparent;
 }
@@ -432,13 +435,14 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(6, 9, 19, 0.35) 0%, rgba(6, 9, 19, 0.15) 45%, rgba(6, 9, 19, 0.88) 100%),
-                radial-gradient(circle at 25% 45%, rgba(6, 9, 19, 0.3) 0%, rgba(6, 9, 19, 0.75) 100%);
+    background: linear-gradient(180deg, rgba(6, 9, 19, 0.3) 0%, rgba(6, 9, 19, 0.1) 40%, rgba(6, 9, 19, 0.88) 100%),
+                radial-gradient(circle at 25% 45%, rgba(6, 9, 19, 0.25) 0%, rgba(6, 9, 19, 0.75) 100%);
 }
 
 .hero-container {
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .hero-content {
@@ -998,46 +1002,45 @@ section {
     color: var(--text-primary);
 }
 
-/* Partners Logos Row / Showcase */
+/* Partners Logos Row / Showcase (Open & Borderless) */
 .partners-logos-showcase {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 32px 40px;
-    margin-top: 48px;
-    padding: 36px 32px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    gap: 48px 56px;
+    margin-top: 56px;
+    padding: 24px 0;
+    background: transparent;
+    border: none;
 }
 
 .partner-logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72px;
-    min-width: 110px;
-    max-width: 190px;
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-md);
-    opacity: 0.9;
-    transition: all var(--transition-fast);
+    height: 88px;
+    min-width: 120px;
+    max-width: 220px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    opacity: 0.92;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .partner-logo-item:hover {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 107, 0, 0.4);
-    transform: translateY(-4px) scale(1.06);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: translateY(-4px) scale(1.1);
 }
 
 .partner-logo-img {
-    max-height: 56px;
-    max-width: 160px;
+    max-height: 80px;
+    max-width: 200px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -1534,6 +1537,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+    #hero {
+        padding: 160px 0 60px 0;
+        min-height: 75vh;
+    }
+
+    .partners-logos-showcase {
+        gap: 32px 36px;
+        margin-top: 36px;
+    }
+
+    .partner-logo-item {
+        height: 64px;
+        max-width: 150px;
+    }
+
+    .partner-logo-img {
+        max-height: 56px;
+        max-width: 140px;
+    }
+
     .menu-toggle {
         display: block;
     }
