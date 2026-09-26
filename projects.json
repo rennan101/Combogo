@@ -10,7 +10,9 @@
         "year": 2026,
         "folder": "HCP",
         "desc": "Desenvolvemos soluções em Realidade Virtual para humanizar o tratamento oncológico nas frentes de psicologia e fisioterapia do hospital.",
-        "link": ""
+        "link": "",
+        "desc_en": "We developed Virtual Reality solutions to humanize oncology treatment across the psychology and physical therapy departments of the hospital.",
+        "desc_es": "Desarrollamos soluciones de Realidad Virtual para humanizar el tratamiento oncológico en las áreas de psicología y fisioterapia del hospital."
     },
     {
         "title": "Recife Invasion - Rua da Aurora",
@@ -23,7 +25,9 @@
         "year": 2026,
         "folder": "Recife Invasion",
         "desc": "Projeto de Realidade Aumentada e jogo imersivo desenvolvido em 2 semanas para a Semana da Tecnologia e evento Red Bull.",
-        "link": "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1"
+        "link": "https://www.instagram.com/p/DYkrYfXlqws/?img_index=1",
+        "desc_en": "Augmented Reality project and immersive game developed in 2 weeks for Technology Week and the Red Bull event.",
+        "desc_es": "Proyecto de Realidad Aumentada y juego inmersivo desarrollado en 2 semanas para la Semana de la Tecnología y el evento Red Bull."
     },
     {
         "title": "Fotogrametria Anatômica 3D",
@@ -36,7 +40,9 @@
         "year": 2025,
         "folder": "Fotogrametria",
         "desc": "Digitalização de alta precisão e impressão 3D em tamanho real de um coração humano, revolucionando o ensino de anatomia.",
-        "link": ""
+        "link": "",
+        "desc_en": "High-precision 3D scanning and full-scale 3D printing of a human heart, revolutionizing anatomy education.",
+        "desc_es": "Digitalización de alta precisión e impresión 3D a escala real de un corazón humano, revolucionando la enseñanza de anatomía."
     },
     {
         "title": "Plataforma Quark",
@@ -48,7 +54,9 @@
         "year": 2024,
         "folder": "Quark",
         "desc": "Pesquisa em gamificação e QA para app de desenvolvimento de soft skills para jovens, aplicação foi premiada pelo MIT Tech Review LATAM e GovTech Summit.",
-        "link": "https://www.plataformaquark.com/"
+        "link": "https://www.plataformaquark.com/",
+        "desc_en": "Gamification research and QA for youth soft skills development app, recognized by MIT Tech Review LATAM and GovTech Summit.",
+        "desc_es": "Investigación en gamificación y QA para app de desarrollo de soft skills para jóvenes, galardonada por MIT Tech Review LATAM y GovTech Summit."
     },
     {
         "title": "O Resgate de Fárya",
@@ -60,7 +68,9 @@
         "year": 2023,
         "folder": "Farya",
         "desc": "Game 2D vencedor em 4 categorias no SBGames 2023 (Melhor Jogo, Arte, Narrativa e Vídeo) e prêmio Anima Verso.",
-        "link": "https://oresgatedefarya.itch.io/o-resgate-de-farya"
+        "link": "https://oresgatedefarya.itch.io/o-resgate-de-farya",
+        "desc_en": "2D Game winner in 4 categories at SBGames 2023 (Best Game, Art, Narrative, and Video) and recipient of the Anima Verso Award.",
+        "desc_es": "Juego 2D ganador en 4 categorías en SBGames 2023 (Mejor Juego, Arte, Narrativa y Video) y premio Anima Verso."
     },
     {
         "title": "Exposição Plural & Neon no Metaverso",
@@ -73,7 +83,9 @@
         "year": 2023,
         "folder": "Metaverse",
         "desc": "Construção de galeria interativa 3D no VRChat para exibição de 30 fotografias e narrativas contemporâneas no metaverso.",
-        "link": ""
+        "link": "",
+        "desc_en": "Construction of an interactive 3D gallery in VRChat to showcase 30 photographs and contemporary narratives in the metaverse.",
+        "desc_es": "Construcción de una galería interactiva 3D en VRChat para exhibir 30 fotografías y narrativas contemporáneas en el metaverso."
     },
     {
         "title": "Trilha das Memórias Maringá",
@@ -85,7 +97,9 @@
         "year": 2022,
         "folder": "Trilha",
         "desc": "App gamificado de turismo imersivo com geolocalização, leitura de QR Codes e sistema de recompensas para visitantes.",
-        "link": "https://www.instagram.com/trilhadasmemorias/"
+        "link": "https://www.instagram.com/trilhadasmemorias/",
+        "desc_en": "Gamified immersive tourism app featuring geolocation, QR Code scanning, and reward mechanics for visitors.",
+        "desc_es": "App gamificada de turismo inmersivo con geolocalización, lectura de códigos QR y sistema de recompensas para visitantes."
     },
     {
         "title": "Projeto Flautista RV",
@@ -98,7 +112,9 @@
         "year": 2022,
         "folder": "Flautista",
         "desc": "Reconstrução interativa em Realidade Virtual do hominídeo brasileiro de 2 mil anos, com apoio de iniciação científica PIBIC.",
-        "link": ""
+        "link": "",
+        "desc_en": "Interactive Virtual Reality reconstruction of the 2,000-year-old Brazilian hominid, supported by scientific research grants (PIBIC).",
+        "desc_es": "Reconstrucción interactiva en Realidad Virtual del homínido brasileño de 2.000 años, con apoyo de investigación científica PIBIC."
     },
     {
         "title": "Livro de RPG Digital",
@@ -110,7 +126,9 @@
         "year": 2022,
         "folder": "Ilustracao_rpg",
         "desc": "Produção de 32 ilustrações autorais, concept art de personagens, itens e cenários para livro digital de RPG.",
-        "link": "https://www.instagram.com/p3boardgames/"
+        "link": "https://www.instagram.com/p3boardgames/",
+        "desc_en": "Production of 32 original illustrations, character concept art, items, and environment designs for a digital RPG book.",
+        "desc_es": "Producción de 32 ilustraciones originales, concept art de personajes, objetos y escenarios para un libro digital de RPG."
     },
     {
         "title": "Aplicativo Rugido",
@@ -122,7 +140,9 @@
         "year": 2021,
         "folder": "Rugido",
         "desc": "App para registro de denúncias e estatísticas de LGBTfobia, integrado ao Guia Oficial da Defensoria Pública de PE.",
-        "link": "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf"
+        "link": "https://www.defensoria.pe.def.br/wp-content/uploads/cartilhas/Cartilha_LGBT.pdf",
+        "desc_en": "Mobile app for reporting and statistics on LGBTphobia, integrated into the Official Guide of the Public Defender Office of Pernambuco.",
+        "desc_es": "App para registro de denuncias y estadísticas de LGBTfobia, integrada a la Guía Oficial de la Defensoría Pública de PE."
     },
     {
         "title": "Animação Institucional #unicapsegura",
@@ -134,7 +154,9 @@
         "year": 2021,
         "folder": "Animacao_incendio",
         "desc": "Animação 2D informativa sobre segurança, normas prediais e prevenção nas dependências da universidade.",
-        "link": "https://www.youtube.com/watch?v=USQH1NfQ6Jw"
+        "link": "https://www.youtube.com/watch?v=USQH1NfQ6Jw",
+        "desc_en": "Informative 2D animation addressing safety protocols, building standards, and emergency prevention on university premises.",
+        "desc_es": "Animación 2D informativa sobre seguridad, normas edilicias y prevención en las instalaciones de la universidad."
     },
     {
         "title": "Biofeedback & VR Terapêutico",
@@ -147,7 +169,9 @@
         "year": 2021,
         "folder": "Vr_Treinamento",
         "desc": "Pesquisa avançada em regulação emocional e biofeedback com utilização do headset Oculus Rift para simulações imersivas.",
-        "link": "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full"
+        "link": "https://repositorio.ufpe.br/jspui/handle/123456789/38033?mode=full",
+        "desc_en": "Advanced research in emotional regulation and biofeedback utilizing Oculus Rift headsets for clinical immersive simulations.",
+        "desc_es": "Investigación avanzada en regulación emocional y biofeedback utilizando gafas Oculus Rift para simulaciones inmersivas."
     },
     {
         "title": "Aplicativo Previna (SEPOD)",
@@ -159,7 +183,9 @@
         "year": 2020,
         "folder": "Sepod",
         "desc": "Plataforma gamificada móvel de suporte socioeducativo em escolas públicas, incentivando reflexões sobre prevenção de drogas.",
-        "link": "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1"
+        "link": "https://www.instagram.com/p/Cx8OAUrv7Sk/?img_index=1",
+        "desc_en": "Gamified mobile platform providing socio-educational support in public schools, encouraging youth reflection on drug prevention.",
+        "desc_es": "Plataforma gamificada móvil de apoyo socioeducativo en escuelas públicas, incentivando reflexiones sobre prevención de drogas."
     },
     {
         "title": "Campanha \"Teste Seu Olhar\"",
@@ -171,7 +197,9 @@
         "year": 2019,
         "folder": "Vr_Olhar",
         "desc": "Experiência de Realidade Virtual para combate à LGBTfobia, aplicada em espaços públicos como o Metrô do Recife.",
-        "link": "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a"
+        "link": "https://globoplay.globo.com/v/7622138/?utm_source=facebook&utm_medium=share-player-desktop&utm_id=97757_v0_s00_e0_tv2_a1dec6iimx9u9a",
+        "desc_en": "Virtual Reality immersive experience fighting LGBTphobia, deployed in public transportation spaces such as the Recife Subway.",
+        "desc_es": "Experiencia de Realidad Virtual para combatir la LGBTfobia, aplicada en espacios públicos como el Metro de Recife."
     },
     {
         "title": "PsicoPing",
@@ -184,7 +212,9 @@
         "year": 2019,
         "folder": "Psicoping",
         "desc": "Game científico transdisciplinar de estimulação cognitiva e reabilitação psicoterapêutica para pacientes com TDAH.",
-        "link": "https://globoplay.globo.com/v/7497090/?s=0s"
+        "link": "https://globoplay.globo.com/v/7497090/?s=0s",
+        "desc_en": "Transdisciplinary scientific game for cognitive stimulation and psychotherapeutic rehabilitation for ADHD patients.",
+        "desc_es": "Juego científico transdisciplinario de estimulación cognitiva y rehabilitación psicoterapéutica para pacientes con TDAH."
     },
     {
         "title": "English Teen - Game of Cabo",
@@ -196,7 +226,9 @@
         "year": 2018,
         "folder": "Game_cabo",
         "desc": "Aplicação gamificada de extensão universitária para o ensino prático de língua inglesa em escolas públicas do litoral.",
-        "link": "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/"
+        "link": "https://www1.unicap.br/assecom1/projeto-de-extensao-do-ifpe-campus-cabo-de-santo-agostinho-em-parceria-com-a-agencia-combogo-unicap-realiza-acao-em-escola/",
+        "desc_en": "Gamified university outreach application for practical English language teaching in coastal public schools.",
+        "desc_es": "Aplicación gamificada de extensión universitaria para la enseñanza práctica del idioma inglés en escuelas públicas del litoral."
     },
     {
         "title": "Corre Ascensinho",
@@ -208,7 +240,9 @@
         "year": 2018,
         "folder": "Corre_ascensinho",
         "desc": "Jogo digital de plataforma em pixel art promovendo a identidade e história acadêmica da universidade de forma divertida.",
-        "link": ""
+        "link": "",
+        "desc_en": "Pixel-art platform digital game promoting the university’s academic identity and heritage in an engaging format.",
+        "desc_es": "Juego digital de plataformas en pixel art que promueve la identidad y la historia académica de la universidad de forma divertida."
     },
     {
         "title": "Game para o Católica In",
@@ -219,7 +253,9 @@
         "year": 2017,
         "folder": "CatolicaIn",
         "desc": "Jogo digital vocacional para o evento anual de orientation profissional voltado a estudantes do Ensino Médio.",
-        "link": "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/"
+        "link": "https://www1.unicap.br/assecom1/agencia-de-jogos-digitais-cria-game-para-o-catolica-in/",
+        "desc_en": "Vocational digital game developed for the university’s annual career orientation event for high school students.",
+        "desc_es": "Juego digital vocacional para el evento anual de orientación profesional dirigido a estudiantes de secundaria."
     },
     {
         "title": "Especial Interativo de Natal",
@@ -231,6 +267,8 @@
         "year": 2017,
         "folder": "Natal_2017",
         "desc": "Aplicação interativa e cartão de festas gamificado desenvolvido pelo laboratório para engajar a comunidade universitária.",
-        "link": "https://www.youtube.com/watch?v=SgJgV_eys5U"
+        "link": "https://www.youtube.com/watch?v=SgJgV_eys5U",
+        "desc_en": "Interactive holiday application and gamified card created by the lab to engage the university community.",
+        "desc_es": "Aplicación interactiva y tarjeta festiva gamificada desarrollada por el laboratorio para conectar con la comunidad universitaria."
     }
 ]

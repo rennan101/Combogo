@@ -8,9 +8,59 @@ import { getLanguage } from './i18n.js';
 let projects = [];
 let currentFilter = 'Todos';
 
+// Category Translations Dictionary
+const CATEGORY_TRANSLATIONS = {
+    'Todos': { pt: 'Todos', en: 'All', es: 'Todos' },
+    'Saúde': { pt: 'Saúde', en: 'Healthcare', es: 'Salud' },
+    'XR': { pt: 'XR', en: 'XR (VR/AR)', es: 'XR (RV/RA)' },
+    'Inovação': { pt: 'Inovação', en: 'Innovation', es: 'Innovación' },
+    'Jogos Digitais': { pt: 'Jogos Digitais', en: 'Digital Games', es: 'Juegos Digitales' },
+    'Jogos Sérios': { pt: 'Jogos Sérios', en: 'Serious Games', es: 'Juegos Serios' },
+    'Arte 2D': { pt: 'Arte 2D', en: '2D Art', es: 'Arte 2D' },
+    'Modelagem 3D': { pt: 'Modelagem 3D', en: '3D Modeling', es: 'Modelado 3D' },
+    'Apps & Gamificação': { pt: 'Apps & Gamificação', en: 'Apps & Gamification', es: 'Apps y Gamificación' },
+    'Impacto Social': { pt: 'Impacto Social', en: 'Social Impact', es: 'Impacto Social' }
+};
+
+export function translateCategory(cat, lang) {
+    if (CATEGORY_TRANSLATIONS[cat] && CATEGORY_TRANSLATIONS[cat][lang]) {
+        return CATEGORY_TRANSLATIONS[cat][lang];
+    }
+    return cat;
+}
+
+// In-memory & LocalStorage Cache for dynamic on-the-fly translations
+const translationCache = getSafeStorage('combogo_trans_cache', {});
+
+export async function fetchLiveTranslation(text, targetLang) {
+    if (!text || targetLang === 'pt') return text;
+    const cleanText = text.trim();
+    const cacheKey = `${targetLang}:${cleanText}`;
+    if (translationCache[cacheKey]) {
+        return translationCache[cacheKey];
+    }
+
+    try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanText)}&langpair=pt|${targetLang}`;
+        const res = await fetch(url);
+        if (res.ok) {
+            const data = await res.json();
+            if (data && data.responseData && data.responseData.translatedText) {
+                const translated = data.responseData.translatedText;
+                translationCache[cacheKey] = translated;
+                setSafeStorage('combogo_trans_cache', translationCache);
+                return translated;
+            }
+        }
+    } catch (e) {
+        console.warn('Live translation notice:', e);
+    }
+    return text;
+}
+
 export async function loadProjects() {
     const cached = getSafeStorage('combogo_projects', null);
-    if (cached && Array.isArray(cached) && cached.length > 0) {
+    if (cached && Array.isArray(cached) && cached.length > 0 && cached.some(p => p.desc_en)) {
         projects = cached;
     } else {
         try {
@@ -185,7 +235,7 @@ export function updateDynamicCategories() {
         const btn = document.createElement('button');
         btn.className = `filter-btn ${cat === currentFilter ? 'active' : ''}`;
         btn.setAttribute('data-filter', cat);
-        btn.textContent = cat === 'Todos' ? (t.cat_all || 'Todos') : cat;
+        btn.textContent = cat === 'Todos' ? (t.cat_all || 'Todos') : translateCategory(cat, lang);
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -213,7 +263,7 @@ export function renderProjects(filter = 'Todos') {
     if (filteredProjects.length === 0) {
         portfolioGrid.innerHTML = `
             <div class="portfolio-empty-state">
-                <p>Nenhum projeto encontrado nesta categoria.</p>
+                <p>${lang === 'en' ? 'No projects found in this category.' : (lang === 'es' ? 'No se encontraron proyectos en esta categoría.' : 'Nenhum projeto encontrado nesta categoria.')}</p>
             </div>`;
         return;
     }
@@ -223,8 +273,27 @@ export function renderProjects(filter = 'Todos') {
         card.className = 'project-card';
         
         let displayDesc = p.desc;
-        if (lang === 'en' && p.desc_en) displayDesc = p.desc_en;
-        if (lang === 'es' && p.desc_es) displayDesc = p.desc_es;
+        if (lang === 'en' && p.desc_en) {
+            displayDesc = p.desc_en;
+        } else if (lang === 'es' && p.desc_es) {
+            displayDesc = p.desc_es;
+        } else if (lang !== 'pt' && p.desc) {
+            const cacheKey = `${lang}:${p.desc.trim()}`;
+            if (translationCache[cacheKey]) {
+                displayDesc = translationCache[cacheKey];
+            } else {
+                // Auto-translate on-the-fly for any future/new project
+                fetchLiveTranslation(p.desc, lang).then(translated => {
+                    if (translated && translated !== p.desc) {
+                        p[`desc_${lang}`] = translated;
+                        const descEl = card.querySelector('.project-desc');
+                        if (descEl && getLanguage() === lang) {
+                            descEl.textContent = translated;
+                        }
+                    }
+                });
+            }
+        }
 
         const folder = p.folder || 'HCP';
         const cats = getProjectCats(p);
@@ -245,7 +314,7 @@ export function renderProjects(filter = 'Todos') {
                 <div class="project-header">
                     <h3 class="project-title">${p.title}</h3>
                     <div class="project-tags">
-                        ${cats.map(c => `<span class="project-tag">${c}</span>`).join('')}
+                        ${cats.map(c => `<span class="project-tag">${translateCategory(c, lang)}</span>`).join('')}
                     </div>
                 </div>
                 <p class="project-client"><strong>${p.client}</strong></p>

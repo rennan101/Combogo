@@ -81,7 +81,7 @@
                 <!-- Language Selector -->
                 <div class="lang-dropdown" id="lang-dropdown-wrapper">
                     <button id="lang-toggle-btn" class="lang-btn" aria-label="Trocar Idioma">
-                        🌐 <span id="current-lang-label">PT</span> ▾
+                        <span id="current-lang-flag">🇧🇷</span> <span id="current-lang-label">PT</span> ▾
                     </button>
                     <div class="lang-menu" id="lang-menu">
                         <a href="#" data-lang="pt" class="active">🇧🇷 Português (PT)</a>
@@ -532,13 +532,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="adm-desc" data-i18n="adm_lbl_desc">Descrição / Resultados *</label>
+                        <label for="adm-desc" data-i18n="adm_lbl_desc">Descrição (Português) *</label>
                         <textarea id="adm-desc" rows="3" class="form-control" required placeholder="Resumo do projeto e seus resultados..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adm-desc-en">Descrição (Inglês) <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">(Opcional - auto-traduz se vazio)</span></label>
+                        <textarea id="adm-desc-en" rows="2" class="form-control" placeholder="English description..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adm-desc-es">Descrição (Espanhol) <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">(Opcional - auto-traduz se vazio)</span></label>
+                        <textarea id="adm-desc-es" rows="2" class="form-control" placeholder="Descripción en español..."></textarea>
                     </div>
 
                     <div style="display: flex; gap: 10px; margin-top: 16px;">
                         <button type="button" class="btn btn-secondary" id="adm-cancel-btn" style="display: none; width: 45%;" data-i18n="adm_btn_back">🔙 Voltar</button>
-                        <button type="submit" class="btn btn-primary" style="flex-grow: 1;" id="adm-submit-btn" data-i18n="adm_btn_submit">Adicionar Projeto ao Portfólio</button>
+                        <button type="submit" class="btn btn-primary" style="flex-grow: 1;" id="adm-submit-btn" data-i18n="adm_btn_submit">Salvar Projeto</button>
                     </div>
                 </form>
             </div>

@@ -16,6 +16,12 @@ export function onLanguageChange(callback) {
     }
 }
 
+const FLAGS = {
+    pt: '🇧🇷',
+    en: '🇺🇸',
+    es: '🇪🇸'
+};
+
 export function translatePage(lang) {
     if (!window.i18n || !window.i18n[lang]) {
         console.warn(`Translation dictionary for "${lang}" not found.`);
@@ -25,7 +31,12 @@ export function translatePage(lang) {
     currentLang = lang;
     const t = window.i18n[lang];
 
-    // Update active state in UI
+    // Update active state and country flag in UI
+    const flagEl = document.getElementById('current-lang-flag');
+    if (flagEl) {
+        flagEl.textContent = FLAGS[lang] || '🌐';
+    }
+
     const labelEl = document.getElementById('current-lang-label');
     if (labelEl) {
         labelEl.textContent = lang.toUpperCase();

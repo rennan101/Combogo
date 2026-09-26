@@ -3,7 +3,7 @@
  * Handles the administrative modal, project CRUD, category management, team CRUD, and JSON downloads.
  */
 import { getSafeStorage, setSafeStorage } from './storage.js';
-import { getProjects, setProjects, getAllCategories, getProjectCats } from './portfolio.js';
+import { getProjects, setProjects, getAllCategories, getProjectCats, fetchLiveTranslation } from './portfolio.js';
 import { getTeamMembers, setTeamMembers, renderTeam } from './team.js';
 import { getLanguage } from './i18n.js';
 
@@ -110,6 +110,10 @@ export function initAdmin() {
                 folderVal = admFolderNewInput.value.trim() || 'HCP';
             }
 
+            const descPT = document.getElementById('adm-desc').value.trim();
+            let descEN = document.getElementById('adm-desc-en') ? document.getElementById('adm-desc-en').value.trim() : '';
+            let descES = document.getElementById('adm-desc-es') ? document.getElementById('adm-desc-es').value.trim() : '';
+
             const projectData = {
                 title: document.getElementById('adm-title').value.trim(),
                 client: document.getElementById('adm-client').value.trim(),
@@ -117,7 +121,9 @@ export function initAdmin() {
                 year: parseInt(document.getElementById('adm-year').value, 10) || new Date().getFullYear(),
                 folder: folderVal,
                 link: document.getElementById('adm-link').value.trim(),
-                desc: document.getElementById('adm-desc').value.trim()
+                desc: descPT,
+                desc_en: descEN,
+                desc_es: descES
             };
 
             if (editId !== '') {
@@ -127,6 +133,23 @@ export function initAdmin() {
             }
 
             setProjects(projects);
+
+            // Asynchronously populate EN and ES if left blank
+            if ((!descEN || !descES) && descPT) {
+                const targetIdx = editId !== '' ? parseInt(editId, 10) : 0;
+                Promise.all([
+                    !descEN ? fetchLiveTranslation(descPT, 'en') : Promise.resolve(descEN),
+                    !descES ? fetchLiveTranslation(descPT, 'es') : Promise.resolve(descES)
+                ]).then(([autoEn, autoEs]) => {
+                    const currentProjects = getProjects();
+                    if (currentProjects[targetIdx]) {
+                        currentProjects[targetIdx].desc_en = autoEn;
+                        currentProjects[targetIdx].desc_es = autoEs;
+                        setProjects(currentProjects);
+                    }
+                }).catch(() => {});
+            }
+
             admForm.reset();
             document.getElementById('adm-edit-id').value = '';
             alert('✅ Projeto salvo com sucesso no portfólio!');
@@ -310,7 +333,9 @@ function startEditProject(index) {
     document.getElementById('adm-year').value = p.year || 2026;
     document.getElementById('adm-folder').value = p.folder || 'HCP';
     document.getElementById('adm-link').value = p.link || '';
-    document.getElementById('adm-desc').value = p.desc;
+    document.getElementById('adm-desc').value = p.desc || '';
+    if (document.getElementById('adm-desc-en')) document.getElementById('adm-desc-en').value = p.desc_en || '';
+    if (document.getElementById('adm-desc-es')) document.getElementById('adm-desc-es').value = p.desc_es || '';
 
     // Check categories
     const cats = getProjectCats(p);
