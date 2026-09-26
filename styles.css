@@ -1047,6 +1047,10 @@ section {
     transition: transform var(--transition-fast);
 }
 
+.partner-logo-img.partner-logo-white {
+    filter: brightness(0) invert(1);
+}
+
 /* Team Section */
 .team-grid {
     display: grid;
