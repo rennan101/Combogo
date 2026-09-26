@@ -35,9 +35,6 @@
     <!-- BACKGROUND IMERSIVO (PONTOS E NÉVOA CYBER) -->
     <div class="ambient-bg"></div>
 
-    <!-- REDE NEURAL FLUTUANTE -->
-    <canvas id="neuro-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.75;"></canvas>
-
     <!-- Header / Navbar -->
     <header>
         <div class="container nav-container">
@@ -172,77 +169,5 @@
     <script src="assets/js/form-state.js"></script>
     <script src="assets/js/form-service.js"></script>
     <script src="assets/js/selecao.js"></script>
-
-    <!-- CANVAS INTERATIVO DE REDE NEURAL DA COMBOGÓ -->
-    <script>
-    (function() {
-        try {
-            const canvas = document.getElementById('neuro-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let width, height, particles;
-            const mouse = { x: null, y: null, radius: 100 };
-            
-            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
-
-            function init() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-                const count = Math.min(Math.floor(width / 25), 50);
-                particles = Array.from({ length: count }, () => ({
-                    x: Math.random() * width, y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.6, vy: (Math.random() - 0.5) * 0.6,
-                    radius: Math.random() * 1.8 + 1.2, connected: false
-                }));
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => {
-                    p.x += p.vx; p.y += p.vy;
-                    if (p.x < 0 || p.x > width) p.vx *= -1;
-                    if (p.y < 0 || p.y > height) p.vy *= -1;
-                    p.connected = false;
-                });
-
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    if (mouse.x && mouse.y) {
-                        const distMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
-                        if (distMouse < mouse.radius) {
-                            p.connected = true;
-                            ctx.lineWidth = 1.2 - (distMouse / mouse.radius);
-                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.4)';
-                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
-                        }
-                    }
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p2 = particles[j];
-                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-                        if (dist < 75) {
-                            p.connected = true; p2.connected = true;
-                            ctx.lineWidth = 1 - (dist / 75);
-                            ctx.strokeStyle = 'rgba(255, 107, 0, 0.25)';
-                            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
-                        }
-                    }
-                }
-
-                particles.forEach(p => {
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.connected ? p.radius * 1.4 : p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = p.connected ? '#FF6B00' : '#00C9DB';
-                    if (p.connected) { ctx.shadowBlur = 12; ctx.shadowColor = '#FF6B00'; }
-                    else { ctx.shadowBlur = 4; ctx.shadowColor = '#00C9DB'; }
-                    ctx.fill(); ctx.shadowBlur = 0;
-                });
-                requestAnimationFrame(animate);
-            }
-            window.addEventListener('resize', init);
-            init(); animate();
-        } catch(e) { console.error("Erro no neuro-canvas:", e); }
-    })();
-    </script>
 </body>
 </html>
