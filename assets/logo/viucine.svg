@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="xMidYMid meet" data-bbox="1.245 0 331.935 43.059" viewBox="0 0 334.423 43.058" height="43.058" width="334.423" xmlns="http://www.w3.org/2000/svg" data-type="ugc" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <linearGradient y2="21.529" x2="333.179" y1="21.529" x1="1.245" gradientUnits="userSpaceOnUse" id="0c606faf-5ec6-413d-a964-acf60e6d5d77_comp-m0ld2cyr">
+            <stop offset="0" stop-color="#7219f2"></stop>
+            <stop offset=".001" stop-color="#7219f2"></stop>
+            <stop offset="1" stop-color="#f72415"></stop>
+        </linearGradient>
+        <path d="M330.259 0H7.93C6.171 0 4.62 1.426 4.467 3.186l-3.21 36.686c-.153 1.76 1.147 3.187 2.907 3.187h322.33c1.761 0 3.311-1.427 3.464-3.187l3.21-36.686C333.321 1.426 332.02 0 330.259 0" fill="url(#0c606faf-5ec6-413d-a964-acf60e6d5d77_comp-m0ld2cyr)"></path>
+    </g>
+</svg>
