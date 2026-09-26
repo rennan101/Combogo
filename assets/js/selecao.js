@@ -324,11 +324,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                 clearFieldError(field.id);
                             });
 
-                            // Bloqueia colar texto além do limite
+                            // Bloqueia teclas não numéricas e digitação além do limite
                             el.addEventListener("keydown", (e) => {
-                                const digits = el.value.replace(/\D/g, "");
                                 const allowed = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "Home", "End"];
-                                if (digits.length >= 11 && !allowed.includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                                if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+                                if (!/^\d$/.test(e.key)) {
+                                    e.preventDefault();
+                                    return;
+                                }
+                                const digits = el.value.replace(/\D/g, "");
+                                if (digits.length >= 11) {
                                     e.preventDefault();
                                 }
                             });

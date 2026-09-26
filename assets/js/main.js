@@ -9,10 +9,12 @@ import { loadTeam, renderTeam } from './modules/team.js';
 import { initQuotesRotator, renderHeroQuote } from './modules/quotes.js';
 import { initAdmin } from './modules/admin.js';
 import { initUI } from './modules/ui.js';
+import { initParticleCanvas } from './modules/canvas.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Initialize UI listeners
+    // 1. Initialize UI & Canvas listeners
     initUI();
+    initParticleCanvas();
     initI18n();
     initAdmin();
 

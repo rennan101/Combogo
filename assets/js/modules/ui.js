@@ -59,6 +59,36 @@ export function initUI() {
         reveals.forEach(el => el.classList.add('active'));
     }
 
+    // WhatsApp number formatting (only digits allowed)
+    const whatsappInput = document.getElementById('whatsapp');
+    if (whatsappInput) {
+        whatsappInput.addEventListener('input', (e) => {
+            let digits = e.target.value.replace(/\D/g, '');
+            if (digits.length > 11) digits = digits.slice(0, 11);
+
+            let masked = digits;
+            if (digits.length <= 2) {
+                masked = digits.length ? `(${digits}` : '';
+            } else if (digits.length <= 7) {
+                masked = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+            } else if (digits.length <= 10) {
+                masked = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+            } else {
+                masked = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+            }
+            e.target.value = masked;
+        });
+
+        whatsappInput.addEventListener('keydown', (e) => {
+            const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Home', 'End'];
+            if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+            // Prevent any non-digit key from being typed
+            if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+    }
+
     // Contact form handling (FormSubmit / WhatsApp)
     const form = document.getElementById('briefing-form');
     if (form) {
