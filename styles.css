@@ -1004,10 +1004,10 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 32px 48px;
-    margin-top: 40px;
-    padding: 32px 28px;
-    background: rgba(255, 255, 255, 0.02);
+    gap: 32px 40px;
+    margin-top: 48px;
+    padding: 36px 32px;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
 }
@@ -1016,26 +1016,32 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 48px;
-    min-width: 80px;
-    max-width: 140px;
-    opacity: 0.75;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    height: 72px;
+    min-width: 110px;
+    max-width: 190px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    opacity: 0.9;
+    transition: all var(--transition-fast);
 }
 
 .partner-logo-item:hover {
     opacity: 1;
-    transform: translateY(-2px) scale(1.08);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 107, 0, 0.4);
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .partner-logo-img {
-    max-height: 42px;
-    max-width: 130px;
+    max-height: 56px;
+    max-width: 160px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: filter var(--transition-fast);
+    transition: transform var(--transition-fast);
 }
 
 /* Team Section */
