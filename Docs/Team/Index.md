@@ -23,6 +23,8 @@ A Combogó é formada por docentes, pesquisadores de pós-graduação e bolsista
 - [[Deivyson-Santana|Deivyson Santana]] — Desenvolvedor Full Stack
 - [[Julia-Vilela|Júlia Vilela]] — Desenvolvedora Full Stack
 - [[Maria-Eduarda|Maria Eduarda Araújo]] — Desenvolvedora Full Stack
+- [[Marcelo-Rocha|Marcelo Rocha]] — Desenvolvedor Full Stack
+- [[Noemi-Soares|Noemi Soares]] — Desenvolvedora de Software
 - [[Yve-Camille|Yve Camille]] — Artista 2D
 - [[Giovana-Verissimo|Giovana Verissimo]] — Modeladora & Animadora 3D
 

@@ -72,6 +72,22 @@
         "link": "https://www.linkedin.com/in/eduardaaraujo-tech"
     },
     {
+        "name": "Marcelo Rocha",
+        "role": "Desenvolvedor Full Stack",
+        "role_en": "Full Stack Developer",
+        "role_es": "Desarrollador Full Stack",
+        "photo": "assets/equipe/Marcelo.png",
+        "link": "https://www.linkedin.com/in/marcelo-rocha-a85958320/?isSelfProfile=false"
+    },
+    {
+        "name": "Noemi Soares",
+        "role": "Desenvolvedora de Software",
+        "role_en": "Software Developer",
+        "role_es": "Desarrolladora de Software",
+        "photo": "assets/equipe/Noemi.png",
+        "link": "https://www.linkedin.com/in/noemi-soares-5a3327352/?isSelfProfile=false"
+    },
+    {
         "name": "Yve Camille",
         "role": "Artista 2D",
         "role_en": "2D Artist",
