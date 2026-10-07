@@ -32,6 +32,46 @@
         "link": "https://www.linkedin.com/in/hugo-beltrão-b98a65425?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
+        "name": "Maurício da Costa",
+        "role": "Modelador 3D",
+        "role_en": "3D Modeler",
+        "role_es": "Modelador 3D",
+        "photo": "assets/equipe/mauricio.png",
+        "link": "https://www.linkedin.com/in/maurício-da-costa-614a66432/?isSelfProfile=false"
+    },
+    {
+        "name": "Gabriel Bezerra",
+        "role": "Game Designer / Desenvolvedor",
+        "role_en": "Game Designer / Developer",
+        "role_es": "Game Designer / Desarrollador",
+        "photo": "assets/equipe/gabriel.jpeg",
+        "link": "https://www.linkedin.com/in/gabriel-bezerra-pereira-81b24628b/"
+    },
+    {
+        "name": "Deivyson Santana",
+        "role": "Desenvolvedor Full Stack",
+        "role_en": "Full Stack Developer",
+        "role_es": "Desarrollador Full Stack",
+        "photo": "assets/equipe/Deivyson.jpeg",
+        "link": "https://linkedin.com/in/deivyson05"
+    },
+    {
+        "name": "Júlia Vilela",
+        "role": "Desenvolvedora Full Stack",
+        "role_en": "Full Stack Developer",
+        "role_es": "Desarrolladora Full Stack",
+        "photo": "assets/equipe/Julia.png",
+        "link": "https://www.linkedin.com/in/júlia-vilela-a5b235266"
+    },
+    {
+        "name": "Maria Eduarda Araújo",
+        "role": "Desenvolvedora Full Stack",
+        "role_en": "Full Stack Developer",
+        "role_es": "Desarrolladora Full Stack",
+        "photo": "assets/equipe/Eduarda.png",
+        "link": "https://www.linkedin.com/in/eduardaaraujo-tech"
+    },
+    {
         "name": "Yve Camille",
         "role": "Artista 2D",
         "role_en": "2D Artist",

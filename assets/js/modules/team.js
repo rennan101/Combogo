@@ -11,15 +11,19 @@ export async function loadTeam() {
     const cached = getSafeStorage('combogo_team', null);
     if (cached && Array.isArray(cached) && cached.length > 0) {
         teamMembers = cached;
-    } else {
-        try {
-            const res = await fetch('team.json');
-            if (res.ok) {
-                teamMembers = await res.json();
+    }
+    try {
+        const res = await fetch('team.json');
+        if (res.ok) {
+            const freshTeam = await res.json();
+            if (!cached || !Array.isArray(cached) || cached.length !== freshTeam.length) {
+                teamMembers = freshTeam;
                 setSafeStorage('combogo_team', teamMembers);
             }
-        } catch (e) {
-            console.warn('Failed to fetch team.json, using fallback:', e);
+        }
+    } catch (e) {
+        console.warn('Failed to fetch team.json, using fallback:', e);
+        if (!teamMembers || teamMembers.length === 0) {
             teamMembers = [];
         }
     }

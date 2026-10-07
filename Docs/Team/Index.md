@@ -18,6 +18,11 @@ A Combogó é formada por docentes, pesquisadores de pós-graduação e bolsista
 - [[Luana-Meneghini|Luana Felipe Meneghini]] — Game Designer / QA
 - [[Gustavo-Feliciano|Gustavo Feliciano]] — Desenvolvedor Unreal / Modelador 3D / Level Designer
 - [[Hugo-Beltrao|Hugo Beltrão de Carvalho]] — Modelador 3D
+- [[Mauricio-Costa|Maurício da Costa]] — Modelador 3D
+- [[Gabriel-Bezerra|Gabriel Bezerra]] — Game Designer / Desenvolvedor
+- [[Deivyson-Santana|Deivyson Santana]] — Desenvolvedor Full Stack
+- [[Julia-Vilela|Júlia Vilela]] — Desenvolvedora Full Stack
+- [[Maria-Eduarda|Maria Eduarda Araújo]] — Desenvolvedora Full Stack
 - [[Yve-Camille|Yve Camille]] — Artista 2D
 - [[Giovana-Verissimo|Giovana Verissimo]] — Modeladora & Animadora 3D
 
